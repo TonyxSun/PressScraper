@@ -67,16 +67,15 @@ class FloorSpider(scrapy.Spider):
         date = response.meta["date"]
         
         
-        # List will all text
-        # MISSING TEXT THAT IS IN SUBCLASSES
-        headers = '[style^="padding-b"]::text, [class="headings"]::text, [class="docnum"]::text, [class="status"]::text, div.docnum ::text'
-        all_text_list = response.css(headers).extract()
+        # Possible css selectors
+        selectors = '[style^="padding-b"]::text, [class="headings"]::text, [class="docnum"]::text, [class="status"]::text, div.docnum ::text'
         
+        # List will contain all text
+        all_text_list = response.css(selectors).extract()
         
-        print ("HIiii", all_text_list)
         
     
-        # Creates string of all text, removing unnecessary blank lines
+        # Creates string of all text, removing unnecessary blank lines and characters
         all_text = ""
         for text in all_text_list:
             if text != "\n":
@@ -87,7 +86,6 @@ class FloorSpider(scrapy.Spider):
                     new_text = new_text + char
                 all_text = all_text + new_text + "\n"
         
-        print ("BYYee", all_text)
         
         # Produce output with date and content
         yield {

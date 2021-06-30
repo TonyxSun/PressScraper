@@ -53,7 +53,7 @@ class FloorSpider(scrapy.Spider):
             """
             
             # Crawls to obtain summary of the entry by following the url found
-            yield scrapy.Request(url, callback=self.get_summary, meta={'date': date})
+            yield scrapy.Request(url, callback=self.get_summary, meta={'date': date, 'url': url})
         
         
     def get_summary(self, response):
@@ -65,6 +65,7 @@ class FloorSpider(scrapy.Spider):
         
         # Recover date found previously
         date = response.meta["date"]
+        url = response.meta["url"]
         
         
         # Possible css selectors
@@ -90,6 +91,7 @@ class FloorSpider(scrapy.Spider):
         # Produce output with date and content
         yield {
             'date': date,
+            'url' : url,
             'content' : all_text  
          }
             

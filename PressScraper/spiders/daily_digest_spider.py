@@ -45,11 +45,22 @@ class DailyDigestSpider(scrapy.Spider):
         date = response.meta["date"]
         url = response.meta['url']
         
+        """
+        text = response.css("[id='daily-digest-content'] ::text").getall()
+        
+        content = '"'
+        
+        for part in text:
+            content = content + part
+        
+        content = content + '"'
+        """
+        
         # prodcues output with date, url, and text fpr the given date
         yield {
             'date': date,
             'url': url,
-            'content': response.css("[id='daily-digest-content'] ::text").getall()
+            #'content': content
         }
         
         

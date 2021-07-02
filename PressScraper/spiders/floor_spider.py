@@ -41,17 +41,7 @@ class FloorSpider(scrapy.Spider):
             # Identifies url and date of each entry
             url = response.urljoin(day.css("td[headers='Summary Senate-Floor-Proceedings'] a::attr(href)").get())
             date = day.css("[headers='Date Senate-Floor-Proceedings']::text").get()
-            
-            """
-            
-            # Extract the following information
-            yield {
-                'date' : day.css("[headers='Date Senate-Floor-Proceedings']::text").get(),
-                'url': response.urljoin(day.css("td[headers='Summary Senate-Floor-Proceedings'] a::attr(href)").get())
-            }
-            
-            """
-            
+  
             # Crawls to obtain summary of the entry by following the url found
             yield scrapy.Request(url, callback=self.get_summary, meta={'date': date, 'url': url})
         
@@ -73,7 +63,6 @@ class FloorSpider(scrapy.Spider):
         
         # List will contain all text
         all_text_list = response.css(selectors).extract()
-        
         
     
         # Creates string of all text, removing unnecessary blank lines and characters

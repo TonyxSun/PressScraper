@@ -15,7 +15,11 @@ class spider(scrapy.Spider):
                 'text': block.css('td::text').get(),
                 'date': block.xpath('td[2]/text()').get(),
                 'pdf_link': block.xpath('td[2]/a[2]/@href').get(),
+                # 'date': block.css('span.text::text').get(),
             }
 
+        # next_page = response.css('li.next a::attr("href")').get()
+        # if next_page is not None:
+        #     yield response.follow(next_page, self.parse)
 # execute = "scrapy crawl dailybills -O dailyBills_Senate.csv"
 # cmdline.execute(execute.split())

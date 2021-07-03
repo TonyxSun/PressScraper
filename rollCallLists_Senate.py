@@ -1,3 +1,5 @@
+#this code cannot access hyperlinks 
+
 from bs4 import BeautifulSoup
 from bs4.element import Comment
 import pandas as pd

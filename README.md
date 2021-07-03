@@ -1,2 +1,3 @@
 # PressScraper
-Scrapy is not working. Using bs4 to scrape xml file. However, links cannot be retrieved. 
+Built for efficient crawling and handling of press releases from US government agencies and industry associations.
+

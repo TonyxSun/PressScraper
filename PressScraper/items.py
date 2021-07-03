@@ -6,7 +6,7 @@
 import scrapy
 
 
-class SenateItem(scrapy.Item):
+class PressscraperItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     pass

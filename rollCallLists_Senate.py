@@ -1,4 +1,4 @@
-#this code cannot access hyperlinks 
+# this code cannot access hyperlinks
 
 from bs4 import BeautifulSoup
 from bs4.element import Comment
@@ -7,9 +7,9 @@ import numpy as np
 import requests
 
 final_data = pd.DataFrame()
-
+# scrapes list of legislations and roll call votes for session 117
 url = "https://www.senate.gov/legislative/LIS/roll_call_lists/vote_menu_117_1.xml"
-
+# uses BS and xml to scrape
 xml_data = requests.get(url).content
 
 soup = BeautifulSoup(xml_data, "xml")

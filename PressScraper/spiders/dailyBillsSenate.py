@@ -1,5 +1,9 @@
 import scrapy
 from scrapy import cmdline
+import os
+from datetime import date
+
+# program to crawl "Daily Bills page on Senate"
 
 
 class spider(scrapy.Spider):
@@ -18,5 +22,9 @@ class spider(scrapy.Spider):
                 # 'date': block.css('span.text::text').get(),
             }
 
-# execute = "scrapy crawl dailybills -O dailyBills_Senate.csv"
-# cmdline.execute(execute.split())
+
+# write to a csv file
+os.system("touch dailyBills_Senate_$(date +%m.%d.%y).csv")
+date = date.today().strftime("%m.%d.%y")
+execute = "scrapy crawl dailybills -O dailyBills_Senate_" + date + ".csv"
+cmdline.execute(execute.split())

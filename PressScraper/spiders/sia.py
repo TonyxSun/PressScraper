@@ -1,4 +1,9 @@
 import scrapy
+import os
+from datetime import date
+from scrapy import cmdline
+
+# scrapes the Semiconductor Industry Association's press releases
 
 
 class QuotesSpider(scrapy.Spider):
@@ -15,3 +20,10 @@ class QuotesSpider(scrapy.Spider):
                 'title': block.css('div.row>div.col-sm-8>a>h3::text').get()
 
             }
+
+
+# write to a csv file
+os.system("touch SIA_$(date +%m.%d.%y).csv")
+date = date.today().strftime("%m.%d.%y")
+execute = "scrapy crawl sia -O SIA_" + date + ".csv"
+cmdline.execute(execute.split())

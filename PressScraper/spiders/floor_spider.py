@@ -12,10 +12,8 @@ class FloorSpider(scrapy.Spider):
         yield scrapy.Request(url='https://floor.senate.gov/proceedings', callback=self.parse)
 
     
-
     def parse(self, response):
         """
-
         Identifies 10 newest entries of senate floor proceedings, and crawls to
         their respective urls.
 
@@ -43,19 +41,9 @@ class FloorSpider(scrapy.Spider):
             # Identifies url and date of each entry
             url = response.urljoin(day.css("td[headers='Summary Senate-Floor-Proceedings'] a::attr(href)").get())
             date = day.css("[headers='Date Senate-Floor-Proceedings']::text").get()
-            
-            """
-            
-            # Extract the following information
-            yield {
-                'date' : day.css("[headers='Date Senate-Floor-Proceedings']::text").get(),
-                'url': response.urljoin(day.css("td[headers='Summary Senate-Floor-Proceedings'] a::attr(href)").get())
-            }
-            
-            """
-            
+  
             # Crawls to obtain summary of the entry by following the url found
-            yield scrapy.Request(url, callback=self.get_summary, meta={'date': date})
+            yield scrapy.Request(url, callback=self.get_summary, meta={'date': date, 'url': url})
         
         
     def get_summary(self, response):
@@ -67,21 +55,32 @@ class FloorSpider(scrapy.Spider):
         
         # Recover date found previously
         date = response.meta["date"]
+        url = response.meta["url"]
         
-        # List will all text
-        # MISSING TEXT THAT IS IN SUBCLASSES
-        all_text_list = response.css('[style="padding-bottom:20px"]::text').extract()
         
-        # Creates string of all text, removing unnecessary blank lines
+        # Possible css selectors
+        selectors = '[style^="padding-b"]::text, [class="headings"]::text, [class="docnum"]::text, [class="status"]::text, div.docnum ::text'
+        
+        # List will contain all text
+        all_text_list = response.css(selectors).extract()
+        
+    
+        # Creates string of all text, removing unnecessary blank lines and characters
         all_text = ""
         for text in all_text_list:
             if text != "\n":
-                all_text = all_text + text + "\n"
-                
+                new_text = ""
+                for char in text:
+                    if char == "\n" or char == ":":
+                        continue
+                    new_text = new_text + char
+                all_text = all_text + new_text + "\n"
+        
         
         # Produce output with date and content
         yield {
             'date': date,
+            'url' : url,
             'content' : all_text  
          }
             

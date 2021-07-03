@@ -6,7 +6,7 @@ from scrapy import cmdline
 # scrapes the Semiconductor Industry Association's press releases
 
 
-class QuotesSpider(scrapy.Spider):
+class PressSpider(scrapy.Spider):
     name = 'sia'
     start_urls = [
         'https://www.semiconductors.org/news-events/latest-news/',

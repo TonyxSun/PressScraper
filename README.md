@@ -19,6 +19,6 @@ A simple scraper for crawling US Congress press releases and industry tycoons fo
 ### US Senate Committees
 * __Commerce__:  Date, URL. title, and summary of press releases from the US Senate Committee on Commerce, Science, and Transportation; _https://www.commerce.senate.gov/news_
 * __Foreign__:  Type of content (nomiations, treaties, legislation, hearing transcripts, business meeting transcripts, committee reports, other), date, URL (if given), and text for activities and reports from the US Senate Committee on Foreign Relations; _https://www.foreign.senate.gov/activities-and-reports_
-* __Banking__: Source of content (majority, minorty), date, URL, and title for press releases from the US Senate Committee on Banking, Housing, and Urban Affairs; _https://www.banking.senate.gov/newsroom/majority-press-releases_
+* __Banking__: Source of content (majority, minority), date, URL, and title for press releases from the US Senate Committee on Banking, Housing, and Urban Affairs; _https://www.banking.senate.gov/newsroom/majority-press-releases_
 
 

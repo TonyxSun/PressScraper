@@ -6,13 +6,13 @@ from scrapy import cmdline
 
 
 class SenateBankingSpider(scrapy.Spider):
-    name = "sfinance"
+    name = "shlsga"
 
     def start_requests(self):
 
         # Urls for minority and majority press releases
-        urls = ["https://www.finance.senate.gov/chairmans-news",
-                "https://www.finance.senate.gov/ranking-members-news"]
+        urls = ["https://www.hsgac.senate.gov/media/majority-media",
+                "https://www.hsgac.senate.gov/media/minority-media"]
 
         # Corresponding category information
         category = ["majority", "minority"]
@@ -37,14 +37,16 @@ class SenateBankingSpider(scrapy.Spider):
                 dates.append(date)
 
         # Obtain all urls for headlines
-        urls = response.css('[class="table"] a::attr(href)').getall()
+        urls = response.css('[id="listing"] a::attr(href)').getall()
+        print(len(urls))
+
         # Will store css selectors to obtain title of headlines
         title_selectors = []
         # Strips unneeded characters from the urls and obtains css selector to obtain the title
         for i in range(len(urls)):
             urls[i] = urls[i].strip("\n\t")
             title_selectors.append("[href~='" + urls[i] + "']::text")
-
+        print(len(urls))
         # Iterates through dates, urls, and titles
         for i in range(len(dates)):
 
@@ -59,5 +61,5 @@ class SenateBankingSpider(scrapy.Spider):
 
 # Creates file with date and writes content to the file
 date = date.today().strftime("%m.%d.%y")
-execute = "scrapy runspider sfinance_spider.py -O sfinance" + date + ".csv"
+execute = "scrapy runspider shlsga_spider.py -O shlsga" + date + ".csv"
 cmdline.execute(execute.split())

@@ -84,5 +84,5 @@ class FloorSpider(scrapy.Spider):
 # Creates file with date and writes content to the file
 # os.system("touch floor_$(date +%m.%d.%y).csv")
 date = date.today().strftime("%m.%d.%y")
-execute = "scrapy runspider floor_spider.py -O floor_" + date + ".csv"
+execute = "scrapy runspider floor_spider.py -O output/floor_" + date + ".csv"
 cmdline.execute(execute.split())

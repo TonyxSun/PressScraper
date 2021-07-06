@@ -69,6 +69,6 @@ class DailyDigestSpider(scrapy.Spider):
 # os.system("touch digest_$(date +%m.%d.%y).csv")
 date = date.today().strftime("%m.%d.%y")
 # execute = "scrapy crawl digest -O digest_" + date + ".csv"
-execute = "scrapy runspider daily_digest_spider.py -O digest_" + date + ".csv"
+execute = "scrapy runspider daily_digest_spider.py -O output/digest_" + date + ".csv"
 
 cmdline.execute(execute.split())

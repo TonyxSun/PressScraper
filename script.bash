@@ -1,11 +1,11 @@
 #!/bin/bash
 
-python daily_digest_spider.py
-python fcc_spider.py
-python dailyBillsSenate.py
-python sbanking_spider.py
-python sen_commerce_spider.py
-python sforeign_spider.py
-python sia_spider.py
-python floor_spider.py
-python rollCallLists_Senate.py
+python3 daily_digest_spider.py
+python3 fcc_spider.py
+python3 dailyBillsSenate.py
+python3 sbanking_spider.py
+python3 scommerce_spider.py
+python3 sforeign_spider.py
+python3 sia_spider.py
+python3 floor_spider.py
+python3 rollCallLists_Senate.py

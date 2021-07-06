@@ -29,5 +29,5 @@ class SenateCommerceSpider(scrapy.Spider):
 # Creates file with date and writes content to the file
 # os.system("touch scommerce_$(date +%m.%d.%y).csv")
 date = date.today().strftime("%m.%d.%y")
-execute = "scrapy runspider sen_commerce_spider.py -O output/scommerce_" + date + ".csv"
+execute = "scrapy runspider scommerce_spider.py -O output/scommerce_" + date + ".csv"
 cmdline.execute(execute.split())

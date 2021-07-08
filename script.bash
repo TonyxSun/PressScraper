@@ -1,14 +1,18 @@
 #!/bin/bash
 
-python3 ./Senate/daily_digest_spider.py
-python3 ./Industry/fcc_spider.py
-python3 ./Senate/dailyBillsSenate.py
-python3 ./Senate/sbanking_spider.py
-python3 ./Senate/scommerce_spider.py
-python3 ./Senate/sforeign_spider.py
-python3 ./Senate/sfinance_spider.py
-python3 ./Senate/shlsga_spider.py
-python3 ./Senate/sjudiciary_spider.py
-python3 ./Industry/sia_spider.py
-python3 ./Senate/floor_spider.py
-python3 ./Senate/rollCallLists_Senate.py
+cd ./Senate
+python daily_digest_spider.py
+python dailyBillsSenate.py
+python sbanking_spider.py
+python scommerce_spider.py
+python sforeign_spider.py
+python sfinance_spider.py
+python shlsga_spider.py
+python sjudiciary_spider.py
+python floor_spider.py
+python rollCallLists_Senate.py
+cd ../Industry
+python fcc_spider.py
+python sia_spider.py
+cd ..
+

@@ -61,5 +61,5 @@ class SenateBankingSpider(scrapy.Spider):
 # Creates file with date and writes content to the file
 # os.system("touch sbanking_$(date +%m.%d.%y).csv")
 date = date.today().strftime("%m.%d.%y")
-execute = "scrapy runspider sbanking_spider.py -O output/sbanking_" + date + ".csv"
+execute = "scrapy runspider sbanking_spider.py -O ../output/sbanking_" + date + ".csv"
 cmdline.execute(execute.split())

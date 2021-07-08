@@ -108,5 +108,5 @@ class SenateForeignSpider(scrapy.Spider):
 # Creates file with date and writes content to the file
 # os.system("touch sforeign_$(date +%m.%d.%y).csv")
 date = date.today().strftime("%m.%d.%y")
-execute = "scrapy runspider sforeign_spider.py -O output/sforeign_" + date + ".csv"
+execute = "scrapy runspider sforeign_spider.py -O ../output/sforeign_" + date + ".csv"
 cmdline.execute(execute.split())

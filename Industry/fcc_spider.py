@@ -39,6 +39,6 @@ class FCCSpider(scrapy.Spider):
 # Creates file with date and writes content to the file
 # os.system("touch fcc_$(date +%m.%d.%y).csv")
 date = date.today().strftime("%m.%d.%y")
-execute = "scrapy runspider fcc_spider.py -O output/fcc_" + date + ".csv"
+execute = "scrapy runspider fcc_spider.py -O ../output/fcc_" + date + ".csv"
 
 cmdline.execute(execute.split())

@@ -26,5 +26,5 @@ class spider(scrapy.Spider):
 # # write to a csv file
 # os.system("touch dailyBills_Senate_$(date +%m.%d.%y).csv")
 date = date.today().strftime("%m.%d.%y")
-execute = "scrapy runspider dailyBillsSenate.py -O output/dailyBills_Senate_" + date + ".csv"
+execute = "scrapy runspider dailyBillsSenate.py -O ../output/dailyBills_Senate_" + date + ".csv"
 cmdline.execute(execute.split())

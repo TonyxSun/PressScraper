@@ -86,7 +86,7 @@ data = pd.DataFrame({"question": question,
                      "issue": issue,
                      "result": result})
 final_data = final_data.append(data, ignore_index=True)
-final_data.to_csv("output/rollcall.csv")
+final_data.to_csv("../output/rollcall.csv")
 
 
 # run with python main.py

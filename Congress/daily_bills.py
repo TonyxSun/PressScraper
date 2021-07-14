@@ -1,6 +1,5 @@
 import scrapy
 from scrapy import cmdline
-import os
 from datetime import date
 
 # program to crawl "Daily Bills page on Senate"
@@ -13,6 +12,7 @@ class spider(scrapy.Spider):
     ]
 
     def parse(self, response):
+
         for block in response.css('tr'):
             yield {
                 'name': block.css('td>strong::text').get(),
@@ -26,5 +26,5 @@ class spider(scrapy.Spider):
 # # write to a csv file
 # os.system("touch dailyBills_Senate_$(date +%m.%d.%y).csv")
 date = date.today().strftime("%m.%d.%y")
-execute = "scrapy runspider dailyBillsSenate.py -O ../output/dailyBills_Senate_" + date + ".csv"
+execute = "scrapy runspider daily_bills.py -O output/daily_bills_" + date + ".csv"
 cmdline.execute(execute.split())

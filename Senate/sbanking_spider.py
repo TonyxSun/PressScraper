@@ -1,6 +1,6 @@
 import scrapy
-import os
-from datetime import date
+from datetime import date as d
+from datetime import timedelta
 from scrapy import cmdline
 
 # Program to crawl the FSenate Banking Committee Press Releases webpage, and extract information about recent headlines.
@@ -23,15 +23,28 @@ class SenateBankingSpider(scrapy.Spider):
             yield scrapy.Request(urls[i], callback=self.parse, meta={'category': category[i]})
 
     def parse(self, response):
+        
+        def getPastDays():
+            """
+            Returns list of strings containing dates for today and yesterday's updates as a string formatted
+            exactly as produced by the webpage. Can use obtained list so that only recent content is outputted.
+            
+            Format: 07/13/21
+            """
+            today = d.today().strftime("%m/%d/%y")
+            yesterday = ( d.today()-timedelta(1) ).strftime("%m/%d/%y")
+            
+            return [today, yesterday]
 
         # Obtain category passed through meta
         category = response.meta["category"]
 
         # Obtain all text under date class
         temp_dates = response.css("[class='date'] ::text").getall()
-
-        # Wull contain all actual dates
+        
+        # Will contain all actual dates
         dates = []
+        
         # Adds actual dates to dates list
         for date in temp_dates:
             if "/" in date:
@@ -46,20 +59,25 @@ class SenateBankingSpider(scrapy.Spider):
             urls[i] = urls[i].strip("\n\t")
             title_selectors.append("[href~='" + urls[i] + "']::text")
 
+        # Obtains today and yesterday as a string
+        past_dates = getPastDays()
+        
         # Iterates through dates, urls, and titles
         for i in range(len(dates)):
-
-            # Extract the following information
-            yield {
-                'category': category,
-                'date': dates[i],
-                'url': urls[i],
-                'title': response.css(title_selectors[i]).get().strip("\n\t")
-            }
+            
+            # Only continues if date is today or yesterday
+            if dates[i] in past_dates:
+                # Extract the following information
+                yield {
+                    'category': category,
+                    'date': dates[i],
+                    'url': urls[i],
+                    'title': response.css(title_selectors[i]).get().strip("\n\t")
+                }
 
 
 # Creates file with date and writes content to the file
 # os.system("touch sbanking_$(date +%m.%d.%y).csv")
-date = date.today().strftime("%m.%d.%y")
-execute = "scrapy runspider sbanking_spider.py -O ../output/sbanking_" + date + ".csv"
+date = d.today().strftime("%m.%d.%y")
+execute = "scrapy runspider sbanking_spider.py -O output/sbanking_" + date + ".csv"
 cmdline.execute(execute.split())

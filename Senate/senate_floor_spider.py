@@ -1,6 +1,6 @@
 import scrapy
-import os
-from datetime import date
+from datetime import date as d
+from datetime import timedelta
 from scrapy import cmdline
 
 
@@ -17,6 +17,18 @@ class FloorSpider(scrapy.Spider):
         their respective urls.
 
         """
+        
+        def getPastDays():
+            """
+            Returns list of strings containing dates for today and yesterday's updates as a string formatted
+            exactly as produced by the webpage. Can use obtained list so that only recent content is outputted.
+            
+            Format: Mon, Jul 12, 2021
+            """
+            today = d.today().strftime("%a, %b %-d, %Y")
+            yesterday = ( d.today()-timedelta(1) ).strftime("%a, %b %-d, %Y")
+            
+            return [today, yesterday]
 
         # Counts number of entries crawled
         count = 0
@@ -41,9 +53,15 @@ class FloorSpider(scrapy.Spider):
                 day.css("td[headers='Summary Senate-Floor-Proceedings'] a::attr(href)").get())
             date = day.css(
                 "[headers='Date Senate-Floor-Proceedings']::text").get()
+            
+            # Obtains today and yesterday as a string
+            past_dates = getPastDays()
+            
+            # Only continues if date is today or yesterday
+            if date in past_dates:
 
-            # Crawls to obtain summary of the entry by following the url found
-            yield scrapy.Request(url, callback=self.get_summary, meta={'date': date, 'url': url})
+                # Crawls to obtain summary of the entry by following the url found
+                yield scrapy.Request(url, callback=self.get_summary, meta={'date': date, 'url': url})
 
     def get_summary(self, response):
         """
@@ -72,7 +90,6 @@ class FloorSpider(scrapy.Spider):
                         continue
                     new_text = new_text + char
                 all_text = all_text + new_text + "\n"
-
         # Produce output with date and content
         yield {
             'date': date,
@@ -83,6 +100,6 @@ class FloorSpider(scrapy.Spider):
 
 # Creates file with date and writes content to the file
 # os.system("touch floor_$(date +%m.%d.%y).csv")
-date = date.today().strftime("%m.%d.%y")
-execute = "scrapy runspider floor_spider.py -O ../output/floor_" + date + ".csv"
+date = d.today().strftime("%m.%d.%y")
+execute = "scrapy runspider senate_floor_spider.py -O output/floor_" + date + ".csv"
 cmdline.execute(execute.split())

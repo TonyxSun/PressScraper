@@ -5,6 +5,7 @@ from bs4.element import Comment
 import pandas as pd
 import numpy as np
 import requests
+from datetime import date as d
 
 final_data = pd.DataFrame()
 # scrapes list of legislations and roll call votes for session 117
@@ -86,7 +87,9 @@ data = pd.DataFrame({"question": question,
                      "issue": issue,
                      "result": result})
 final_data = final_data.append(data, ignore_index=True)
-final_data.to_csv("../output/rollcall.csv")
+
+date = d.today().strftime("%m.%d.%y")
+final_data.to_csv("output/senate_roll_call" + date + ".csv")
 
 
 # run with python main.py

@@ -35,7 +35,7 @@ class SenateBankingSpider(scrapy.Spider):
             yesterday = (d.today()-timedelta(1)).strftime("%m/%d/%y")
             daybefore = (d.today()-timedelta(2)).strftime("%m/%d/%y")
 
-            return [today, yesterday, dayb4]
+            return [today, yesterday, daybefore]
 
         # Obtain category passed through meta
         category = response.meta["category"]

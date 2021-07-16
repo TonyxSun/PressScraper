@@ -40,6 +40,7 @@ class SenateForeignSpider(scrapy.Spider):
 
             yield scrapy.Request(url, callback=self.get_news, meta={'category': category})
 
+
     def get_news(self, response):
         """
 
@@ -47,7 +48,7 @@ class SenateForeignSpider(scrapy.Spider):
 
         """
         
-        def getPastDays():
+        def get_past_days():
             """
             Returns list of strings containing dates for today and yesterday's updates as a string formatted
             exactly as produced by the webpage. Can use obtained list so that only recent content is outputted.
@@ -61,7 +62,7 @@ class SenateForeignSpider(scrapy.Spider):
         
         
         # Obtains today and yesterday as a string
-        past_dates = getPastDays()
+        past_dates = get_past_days()
 
         # Recover category type found previously
         category = response.meta["category"]

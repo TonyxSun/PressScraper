@@ -19,7 +19,6 @@ class AllBillsSpider(scrapy.Spider):
             """
             Returns list of strings containing dates for today and yesterday's updates as a string formatted
             exactly as produced by the webpage. Can use obtained list so that only recent content is outputted.
-                    0123456789
             Format: 07/13/2021
             """
             today = d.today().strftime("%m/%d/%Y")

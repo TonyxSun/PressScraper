@@ -10,6 +10,8 @@ python3 sjudiciary_spider.py
 python3 senate_floor_spider.py
 python3 senate_roll_call.py
 
+cd ../House
+python3 h_energy_spider.py
 
 cd ../Industry
 python3 sia_spider.py

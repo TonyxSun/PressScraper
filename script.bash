@@ -18,6 +18,7 @@ python3 fcc_spider.py
 cd ../Congress
 python3 daily_digest_spider.py
 python3 daily_bills.py
+python3 all_bills_spider.py
 
 
 

@@ -10,41 +10,64 @@ class SenateCommerceSpider(scrapy.Spider):
     name = "scommerce"
 
     def start_requests(self):
-        yield scrapy.Request(url='https://www.commerce.senate.gov/news', callback=self.parse)
+        urls = ["https://www.commerce.senate.gov/pressreleases",
+                "https://www.commerce.senate.gov/hearings",
+                "https://www.commerce.senate.gov/markups"]
+        
+        categories = ["Press Release", "Hearings", "Markups"]
+        
+        for i in range(len(urls)):
+            
+            yield scrapy.Request(url=urls[i], callback=self.parse, meta={'category': categories[i]})
 
     def parse(self, response):
         
-        def getPastDays():
+        def get_past_days():
             """
             Returns list of strings containing dates for today and yesterday's updates as a string formatted
             exactly as produced by the webpage. Can use obtained list so that only recent content is outputted.
             
-            Format: July 13, 2021
+            Format: 07/22/21
             """
-            today = d.today().strftime("%B %-d, %Y")
-            yesterday = ( d.today()-timedelta(1) ).strftime("%B %-d, %Y")
+            today = d.today().strftime("%m/%d/%Y")
+            yesterday = ( d.today()-timedelta(1) ).strftime("%m/%d/%Y")
             
             return [today, yesterday]
         
-        # Obtains today and yesterday as a string
-        past_dates = getPastDays()
         
-        # Iterate through headlines on the page
-        for headline in response.css('[class="even"], [class^="odd"]'):
+        # Obtains today and yesterday as a string
+        past_dates = get_past_days()
+        
+        # Recover category type found previously
+        category = response.meta["category"]
+        
+        # Get all URLS
+        urls = response.css('[class^="element odd"] a::attr(href),[class^="element even"] a::attr(href)').getall()
+        
+        # To iterate through urls
+        i = -1
+
             
-            date = headline.css("[class='element-date']::text").get()
+        # Iterate through each press release / hearing / markup
+        for release in response.css('[class^="element odd"],[class^="element even"]'):
             
-            # Only continues if date is today or yesterday
+            i += 1
+            
+            # Obtain date and only continue if date was in past_dates
+            date = release.css('[class="element-datetime"] ::text').get()
+            
             if date in past_dates:
-
-                # Extract the following information
+            
                 yield {
-                    'date': date,
-                    'title': headline.css("h1[class='element-title'] *::text").get(),
-                    'url': response.urljoin(headline.css("h1.element-title a::attr(href)").get()),
-                    'text': headline.css("[class='element-content'] *::text").getall()
+                    'category': category,
+                    'date': release.css('[class="element-datetime"] ::text').get(),
+                    'title': release.css('[class="element-title"] ::text').get(),
+                    'url': urls[i],
+                    'summary': release.css('[class="element-abstract"] ::text').get()
+                    
                 }
-
+        
+        
 
 # Creates file with date and writes content to the file
 # os.system("touch scommerce_$(date +%m.%d.%y).csv")

@@ -7,7 +7,7 @@ from scrapy import cmdline
 
 
 class SenateBankingSpider(scrapy.Spider):
-    name = "shlsga"
+    name = "shsgac"
 
     def start_requests(self):
 
@@ -85,7 +85,7 @@ class SenateBankingSpider(scrapy.Spider):
                     yield{
                         'category': category,
                         'date': date,
-                        'url': response.urljoin(hearing.css('div.faux-col a::attr(href)').get()),
+                        'url': response.urljoin(hearing.css('a.summary::attr(href)').get()),
                         'title': title.strip()
                     }
 

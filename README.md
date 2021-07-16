@@ -14,6 +14,7 @@ A simple scraper for crawling US Congress press releases and industry tycoons fo
 ## US Congress
 * __Daily Digests__: Date, URL, and text providing details of legislation introduced, reported, passed, and considered by the full House or Senate each legislative day; _https://www.congress.gov/bills-with-chamber-action/browse-by-date_
 * __Daily Bill Texts__: Date, PDF file, and text providing detailed information on legislation considered in __Daily Digests__; _https://www.congress.gov/bill-texts-received-today_
+* __All Bills__: Date, URL, and other details (eg. title, sponsor, committees, latest action) for all bills under total of "All Bills, Resolutions, and Amendments"; _https://www.congress.gov/bills-with-chamber-action/browse-by-date_
 
 
 ## US Senate
@@ -22,9 +23,9 @@ A simple scraper for crawling US Congress press releases and industry tycoons fo
 * __Floor Activity__: Date, URL, and text providing details of senate floor proceedings;  _https://floor.senate.gov/proceedings_
 
 ### US Senate Committees
-* __Commerce__:  Date, URL. title, and summary of press releases from the US Senate Committee on Commerce, Science, and Transportation; _https://www.commerce.senate.gov/news_
+* __Commerce__:  Date, URL. title, and summary of press releases, hearings, and markups from the US Senate Committee on Commerce, Science, and Transportation; _https://www.commerce.senate.gov/news_
 * __Foreign__:  Type of content (nomiations, treaties, legislation, hearing transcripts, business meeting transcripts, committee reports, other), date, URL (if given), and text for activities and reports from the US Senate Committee on Foreign Relations; _https://www.foreign.senate.gov/activities-and-reports_
-* __Banking__: Source of content (majority, minority), date, URL, and title for press releases from the US Senate Committee on Banking, Housing, and Urban Affairs; _https://www.banking.senate.gov/newsroom/majority-press-releases_
+* __Banking__: Date, URL, and title for press releases, hearings, and markups from the US Senate Committee on Banking, Housing, and Urban Affairs; _https://www.banking.senate.gov/newsroom/majority-press-releases_
 * __Finance__: Source of content (majority, minority), date, URL, and title for press releases from the US Senate Committee on Finance; _https://www.finance.senate.gov/chairmans-news_
 * __HLSGA__: Source of content (majority, minority), date, URL, and title for press releases from the US Senate Committee on Homeland Security & Government Affairs; _https://www.hsgac.senate.gov/media/majority-media_
 * __Judiciary__: Source of content (majority, minority), date, URL, and title for press releases from the US Senate Committee on the Judiciary; _https://www.judiciary.senate.gov/press/majority_

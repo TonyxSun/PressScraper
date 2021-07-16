@@ -36,18 +36,20 @@ class SenateBankingSpider(scrapy.Spider):
             today = d.today().strftime("%m/%d/%y")
             yesterday = ( d.today()-timedelta(1) ).strftime("%m/%d/%y")
             
-            return [today, yesterday, "05/19/21"]
+            return [today, yesterday]
         
         def get_date_only(date):
+            """
+            Obtains only date given date + time
+            """
             
             return date[0:8]
 
         # Obtain category passed through meta
         category = response.meta["category"]
         
-        
 
-        
+        # PRESS RELEAQSES
         # Obtain all text under date class
         temp_dates = response.css("[class='date'] ::text").getall()
         
@@ -83,8 +85,10 @@ class SenateBankingSpider(scrapy.Spider):
                     'url': urls[i],
                     'title': response.css(title_selectors[i]).get().strip("\n\t")
                 }
+                
+                
     
-        # MARKUP
+        # MARKUP and HEARINGS
         for markup in response.css('[class="vevent"]'):
     
             date = get_date_only(markup.css('[class="dtstart"]::text').get())

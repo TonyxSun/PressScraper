@@ -13,10 +13,12 @@ class SenateBankingSpider(scrapy.Spider):
 
         # Urls for minority and majority press releases
         urls = ["https://www.banking.senate.gov/newsroom/majority-press-releases",
-                "https://www.banking.senate.gov/newsroom/minority-press-releases"]
+                "https://www.banking.senate.gov/newsroom/minority-press-releases",
+                "https://www.banking.senate.gov/hearings",
+                "https://www.banking.senate.gov/markups"]
 
         # Corresponding category information
-        category = ["majority", "minority"]
+        category = ["Kajority Press Release", "Minority Press Release", "Hearings", "Markups"]
 
         # Go into majority and minority webpages
         for i in range(len(urls)):
@@ -24,7 +26,7 @@ class SenateBankingSpider(scrapy.Spider):
 
     def parse(self, response):
         
-        def getPastDays():
+        def get_past_days():
             """
             Returns list of strings containing dates for today and yesterday's updates as a string formatted
             exactly as produced by the webpage. Can use obtained list so that only recent content is outputted.
@@ -34,11 +36,18 @@ class SenateBankingSpider(scrapy.Spider):
             today = d.today().strftime("%m/%d/%y")
             yesterday = ( d.today()-timedelta(1) ).strftime("%m/%d/%y")
             
-            return [today, yesterday]
+            return [today, yesterday, "05/19/21"]
+        
+        def get_date_only(date):
+            
+            return date[0:8]
 
         # Obtain category passed through meta
         category = response.meta["category"]
+        
+        
 
+        
         # Obtain all text under date class
         temp_dates = response.css("[class='date'] ::text").getall()
         
@@ -60,7 +69,7 @@ class SenateBankingSpider(scrapy.Spider):
             title_selectors.append("[href~='" + urls[i] + "']::text")
 
         # Obtains today and yesterday as a string
-        past_dates = getPastDays()
+        past_dates = get_past_days()
         
         # Iterates through dates, urls, and titles
         for i in range(len(dates)):
@@ -73,6 +82,27 @@ class SenateBankingSpider(scrapy.Spider):
                     'date': dates[i],
                     'url': urls[i],
                     'title': response.css(title_selectors[i]).get().strip("\n\t")
+                }
+    
+        # MARKUP
+        for markup in response.css('[class="vevent"]'):
+    
+            date = get_date_only(markup.css('[class="dtstart"]::text').get())
+            
+            if date in past_dates:
+                title_list = markup.css('[class="url summary pull-left"]::text').getall()
+                title = ""
+                
+                for part in title_list:
+                    title = title + part.strip("\n\t")
+                    
+                print ()
+                
+                yield {
+                    'category': category,
+                    'date': markup.css('[class="dtstart"]::text').get(),
+                    'url': response.urljoin(markup.css('[class="faux-col"] a::attr(href)').get()),
+                    'title': title
                 }
 
 

@@ -20,7 +20,7 @@ class SenateBankingSpider(scrapy.Spider):
         # Corresponding category information
         category = ["Kajority Press Release", "Minority Press Release", "Hearings", "Markups"]
 
-        # Go into majority and minority webpages
+        # Go into each webpage
         for i in range(len(urls)):
             yield scrapy.Request(urls[i], callback=self.parse, meta={'category': category[i]})
 

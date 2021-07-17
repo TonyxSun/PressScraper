@@ -4,8 +4,8 @@ from datetime import timedelta
 from scrapy import cmdline
 
 
-class HouseForeignSpider(scrapy.Spider):
-    name = "hforeign"
+class HouseHomelandSpider(scrapy.Spider):
+    name = "hhomeland"
     
     def start_requests(self):
         

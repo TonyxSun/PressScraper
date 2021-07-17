@@ -81,23 +81,24 @@ class HouseHomelandSpider(scrapy.Spider):
         all_dates = response.css('[class="date"] ::text').getall()
         urls = response.css('[class="table"] a::attr(href)').getall()
 
-        
+        # Obtain only actual dates
         dates = []
         for date in all_dates:
             if "\t" not in date:
                 dates.append(date)
                 
-                
+        # To store CSS selectors to obtain the title
         title_selectors = []
         
+        # Create and add selectors to title_selectors
         for url in urls:
-            
             selector = "[href='" + url + "'] ::text"
-            
             title_selectors.append(selector)
         
+        # Iterating through indexes
         for i in range(len(dates)):
             
+            # Continue is date is yesterday or today
             if dates[i] in past_dates:
                 
                 yield {

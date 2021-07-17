@@ -37,25 +37,35 @@ class HouseForeignSpider(scrapy.Spider):
         # Obtain category passed through meta
         category = response.meta["category"]
         
+        # Get past dates needed
+        past_dates = get_past_days()
+        
+        # Obtain the following
         dates = response.css('[class="col-xs-1 recordListDate"]::text').getall()
         times = response.css('[class="col-xs-1 recordListTime"]::text').getall()
         titles = response.css('[class="ContentGrid"]::text').getall()
         urls = response.css('[class="recordListTitle"] a::attr(href)').getall()
         
+        # For Press Releases, no time is given, so replace with None
         if len(times) == 0:
             for i in range(len(dates)):
                 times.append(None)
         
+        # For each entry, obtain and produce output
         for i in range(len(dates)):
-            yield {
-                'category': category,
-                'date': dates[i],
-                'time': times[i],
-                'title': titles[i],
-                'urls': response.urljoin(urls[i])
+            
+            # Continue is date was today or yesterday
+            if dates[i] in past_dates:
                 
-            }
-        
+                yield {
+                    'category': category,
+                    'date': dates[i],
+                    'time': times[i],
+                    'title': titles[i],
+                    'urls': response.urljoin(urls[i])
+                    
+                }
+            
             
         
 # Creates file with date and writes content to the file

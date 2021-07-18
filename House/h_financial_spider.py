@@ -10,7 +10,7 @@ class HouseCommerceSpider(scrapy.Spider):
     name = "financialservices"
 
     def start_requests(self):
-        urls = ["https://financialservices.house.gov/news/", "https://energycommerce.house.gov/committee-activity/hearings", "https://energycommerce.house.gov/committee-activity/markups"
+        urls = ["https://financialservices.house.gov/news/", "https://financialservices.house.gov/calendar/?EventTypeID=577&Congress=117", "https://financialservices.house.gov/calendar/?EventTypeID=575&Congress=117"
                 ]
 
         categories = ["Press Release", "Hearings", "Markups"]
@@ -34,23 +34,14 @@ class HouseCommerceSpider(scrapy.Spider):
 
             return [today, yesterday]
 
-        def get_past_days_2():
-            """
-            Returns list of strings containing dates for today and yesterday's updates as a string formatted
-            exactly as produced by the webpage. Can use obtained list so that only recent content is outputted.
+        def same_week(dateString):
+            '''returns true if a dateString in %B %d, %Y fo rmat is part of the current week'''
+            d1 = datetime.datetime.strptime(dateString, '%B %d, %Y')
+            d2 = datetime.datetime.today()
+            return d1.isocalendar()[1] == d2.isocalendar()[1] and d1.year == d2.year
 
-            Format: 07/13/2021
-            """
-            today = datetime.datetime.now().strftime("%m/%d/%Y")
-            yesterday = (datetime.datetime.now() -
-                         timedelta(1)).strftime("%m/%d/%Y")
-            daybefore = (datetime.datetime.now() -
-                         timedelta(2)).strftime("%m/%d/%Y")
-
-            return [today, yesterday, daybefore]
         # Obtains today and yesterday as a string
         past_dates_1 = get_past_days_1()
-        past_dates_2 = get_past_days_2()
 
         # Recover category type found previously
         category = response.meta["category"]
@@ -71,7 +62,8 @@ class HouseCommerceSpider(scrapy.Spider):
                 date = release.css('time::text').get()
                 # clean date format
 
-                if date in past_dates_1:
+                if same_week(date) or date in past_dates_1:
+                    # if date in past_dates_1:
                     yield {
                         'category': category,
                         'date': date,
@@ -81,23 +73,32 @@ class HouseCommerceSpider(scrapy.Spider):
                     }
 
         # interate through hearings
-        # if category == "Hearings" or "Markups":
-        #     for release in response.css('[class^="views-row"]'):
-        #         i += 1
+        if category == "Hearings" or "Markups":
+            # for release in response.css('[class^="future"],[class^="past"]'):
+            # i += 1
 
-        #         # Obtain date and only continue if date was in past_dates
-        #         date = release.css(
-        #             'div.views-field-field-congress-meeting-date span::text').get()
-        #         # clean date format
-        #         new_date = ""
-        #         new_date = date[5:15]
-        #         if new_date in past_dates_2:
-        #             yield {
-        #                 'category': category,
-        #                 'date': new_date,
-        #                 'title': release.css('h3.field-content a::text').get(),
-        #                 'url': response.urljoin(urls[i]),
-        #             }
+            # Obtain date and only continue if date was in past_dates
+            date = response.xpath(
+                '//div[@class="newsie-details"]/text()[following-sibling::span[1]]').getall()
+            # date = dates[2]
+            for i in range(len(date)):
+                date[i] = date[i].strip("\r\n |")
+            date = list(filter(None, date))
+            title = response.css('li>h3.newsie-titler a::text').getall()
+            summary = response.css('li>h4::text').getall()
+            print(title)
+            # clean date format
+            # print("date is " + date + ".")
+            print(date)
+            for i in range(len(date)):
+                if date[i] in past_dates_1:
+                    yield {
+                        'category': category,
+                        'date': date[i],
+                        'title': title[i],
+                        'url': response.urljoin(urls[i]),
+                        'summary': summary[i]
+                    }
 
 
 # Creates file with date and writes content to the file

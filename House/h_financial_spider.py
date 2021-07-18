@@ -60,7 +60,6 @@ class HouseCommerceSpider(scrapy.Spider):
 
                 # Obtain date and only continue if date was in past_dates
                 date = release.css('time::text').get()
-                # clean date format
 
                 if same_week(date) or date in past_dates_1:
                     # if date in past_dates_1:
@@ -79,19 +78,15 @@ class HouseCommerceSpider(scrapy.Spider):
 
             # Obtain date and only continue if date was in past_dates
             date = response.xpath(
-                '//div[@class="newsie-details"]/text()[following-sibling::span[1]]').getall()
-            # date = dates[2]
+                '//div[@class="newsie-details"]/text()[following-sibling::span[1]]').getall()  # this selector took me 2 hours ffs
+            # clean list
             for i in range(len(date)):
                 date[i] = date[i].strip("\r\n |")
             date = list(filter(None, date))
             title = response.css('li>h3.newsie-titler a::text').getall()
             summary = response.css('li>h4::text').getall()
-            print(title)
-            # clean date format
-            # print("date is " + date + ".")
-            print(date)
             for i in range(len(date)):
-                if date[i] in past_dates_1:
+                if date[i] in past_dates_1 or same_week(date[i]):
                     yield {
                         'category': category,
                         'date': date[i],

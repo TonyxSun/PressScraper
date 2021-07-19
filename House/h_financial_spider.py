@@ -38,7 +38,7 @@ class HouseCommerceSpider(scrapy.Spider):
             '''returns true if a dateString in %B %d, %Y fo rmat is part of the current week'''
             d1 = datetime.datetime.strptime(dateString, '%B %d, %Y')
             d2 = datetime.datetime.today()
-            return d1.isocalendar()[1] == d2.isocalendar()[1] and d1.year == d2.year
+            return (d1.isocalendar()[1] == d2.isocalendar()[1] or d1.isocalendar()[1] == d2.isocalendar()[1]-1) and d1.year == d2.year
 
         # Obtains today and yesterday as a string
         past_dates_1 = get_past_days_1()

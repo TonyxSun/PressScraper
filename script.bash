@@ -12,9 +12,11 @@ python3 senate_roll_call.py
 
 cd ../House
 python3 h_energy_spider.py
-python3 h_financial_spider.pyfhlhn,m  m'p[
-    krg'qejfk;ldsd;ljkfj;lkfdsf
-]
+python3 h_financial_spider.py
+python3 h_foreign_spider.py
+python3 h_homeland_spider.py
+python3 h_science_spider.py
+python3 h_transportation_spider.py
 
 
 cd ../Industry

@@ -4,7 +4,6 @@ from scrapy import cmdline
 
 import sys
 sys.path.insert(1, '../.')
-
 from check_date import check_date
 
 
@@ -26,23 +25,9 @@ class HouseForeignSpider(scrapy.Spider):
         
     def parse(self, response):
         
-        def get_past_days():
-            """
-            Returns list of strings containing dates for today and yesterday's updates as a string formatted
-            exactly as produced by the webpage. Can use obtained list so that only recent content is outputted.
-            
-            Format: 7/13/21
-            """
-            today = d.today().strftime("%-m/%d/%y")
-            yesterday = ( d.today()-timedelta(1) ).strftime("%-m/%d/%y")
-            
-            return [today, yesterday]
-        
         # Obtain category passed through meta
         category = response.meta["category"]
         
-        # Get past dates needed
-        #past_dates = get_past_days()
         
         # Obtain the following
         dates = response.css('[class="col-xs-1 recordListDate"]::text').getall()

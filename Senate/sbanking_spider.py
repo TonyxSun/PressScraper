@@ -1,7 +1,10 @@
 import scrapy
-from datetime import date as d
-from datetime import timedelta
+from datetime import datetime
 from scrapy import cmdline
+
+import sys
+sys.path.insert(1, '../.')
+from check_date import check_date
 
 # Program to crawl the FSenate Banking Committee Press Releases webpage, and extract information about recent headlines.
 
@@ -25,18 +28,6 @@ class SenateBankingSpider(scrapy.Spider):
             yield scrapy.Request(urls[i], callback=self.parse, meta={'category': category[i]})
 
     def parse(self, response):
-        
-        def get_past_days():
-            """
-            Returns list of strings containing dates for today and yesterday's updates as a string formatted
-            exactly as produced by the webpage. Can use obtained list so that only recent content is outputted.
-            
-            Format: 07/13/21
-            """
-            today = d.today().strftime("%m/%d/%y")
-            yesterday = ( d.today()-timedelta(1) ).strftime("%m/%d/%y")
-            
-            return [today, yesterday]
         
         def get_date_only(date):
             """
@@ -70,14 +61,13 @@ class SenateBankingSpider(scrapy.Spider):
             urls[i] = urls[i].strip("\n\t")
             title_selectors.append("[href~='" + urls[i] + "']::text")
 
-        # Obtains today and yesterday as a string
-        past_dates = get_past_days()
         
         # Iterates through dates, urls, and titles
         for i in range(len(dates)):
             
+            date_obj = datetime.strptime(dates[i], "%m/%d/%y").date()
             # Only continues if date is today or yesterday
-            if dates[i] in past_dates:
+            if check_date(date_obj):
                 # Extract the following information
                 yield {
                     'category': category,
@@ -89,12 +79,15 @@ class SenateBankingSpider(scrapy.Spider):
                 
     
         # MARKUP and HEARINGS
-        for markup in response.css('[class="vevent"]'):
+        for item in response.css('[class="vevent"]'):
     
-            date = get_date_only(markup.css('[class="dtstart"]::text').get())
+            date = get_date_only(item.css('[class="dtstart"]::text').get())
             
-            if date in past_dates:
-                title_list = markup.css('[class="url summary pull-left"]::text').getall()
+            date_obj = datetime.strptime(date, "%m/%d/%y").date()
+            
+            
+            if check_date(date_obj):
+                title_list = item.css('[class="url summary pull-left"]::text').getall()
                 title = ""
                 
                 for part in title_list:
@@ -104,14 +97,14 @@ class SenateBankingSpider(scrapy.Spider):
                 
                 yield {
                     'category': category,
-                    'date': markup.css('[class="dtstart"]::text').get(),
-                    'url': response.urljoin(markup.css('[class="faux-col"] a::attr(href)').get()),
+                    'date': item.css('[class="dtstart"]::text').get(),
+                    'url': response.urljoin(item.css('[class="faux-col"] a::attr(href)').get()),
                     'title': title
                 }
 
 
 # Creates file with date and writes content to the file
 # os.system("touch sbanking_$(date +%m.%d.%y).csv")
-date = d.today().strftime("%m.%d.%y")
+date = datetime.today().strftime("%m.%d.%y")
 execute = "scrapy runspider sbanking_spider.py -O output/sbanking_" + date + ".csv"
 cmdline.execute(execute.split())

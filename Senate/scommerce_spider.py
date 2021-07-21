@@ -1,7 +1,11 @@
 import scrapy
-from datetime import date as d
-from datetime import timedelta
+from datetime import datetime
 from scrapy import cmdline
+
+import sys
+sys.path.insert(1, '../.')
+from check_date import check_date
+
 
 # Program to crawl the Senate Commerce news webpage, and extract information about recent headlines.
 
@@ -21,23 +25,7 @@ class SenateCommerceSpider(scrapy.Spider):
             yield scrapy.Request(url=urls[i], callback=self.parse, meta={'category': categories[i]})
 
     def parse(self, response):
-        
-        def get_past_days():
-            """
-            Returns list of strings containing dates for today and yesterday's updates as a string formatted
-            exactly as produced by the webpage. Can use obtained list so that only recent content is outputted.
-            
-            Format: 07/22/21
-            """
-            today = d.today().strftime("%m/%d/%Y")
-            yesterday = ( d.today()-timedelta(1) ).strftime("%m/%d/%Y")
-            
-            return [today, yesterday]
-        
-        
-        # Obtains today and yesterday as a string
-        past_dates = get_past_days()
-        
+
         # Recover category type found previously
         category = response.meta["category"]
         
@@ -56,7 +44,9 @@ class SenateCommerceSpider(scrapy.Spider):
             # Obtain date and only continue if date was in past_dates
             date = release.css('[class="element-datetime"] ::text').get()
             
-            if date in past_dates:
+            date_obj = datetime.strptime(date, "%m/%d/%Y").date()
+            
+            if check_date(date_obj):
             
                 yield {
                     'category': category,
@@ -71,6 +61,6 @@ class SenateCommerceSpider(scrapy.Spider):
 
 # Creates file with date and writes content to the file
 # os.system("touch scommerce_$(date +%m.%d.%y).csv")
-date = d.today().strftime("%m.%d.%y")
+date = datetime.today().strftime("%m.%d.%y")
 execute = "scrapy runspider scommerce_spider.py -O output/scommerce_" + date + ".csv"
 cmdline.execute(execute.split())

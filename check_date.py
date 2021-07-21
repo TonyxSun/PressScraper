@@ -6,21 +6,29 @@ import doctest
 
 """
 {{{ TO CHANGE }}}
-1. Change path to include parent directory and import module
+
+1. Remove imports
+from datetime import timedelta
+from datetime import date as d
+
+2. Add import
+from datetime import datetime
+
+3. Change path to include parent directory and import module
 import sys
 sys.path.insert(1, '../.')
 from check_date import check_date
 
-2. Convert date as string to date using
+4. Convert date as string to date, and adjust functions accordingly
     * remove - from format (not needed)
     * .date() converts datetime obj to date obj
-new_date = datetime.strptime(old_date, "format").date()
+# Obtain date as object
+date_obj = datetime.strptime(date, "format").date()
 
-3. Remove unncessary imports
-x from datetime import timedelta
+5. Remove function
+get_past_days()
 
-4. Add import
-from datetime import datetime
+6. Change d to datetime when creating csv
 
 """
 

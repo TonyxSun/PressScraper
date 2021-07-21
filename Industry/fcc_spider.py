@@ -1,7 +1,10 @@
 import scrapy
-from datetime import date as d
-from datetime import timedelta
+from datetime import datetime
 from scrapy import cmdline
+
+import sys
+sys.path.insert(1, '../.')
+from check_date import check_date
 
 # Program to crawl the FCC Headlines webpage, and extract information about recent headlines.
 
@@ -14,19 +17,6 @@ class FCCSpider(scrapy.Spider):
 
     def parse(self, response):
         
-        
-        def getPastDays():
-            """
-            Returns list of strings containing dates for today and yesterday's updates as a string formatted
-            exactly as produced by the webpage. Can use obtained list so that only recent content is outputted.
-            
-            Format: July 6, 2021
-            """
-            today = d.today().strftime("%B %-d, %Y")
-            yesterday = ( d.today()-timedelta(1) ).strftime("%B %-d, %Y")
-            
-            return [today, yesterday]
-        
 
         # Helper function to identify date, as when extracted, the date is followed by unrecognized characters
         def fix_date(date):
@@ -38,17 +28,18 @@ class FCCSpider(scrapy.Spider):
                     # Strip remaining unneeded characters
                     return new[:len(new)-1]
                 new = new + letter
-        
-        # Obtains today and yesterday as a string
-        past_dates = getPastDays()
+
         
         # Using regex, recognize headlines as those with a class that begin with "views-row"
         for headline in response.css('[class^="views-row"]'):
             
             date = fix_date(headline.css("span.released-date::text").get())
             
+            # Obtain date as object
+            date_obj = datetime.strptime(date, "%B %d, %Y").date()
+            
             # Only continues if date is today or yesterday
-            if date in past_dates:
+            if check_date(date_obj):
                 # Extract the following information
                 yield {
                     'date': date,
@@ -59,6 +50,6 @@ class FCCSpider(scrapy.Spider):
 
 # Creates file with date and writes content to the file
 # os.system("touch fcc_$(date +%m.%d.%y).csv")
-date = d.today().strftime("%m.%d.%y")
+date = datetime.today().strftime("%m.%d.%y")
 execute = "scrapy runspider fcc_spider.py -O output/fcc_" + date + ".csv"
 cmdline.execute(execute.split())

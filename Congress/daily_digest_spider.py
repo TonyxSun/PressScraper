@@ -1,8 +1,12 @@
 import scrapy
 import os
-from datetime import date as d
-from datetime import timedelta
+from datetime import datetime
 from scrapy import cmdline
+
+import sys
+sys.path.insert(1, '../.')
+from check_date import check_date
+
 
 # Program to crawl Congress "Action on Legislation" page and extract the daily digest.
 
@@ -15,42 +19,22 @@ class DailyDigestSpider(scrapy.Spider):
 
     def parse(self, response):
         """
-        Finds the ten most recent daily digests, and crawls to each page.
+        Finds recent daily digests, and crawls to each page.
         """
         
-        def getPastDays():
-            """
-            Returns list of strings containing dates for today and yesterday's updates as a string formatted
-            exactly as produced by the webpage. Can use obtained list so that only recent content is outputted.
-            
-            Format: 07/13/2021
-            """
-            today = d.today().strftime("%m/%d/%Y")
-            yesterday = ( d.today()-timedelta(1) ).strftime("%m/%d/%Y")
-            
-            return [today, yesterday]
-
-        # Counts number of entries parsed, ends at 10
-        count = 0
-        
-        # Obtains today and yesterday as a string
-        past_dates = getPastDays()
-
         # Iterates through each entry/date
         for day in response.css('[class="tablesorter-infoOnly"]'):
-
-            count += 1
-
-            if count == 10:
-                break
 
             # Obtains url and date
             url = response.urljoin(
                 day.css("td[rowspan='3'] a::attr(href)").get())
             date = day.css("td[rowspan='3'] ::text").get()
+            
+            # Obtain date as object
+            date_obj = datetime.strptime(date, "%m/%d/%Y").date()
 
             # Only continues if date is today or yesterday
-            if date in past_dates:
+            if check_date(date_obj):
 
                 # Crawls each link with the daily digest
                 yield scrapy.Request(url, callback=self.get_digest, meta={'date': date, 'url': url})
@@ -86,7 +70,7 @@ class DailyDigestSpider(scrapy.Spider):
 
 # Creates file with date and writes content to the file
 # os.system("touch digest_$(date +%m.%d.%y).csv")
-date = d.today().strftime("%m.%d.%y")
+date = datetime.today().strftime("%m.%d.%y")
 # execute = "scrapy crawl digest -O digest_" + date + ".csv"
 execute = "scrapy runspider daily_digest_spider.py -O output/digest_" + date + ".csv"
 

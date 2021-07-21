@@ -1,7 +1,11 @@
 import scrapy
-from datetime import date as d
-from datetime import timedelta
+from datetime import datetime
 from scrapy import cmdline
+
+import sys
+sys.path.insert(1, '../.')
+from check_date import check_date
+
 
 
 class HouseHomelandSpider(scrapy.Spider):
@@ -22,35 +26,9 @@ class HouseHomelandSpider(scrapy.Spider):
         
     def parse(self, response):
         
-        def get_past_days1():
-            """
-            Returns list of strings containing dates for today and yesterday's updates as a string formatted
-            exactly as produced by the webpage. Can use obtained list so that only recent content is outputted.
-            
-            Format: Jul 16 2021
-            """
-            today = d.today().strftime("%b %-d %Y")
-            yesterday = ( d.today()-timedelta(1) ).strftime("%b %-d %Y")
-            
-            return [today, yesterday]
-        
-        def get_past_days2():
-            """
-            Returns list of strings containing dates for today and yesterday's updates as a string formatted
-            exactly as produced by the webpage. Can use obtained list so that only recent content is outputted.
-            
-            Format: 07/13/21
-            """
-            today = d.today().strftime("%m/%d/%y")
-            yesterday = ( d.today()-timedelta(1) ).strftime("%m/%d/%y")
-            
-            return [today, yesterday]
         
         # Obtain category passed through meta
         category = response.meta["category"]
-        
-        # Obtain only past dates
-        past_dates = get_past_days1()
 
 
         # MARKUPS and HEARINGS
@@ -65,7 +43,10 @@ class HouseHomelandSpider(scrapy.Spider):
             # Get date
             date = entry.css('[class="dtstart"] ::text').get()
             
-            if date in past_dates:
+            # Obtain date as object
+            date_obj = datetime.strptime(date, "%b %d %Y").date()
+            
+            if check_date(date_obj):
                 
                 yield {
                     'category': category,
@@ -74,8 +55,6 @@ class HouseHomelandSpider(scrapy.Spider):
                     'url': response.urljoin(url)  
                 }
         
-        # Obtain only past dates
-        past_dates = get_past_days2()
         
         # PRESS RELEASES
         all_dates = response.css('[class="date"] ::text').getall()
@@ -86,6 +65,7 @@ class HouseHomelandSpider(scrapy.Spider):
         for date in all_dates:
             if "\t" not in date:
                 dates.append(date)
+        
                 
         # To store CSS selectors to obtain the title
         title_selectors = []
@@ -98,8 +78,12 @@ class HouseHomelandSpider(scrapy.Spider):
         # Iterating through indexes
         for i in range(len(dates)):
             
+            
+            # Obtain date as object
+            date_obj = datetime.strptime(dates[i], "%m/%d/%y").date()
+            
             # Continue is date is yesterday or today
-            if dates[i] in past_dates:
+            if check_date(date_obj):
                 
                 yield {
                     'category': category,
@@ -117,7 +101,7 @@ class HouseHomelandSpider(scrapy.Spider):
 
 # Creates file with date and writes content to the file
 # os.system("touch sbanking_$(date +%m.%d.%y).csv")
-date = d.today().strftime("%m.%d.%y")
+date = datetime.today().strftime("%m.%d.%y")
 execute = "scrapy runspider h_homeland_spider.py -O output/h_homeland_" + date + ".csv"
 cmdline.execute(execute.split())   
         

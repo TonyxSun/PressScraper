@@ -1,7 +1,10 @@
 import scrapy
-from datetime import date as d
-from datetime import timedelta
+from datetime import datetime
 from scrapy import cmdline
+
+import sys
+sys.path.insert(1, '../.')
+from check_date import check_date
 
 # Program to crawl the Senate Foreign "Activities and Reports" section.
 
@@ -48,22 +51,6 @@ class SenateForeignSpider(scrapy.Spider):
 
         """
         
-        def get_past_days():
-            """
-            Returns list of strings containing dates for today and yesterday's updates as a string formatted
-            exactly as produced by the webpage. Can use obtained list so that only recent content is outputted.
-            
-            Format: 07/13/21
-            """
-            today = d.today().strftime("%m/%d/%y")
-            yesterday = ( d.today()-timedelta(1) ).strftime("%m/%d/%y")
-            
-            return [today, yesterday]
-        
-        
-        # Obtains today and yesterday as a string
-        past_dates = get_past_days()
-
         # Recover category type found previously
         category = response.meta["category"]
 
@@ -72,8 +59,10 @@ class SenateForeignSpider(scrapy.Spider):
             
             date = headline.css('[class="pull-left date"]::text').get()
             
-            # Only continues if date is today or yesterday
-            if date in past_dates:
+            # Obtain date as object
+            date_obj = datetime.strptime(date, "%m/%d/%y").date()
+            
+            if check_date(date_obj):
 
                 yield {
                     'category': category,
@@ -93,8 +82,9 @@ class SenateForeignSpider(scrapy.Spider):
         for headline in response.css('[class="bill-title"]'):
             i += 1
             
-            # Only continues if date is today or yesterday
-            if dates[i] in past_dates:
+            date_obj = datetime.strptime(dates[i], "%m/%d/%y").date()
+            
+            if check_date(date_obj):
 
                 yield {
                     'category': category,
@@ -123,8 +113,9 @@ class SenateForeignSpider(scrapy.Spider):
             if titles[i] == "acrobat":
                 continue
             
-            # Only continues if date is today or yesterday
-            if dates[i] in past_dates:
+            date_obj = datetime.strptime(dates[i], "%m/%d/%y").date()
+            
+            if check_date(date_obj):
             
                 yield {
                     'category': category,
@@ -136,6 +127,6 @@ class SenateForeignSpider(scrapy.Spider):
 
 # Creates file with date and writes content to the file
 # os.system("touch sforeign_$(date +%m.%d.%y).csv")
-date = d.today().strftime("%m.%d.%y")
+date = datetime.today().strftime("%m.%d.%y")
 execute = "scrapy runspider sforeign_spider.py -O output/sforeign_" + date + ".csv"
 cmdline.execute(execute.split())

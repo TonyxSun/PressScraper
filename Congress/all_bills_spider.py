@@ -1,8 +1,10 @@
 import scrapy
-import os
-from datetime import date as d
-from datetime import timedelta
+from datetime import datetime
 from scrapy import cmdline
+
+import sys
+sys.path.insert(1, '../.')
+from check_date import check_date
 
 # Program to crawl Congress "Action on Legislation" page and extract all bills information.
 
@@ -15,24 +17,10 @@ class AllBillsSpider(scrapy.Spider):
 
     def parse(self, response):
         
-        def get_past_days():
-            """
-            Returns list of strings containing dates for today and yesterday's updates as a string formatted
-            exactly as produced by the webpage. Can use obtained list so that only recent content is outputted.
-            Format: 07/13/2021
-            """
-            today = d.today().strftime("%m/%d/%Y")
-            yesterday = ( d.today()-timedelta(1) ).strftime("%m/%d/%Y")
-            
-            return [yesterday, today]
-        
         def reformat_date(date):
             return date[6:10] + "-" + date[0:2] + "-" + date[3:5]
         
-        
-        
-        # Dates we'd like to crawl to
-        past_dates = get_past_days()
+
         
         # All URLs on the page
         all_urls = response.css('[id^="tbody"] a::attr(href)').extract()
@@ -60,8 +48,11 @@ class AllBillsSpider(scrapy.Spider):
             # Obtain the key - the exact URL to expect to access the right page
             key = key1 + reformat_date(dates[i]) + key2
             
+            # Obtain date as object
+            date_obj = datetime.strptime(dates[i], "%m/%d/%Y").date()
+            
             # Double check key URL actually exists on the page (some dates do not have total URL)
-            if key in all_urls and dates[i] in past_dates:
+            if key in all_urls and check_date(date_obj):
                 urls.append(key)
                 req_dates.append(dates[i])
         
@@ -88,6 +79,10 @@ class AllBillsSpider(scrapy.Spider):
             
             # Obtains all text assoc. with the bill
             text = result.css('[class="result-item"] *::text').getall()
+            
+            sponsor = None
+            committees = None
+            latest_action = None
             
             # Identifies the sponsor, committees, and latest action
             for part in text:
@@ -121,7 +116,7 @@ class AllBillsSpider(scrapy.Spider):
 
 # Creates file with date and writes content to the file
 # os.system("touch digest_$(date +%m.%d.%y).csv")
-date = d.today().strftime("%m.%d.%y")
+date = datetime.today().strftime("%m.%d.%y")
 # execute = "scrapy crawl digest -O digest_" + date + ".csv"
 execute = "scrapy runspider all_bills_spider.py -O output/all_bills_" + date + ".csv"
 

@@ -3,6 +3,7 @@ import datetime
 from datetime import timedelta
 from scrapy import cmdline
 
+
 # Program to crawl the HOUSE Energy and Commerce news webpage, and extract information about recent headlines.
 
 
@@ -22,6 +23,7 @@ class HouseCommerceSpider(scrapy.Spider):
             yield scrapy.Request(url=urls[i], callback=self.parse, meta={'category': categories[i]})
 
     def parse(self, response):
+   
 
         def get_past_days():
             """
@@ -61,9 +63,11 @@ class HouseCommerceSpider(scrapy.Spider):
             d2 = datetime.datetime.today()
             return d1.isocalendar()[1] == d2.isocalendar()[1] and d1.year == d2.year
 
+        
         # Obtains today and yesterday as a string
         past_dates = get_past_days()
         past_dates_alt = get_past_days_alt()
+        
 
         # Recover category type found previously
         category = response.meta["category"]

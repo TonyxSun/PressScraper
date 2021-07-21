@@ -1,7 +1,11 @@
 import scrapy
-from datetime import date as d
-from datetime import timedelta
+from datetime import datetime
 from scrapy import cmdline
+
+import sys
+sys.path.insert(1, '../.')
+
+from get_dates import check_date
 
 
 class HouseForeignSpider(scrapy.Spider):
@@ -38,7 +42,7 @@ class HouseForeignSpider(scrapy.Spider):
         category = response.meta["category"]
         
         # Get past dates needed
-        past_dates = get_past_days()
+        #past_dates = get_past_days()
         
         # Obtain the following
         dates = response.css('[class="col-xs-1 recordListDate"]::text').getall()
@@ -54,8 +58,9 @@ class HouseForeignSpider(scrapy.Spider):
         # For each entry, obtain and produce output
         for i in range(len(dates)):
             
+            date = datetime.strptime(dates[i], "%m/%d/%y").date()
             # Continue is date was today or yesterday
-            if dates[i] in past_dates:
+            if check_date(date):
                 
                 yield {
                     'category': category,
@@ -70,7 +75,7 @@ class HouseForeignSpider(scrapy.Spider):
         
 # Creates file with date and writes content to the file
 # os.system("touch sbanking_$(date +%m.%d.%y).csv")
-date = d.today().strftime("%m.%d.%y")
+date = datetime.today().strftime("%m.%d.%y")
 execute = "scrapy runspider h_foreign_spider.py -O output/h_foreign_" + date + ".csv"
 cmdline.execute(execute.split())   
         

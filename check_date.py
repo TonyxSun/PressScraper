@@ -9,7 +9,7 @@ import doctest
 1. Change path to include parent directory and import module
 import sys
 sys.path.insert(1, '../.')
-from get_dates import check_date
+from check_date import check_date
 
 2. Convert date as string to date using
     * remove - from format (not needed)

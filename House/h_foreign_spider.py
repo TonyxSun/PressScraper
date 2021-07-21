@@ -5,7 +5,7 @@ from scrapy import cmdline
 import sys
 sys.path.insert(1, '../.')
 
-from get_dates import check_date
+from check_date import check_date
 
 
 class HouseForeignSpider(scrapy.Spider):

@@ -3,6 +3,7 @@ from scrapy import cmdline
 from datetime import date
 
 # program to crawl "Daily Bills page on Senate"
+# since it is updated daily, does not need date check
 
 
 class spider(scrapy.Spider):

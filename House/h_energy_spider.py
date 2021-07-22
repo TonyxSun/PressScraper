@@ -1,6 +1,8 @@
 import scrapy
-import datetime
-from datetime import timedelta
+from datetime import datetime
+import sys
+sys.path.insert(1, '../.')
+from check_date import check_date
 from scrapy import cmdline
 
 # Program to crawl the HOUSE Energy and Commerce news webpage, and extract information about recent headlines.
@@ -20,37 +22,6 @@ class HouseCommerceSpider(scrapy.Spider):
             yield scrapy.Request(url=urls[i], callback=self.parse, meta={'category': categories[i]})
 
     def parse(self, response):
-
-        def get_past_days_1():
-            """
-            Returns list of strings containing dates for today and yesterday's updates as a string formatted
-            exactly as produced by the webpage. Can use obtained list so that only recent content is outputted.
-
-            Format: Jul 15, 2021
-            """
-            today = datetime.datetime.now().strftime("%b %d, %Y")
-            yesterday = (datetime.datetime.now() -
-                         timedelta(1)).strftime("%b %d, %Y")
-
-            return [today, yesterday]
-
-        def get_past_days_2():
-            """
-            Returns list of strings containing dates for today and yesterday's updates as a string formatted
-            exactly as produced by the webpage. Can use obtained list so that only recent content is outputted.
-
-            Format: 07/13/2021
-            """
-            today = datetime.datetime.now().strftime("%m/%d/%Y")
-            yesterday = (datetime.datetime.now() -
-                         timedelta(1)).strftime("%m/%d/%Y")
-            daybefore = (datetime.datetime.now() -
-                         timedelta(2)).strftime("%m/%d/%Y")
-
-            return [today, yesterday, daybefore]
-        # Obtains today and yesterday as a string
-        past_dates_1 = get_past_days_1()
-        past_dates_2 = get_past_days_2()
 
         # Recover category type found previously
         category = response.meta["category"]
@@ -75,7 +46,9 @@ class HouseCommerceSpider(scrapy.Spider):
                     new_date = date[0:4] + "0" + date[4:]
                 else:
                     new_date = date
-                if new_date in past_dates_1:
+                date_obj = datetime.strptime(new_date, "%b %d, %Y").date()
+
+                if check_date(date_obj):
                     yield {
                         'category': category,
                         'date': new_date,
@@ -95,7 +68,9 @@ class HouseCommerceSpider(scrapy.Spider):
                 # clean date format
                 new_date = ""
                 new_date = date[5:15]
-                if new_date in past_dates_2:
+                date_obj = datetime.strptime(new_date, "%m/%d/%Y").date()
+
+                if check_date(date_obj):
                     yield {
                         'category': category,
                         'date': new_date,
@@ -106,6 +81,6 @@ class HouseCommerceSpider(scrapy.Spider):
 
 # Creates file with date and writes content to the file
 # os.system("touch scommerce_$(date +%m.%d.%y).csv")
-date = datetime.datetime.now().strftime("%m.%d.%y")
+date = datetime.today().strftime("%m.%d.%y")
 execute = "scrapy runspider h_energy_spider.py -O output/h_energy_" + date + ".csv"
 cmdline.execute(execute.split())

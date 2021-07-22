@@ -1,4 +1,5 @@
 # this code cannot access hyperlinks
+# accesses list of all legislation, so date check does not apply
 
 from bs4 import BeautifulSoup
 from bs4.element import Comment

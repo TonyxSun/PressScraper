@@ -1,7 +1,10 @@
-import scrapy
-import datetime
-from datetime import timedelta
 from scrapy import cmdline
+import scrapy
+from datetime import datetime
+import sys
+sys.path.insert(1, '../.')
+from check_date import check_date
+
 
 
 # Program to crawl the HOUSE Energy and Commerce news webpage, and extract information about recent headlines.
@@ -23,51 +26,6 @@ class HouseCommerceSpider(scrapy.Spider):
             yield scrapy.Request(url=urls[i], callback=self.parse, meta={'category': categories[i]})
 
     def parse(self, response):
-   
-
-        def get_past_days():
-            """
-            Returns list of strings containing dates for today and yesterday's updates as a string formatted
-            exactly as produced by the webpage. Can use obtained list so that only recent content is outputted.
-
-            Format: July 15, 2021
-            """
-            today = datetime.datetime.now().strftime("%B %d, %Y")
-            yesterday = (datetime.datetime.now() -
-                         timedelta(1)).strftime("%B %d, %Y")
-
-            return [today, yesterday]
-
-        def get_past_days_alt():
-            """
-            Returns list of strings containing dates for today and yesterday's updates as a string formatted
-            exactly as produced by the webpage. Can use obtained list so that only recent content is outputted.
-
-            Format: Jun 9 2021
-            """
-            today = datetime.datetime.now().strftime("%b %d %Y")
-            yesterday = (datetime.datetime.now() -
-                         timedelta(1)).strftime("%b %d %Y")
-
-            return [today, yesterday]
-
-        def same_week(dateString):
-            '''returns true if a dateString in %B %d, %Y fo rmat is part of the current week'''
-            d1 = datetime.datetime.strptime(dateString, '%B %d, %Y')
-            d2 = datetime.datetime.today()
-            return (d1.isocalendar()[1] == d2.isocalendar()[1] or d1.isocalendar()[1] == d2.isocalendar()[1]-1) and d1.year == d2.year
-
-        def same_week_alt(dateString):
-            '''returns true if a dateString in %B %d, %Y fo rmat is part of the current week'''
-            d1 = datetime.datetime.strptime(dateString, "%b %d %Y")
-            d2 = datetime.datetime.today()
-            return d1.isocalendar()[1] == d2.isocalendar()[1] and d1.year == d2.year
-
-        
-        # Obtains today and yesterday as a string
-        past_dates = get_past_days()
-        past_dates_alt = get_past_days_alt()
-        
 
         # Recover category type found previously
         category = response.meta["category"]
@@ -86,7 +44,8 @@ class HouseCommerceSpider(scrapy.Spider):
                 summaries[i] = summaries[i].replace('\r\n', '')
 
             for i in range(len(dates)):
-                if dates[i] in past_dates or same_week(dates[i]):
+                date_obj = datetime.strptime(dates[i], "%B %d, %Y").date()
+                if check_date(date_obj):
                     yield {
                         'category': category,
                         'date': dates[i],
@@ -109,7 +68,9 @@ class HouseCommerceSpider(scrapy.Spider):
                 date = entry.css('[class="dtstart"] ::text').get().rstrip(" ")
                 if len(date) == 10:
                     date = date[:4] + "0" + date[4:]
-                if date in past_dates_alt or same_week_alt(date):
+                date_obj = datetime.strptime(date, "%b %d %Y").date()
+
+                if check_date(date_obj):
                     yield {
                         'category': category,
                         'date': date,
@@ -128,7 +89,8 @@ class HouseCommerceSpider(scrapy.Spider):
                 titles[i] = titles[i].strip("\r\n\t")
             urls = response.css('li>a.middleheadline::attr(href)').getall()
             for i in range(len(dates)):
-                if dates[i] in past_dates or same_week(dates[i]):
+                date_obj = datetime.strptime(dates[i], "%B %d, %Y").date()
+                if check_date(date_obj):
                     yield {
                         'category': category,
                         'date': dates[i],
@@ -145,9 +107,10 @@ class HouseCommerceSpider(scrapy.Spider):
             for i in range(len(titles)):
                 titles[i] = titles[i].strip("\r\n\t")
             urls = response.css('li>a.middleheadline::attr(href)').getall()
-            print(dates)
             for i in range(len(dates)):
-                if dates[i] in past_dates or same_week(dates[i]):
+                date_obj = datetime.strptime(dates[i], "%B %d, %Y").date()
+
+                if check_date(date_obj):
                     yield {
                         'category': category,
                         'date': dates[i],
@@ -158,6 +121,6 @@ class HouseCommerceSpider(scrapy.Spider):
 
 # Creates file with date and writes content to the file
 # os.system("touch scommerce_$(date +%m.%d.%y).csv")
-date = datetime.datetime.now().strftime("%m.%d.%y")
+date = datetime.today().strftime("%m.%d.%y")
 execute = "scrapy runspider h_transportation_spider.py -O output/h_transportation_" + date + ".csv"
 cmdline.execute(execute.split())

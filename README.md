@@ -11,8 +11,8 @@ A simple scraper for crawling US Congress press releases and industry tycoons fo
 
 ## Industry
 
-*  __SIA__：Date, URL, and title of all headlines for the Semiconductor Industry Association;  _https://www.semiconductors.org/news-events/latest-news/_
-* __FCC__: Date, URL, and title of all headlines for the Federal Communications Commission;  _https://www.fcc.gov/news-events/headlines_
+*  __SIA__：Date, URL, and title of all headlines for the Semiconductor Industry Association; <sub><br> _https://www.semiconductors.org/news-events/latest-news/_
+* __FCC__: Date, URL, and title of all headlines for the Federal Communications Commission; <sub><br>  _https://www.fcc.gov/news-events/headlines_
 
 
 ## US Congress

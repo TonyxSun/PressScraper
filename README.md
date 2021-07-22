@@ -1,6 +1,8 @@
 # About
 
 A simple scraper for crawling US Congress press releases and industry tycoons for analytical purposes. [ongoing]
+**Time Frame**: Past content within one week and all future content. 
+**Export Format**: CSV 
 
 # Contents
 
@@ -26,14 +28,20 @@ A simple scraper for crawling US Congress press releases and industry tycoons fo
 * __Commerce__:  Date, URL. title, and summary of press releases, hearings, and markups from the US Senate Committee on Commerce, Science, and Transportation; _https://www.commerce.senate.gov/pressreleases_, _https://www.commerce.senate.gov/hearings_, _https://www.commerce.senate.gov/markups_
 * __Foreign__:  Type of content (nomiations, treaties, legislation, hearing transcripts, business meeting transcripts, committee reports, other), date, URL (if given), and text for activities and reports from the US Senate Committee on Foreign Relations; _https://www.foreign.senate.gov/activities-and-reports_
 * __Banking__: Date, URL, and title for press releases, hearings, and markups from the US Senate Committee on Banking, Housing, and Urban Affairs; _https://www.banking.senate.gov/newsroom/majority-press-releases_, _https://www.banking.senate.gov/hearings_, _https://www.banking.senate.gov/markups_
-* __Finance__: Source of content (majority, minority), date, URL, and title for press releases from the US Senate Committee on Finance; _https://www.finance.senate.gov/chairmans-news_
-* __HLSGA__: Source of content (majority, minority), date, URL, and title for press releases from the US Senate Committee on Homeland Security & Government Affairs; _https://www.hsgac.senate.gov/media/majority-media_
-* __Judiciary__: Source of content (majority, minority), date, URL, and title for press releases from the US Senate Committee on the Judiciary; _https://www.judiciary.senate.gov/press/majority_
+* __Finance__: Source of content (majority, minority), date, URL, and title for press releases and hearings from the US Senate Committee on Finance; _https://www.finance.senate.gov/chairmans-news_, _https://www.finance.senate.gov/hearings_
+* __HLSGA__: Source of content (majority, minority), date, URL, and title for press releases and hearings from the US Senate Committee on Homeland Security & Government Affairs; _https://www.hsgac.senate.gov/media/majority-media_, _https://www.hsgac.senate.gov/hearings_
+* __Judiciary__: Source of content (majority, minority), date, URL, and title for press releases and hearings from the US Senate Committee on the Judiciary; _https://www.judiciary.senate.gov/press/majority_, _https://www.judiciary.senate.gov/hearings_
 
 ## US House
 
 ### US House Committees
+* __Energy__: Date, URL, title, and summary of press releases, hearings, and markups from the US House Committee on Energy;_https://energycommerce.house.gov/newsroom/press-releases_, _https://energycommerce.house.gov/committee-activity/hearings_, _https://energycommerce.house.gov/committee-activity/markups_
+* __Financial Services__: Date, URL, title, and summary of press releases, hearings, and markups from the US House Committee on Financial Services; _https://financialservices.house.gov/news/_, _https://financialservices.house.gov/calendar/?EventTypeID=577&Congress=117_, _https://financialservices.house.gov/calendar/?EventTypeID=575&Congress=117_
 * __Foreign__:  Date, time (if applicable), title, and URL for press releases, hearings, and markups from the US House Committee on Foreign Affairs; _https://foreignaffairs.house.gov/press-releases_, _https://foreignaffairs.house.gov/hearings_, _https://foreignaffairs.house.gov/markups_
+* __Homeland__: 
+* __Science, Space, and Tech__:Date, URL, and title of press releases, hearings, and markups from the US House Committee on Science, Space, and Tech; _https://science.house.gov/news/press-releases_, _https://science.house.gov/hearings_, _https://science.house.gov/markups_
+* __Transportation__:Date, URL, and title of press releases, hearings, and markups from the US House Committee on Transportation (Both Majority and Minority sites); _https://republicans-transportation.house.gov/news/documentquery.aspx?DocumentTypeID=2545_, _https://republicans-transportation.house.gov/calendar/?EventTypeID=542_, _https://republicans-transportation.house.gov/calendar/?EventTypeID=541_, _https://transportation.house.gov/news/press-releases_, _https://transportation.house.gov/committee-activity/hearings_, _https://transportation.house.gov/committee-activity/markups_
+
 
 # How to run:
 1. Clone repository.

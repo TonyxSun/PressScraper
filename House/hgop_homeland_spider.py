@@ -28,13 +28,17 @@ class HouseGOPHomelandSpider(scrapy.Spider):
         
         for item in response.css('[id^="post-"]'):
                 
+                # Get date
                 date = item.css('[class="entry-date"] ::text').get()
                 
+                # Skip if date is None
                 if date == None:
                     continue
                 
+                # Get date as object
                 date_obj = datetime.strptime(date, "%B %d, %Y").date()
                 
+                # If date is valid, extract data
                 if check_date(date_obj):
             
                     yield {

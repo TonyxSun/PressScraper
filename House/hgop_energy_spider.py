@@ -27,6 +27,11 @@ class HouseGOPEnergySpider(scrapy.Spider):
         
         def get_date(date):
             
+            """
+            Extracted date includes time, want to remove
+
+            """
+            
             new_date = ""
             spaces = 0
             
@@ -42,14 +47,18 @@ class HouseGOPEnergySpider(scrapy.Spider):
         
         for item in response.css('[class^="col-sm-"]'):
             
+            # Get date
             date = item.css('[class="meta h4"] ::text').get()
             
+            # Adjust format of date for hearings, markups
+            # Change to date object
             if category in ["Hearings", "Markups"]:
                 date = get_date(date)
                 date_obj = datetime.strptime(date, "%B %d, %Y").date()
             else:
                 date_obj = datetime.strptime(date, "%m.%d.%Y").date()
             
+            # Extract for valid dates
             if check_date(date_obj):
             
                 yield {
@@ -61,10 +70,6 @@ class HouseGOPEnergySpider(scrapy.Spider):
                 }
             
         
-
-
-
-
 
 
 

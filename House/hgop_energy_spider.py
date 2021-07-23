@@ -8,7 +8,7 @@ from scrapy import cmdline
 
 # Program to crawl the Republican Energy and Commerce Committee webpage, and extract information about recent headlines.
 
-class HouseGOPEnergyeSpider(scrapy.Spider):
+class HouseGOPEnergySpider(scrapy.Spider):
     name = "h-gop-energy"
     
     def start_requests(self):

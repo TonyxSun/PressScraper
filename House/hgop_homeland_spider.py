@@ -45,7 +45,7 @@ class HouseGOPHomelandSpider(scrapy.Spider):
                         'category': category,
                         'date': date,
                         'title': item.css('[class="post-title entry-title"] ::text').get(),
-                        'url': response.css('[class="post-title entry-title"] a::attr(href)').get(),
+                        'url': item.css('[class="post-title entry-title"] a::attr(href)').get(),
                         'description': item.css('[class="entry-summary"] *::text').getall()[1]
                     }
                 
@@ -56,5 +56,5 @@ class HouseGOPHomelandSpider(scrapy.Spider):
 # Creates file with date and writes content to the file
 # os.system("touch scommerce_$(date +%m.%d.%y).csv")
 date = datetime.today().strftime("%m.%d.%y")
-execute = "scrapy runspider hgop_homeland_spider.py -O output/h_homeland_energy_" + date + ".csv"
+execute = "scrapy runspider hgop_homeland_spider.py -O output/h_gop_homeland_" + date + ".csv"
 cmdline.execute(execute.split())

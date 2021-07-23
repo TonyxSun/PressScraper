@@ -65,7 +65,7 @@ class HouseGOPEnergySpider(scrapy.Spider):
                     'category': category,
                     'date': date,
                     'title': item.css('[class="headline"] ::text').get(),
-                    'url': response.css('[class^="col-sm-"] a::attr(href)').get(),
+                    'url': item.css('[class^="col-sm-"] a::attr(href)').get(),
                     'description': item.css('[class="description"] ::text').get()
                 }
             

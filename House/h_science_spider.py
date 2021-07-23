@@ -5,10 +5,10 @@ sys.path.insert(1, '../.')
 from check_date import check_date
 from scrapy import cmdline
 
-# Program to crawl the HOUSE Energy and Commerce news webpage, and extract information about recent headlines.
+# Program to crawl the HOUSE Science news webpage, and extract information about recent headlines.
 
 
-class HouseCommerceSpider(scrapy.Spider):
+class HouseScienceSpider(scrapy.Spider):
     name = "science, space, and tech"
 
     def start_requests(self):

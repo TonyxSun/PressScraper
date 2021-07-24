@@ -3,7 +3,7 @@ import numpy as np
 from datetime import datetime
 
 date = datetime.today().strftime("%m.%d.%y")
-html_text = ""
+html_text = '<style type="text/css"> body { color: steelblue; background-color: #FDF5E6 } </style>'
 
 '''Industry'''
 html_text += '<h2 id="industry">Industry</h2>'

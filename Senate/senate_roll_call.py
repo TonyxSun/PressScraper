@@ -33,42 +33,44 @@ Title = []
 
 while True:
     try:
-        votenumber.append(" ".join(child.find('vote_number')))
+        votenumber.append(" ".join(child.find('vote_number')).strip("\n\t"))
     except:
         votenumber.append(" . ")
 
     try:
-        Title.append(" ".join(child.find('title')))
+        Title.append(" ".join(child.find('title')).strip("\n\t"))
     except:
         Title.append(" . ")
 
     try:
-        yeas.append(" ".join(child.find('yeas')))
+        yeas.append(" ".join(child.find('yeas')).strip("\n\t"))
     except:
         yeas.append(" . ")
 
     try:
-        nays.append(" ".join(child.find('nays')))
+        nays.append(" ".join(child.find('nays')).strip("\n\t"))
     except:
         nays.append(" . ")
 
     try:
-        question.append(" ".join(child.find('question')))
+        question.append(" ".join(child.find('question')).replace("\n", "").strip())
+        # print(child.find('question').strip("\n\t").replace("\n", "").replace("<br>", "").strip())
+        # print(".")
     except:
         question.append(" . ")
 
     try:
-        issue.append(" ".join(child.find('issue')))
+        issue.append(" ".join(child.find('issue')).strip("\n\t"))
     except:
         issue.append(" . ")
 
     try:
-        date.append(" ".join(child.find('vote_date')))
+        date.append(" ".join(child.find('vote_date')).strip("\n\t"))
     except:
         date.append(" . ")
 
     try:
-        result.append(" ".join(child.find('result')))
+        result.append(" ".join(child.find('result')).strip("\n\t"))
     except:
         result.append(" ")
 

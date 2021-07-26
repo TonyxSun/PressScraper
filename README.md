@@ -40,10 +40,16 @@ A simple scraper for crawling US Congress press releases and industry tycoons fo
 * __Energy__: Date, URL, title, and summary of press releases, hearings, and markups from the US House Committee on Energy;<sub>  <br>_https://energycommerce.house.gov/newsroom/press-releases_, _https://energycommerce.house.gov/committee-activity/hearings_, _https://energycommerce.house.gov/committee-activity/markups_ 
 * __Financial Services__: Date, URL, title, and summary of press releases, hearings, and markups from the US House Committee on Financial Services; <sub> <br> _https://financialservices.house.gov/news/_, _https://financialservices.house.gov/calendar/?EventTypeID=577&Congress=117_, _https://financialservices.house.gov/calendar/?EventTypeID=575&Congress=117_
 * __Foreign__:  Date, time (if applicable), title, and URL for press releases, hearings, and markups from the US House Committee on Foreign Affairs; <sub> <br> _https://foreignaffairs.house.gov/press-releases_, _https://foreignaffairs.house.gov/hearings_, _https://foreignaffairs.house.gov/markups_
-* __Homeland__: 
+* __Homeland__: Date, title, and url for news, hearings, and markups from the US House Committee on Homeland Security; <sub> <br> _https://homeland.house.gov/activities/hearings_. _https://homeland.house.gov/activities/markups_, _https://homeland.house.gov/news_
 * __Science, Space, and Tech__:Date, URL, and title of press releases, hearings, and markups from the US House Committee on Science, Space, and Tech; <sub> <br> _https://science.house.gov/news/press-releases_, _https://science.house.gov/hearings_, _https://science.house.gov/markups_
 * __Transportation__:Date, URL, and title of press releases, hearings, and markups from the US House Committee on Transportation (Both Majority and Minority sites);<sub> <br>_https://republicans-transportation.house.gov/news/documentquery.aspx?DocumentTypeID=2545_, _https://republicans-transportation.house.gov/calendar/?EventTypeID=542_, _https://republicans-transportation.house.gov/calendar/?EventTypeID=541_, _https://transportation.house.gov/news/press-releases_, _https://transportation.house.gov/committee-activity/hearings_, _https://transportation.house.gov/committee-activity/markups_
 
+  
+### US Republican Committees
+* __Energy__: Date, URL, title, and summary of press releases, hearings, and markups from the US Republican Committee on Energy and Commerce;<sub>  <br>_https://republicans-energycommerce.house.gov/news/_, _https://republicans-energycommerce.house.gov/hearings/_, _https://republicans-energycommerce.house.gov/markups/_ 
+* __Foreign__: Date, URL, title, and summary of updates, hearings, and markups from the US Republican Committee on Foreign Affairs; <sub> <br> _https://gop-foreignaffairs.house.gov/updates/_, _https://gop-foreignaffairs.house.gov/hearing/_, _https://gop-foreignaffairs.house.gov/markup/_
+* __Homeland__:  Date, title, URL, and description for press releases from the US House Committee on Homeland Security; <sub> <br> _https://republicans-homeland.house.gov/committee-activity/press-releases/_
+* __Science__: Date, title, and url for news, hearings, and markups from the US House Committee on Science, Space, and Technology; <sub> <br> _https://republicans-science.house.gov/news_. _https://republicans-science.house.gov/legislation/hearings_, _https://republicans-science.house.gov/legislation/markups_
 
 # How to run:
 1. Clone repository.

@@ -153,6 +153,10 @@ html_text += h_science_html
 # Transportation
 html_text += '<p></p><strong>Transportation</strong>: Date, URL, and title of press releases, hearings, and markups from the US House Committee on Transportation (Both Majority and Minority sites);  <em><a href="https://republicans-transportation.house.gov/news/documentquery.aspx?DocumentTypeID=2545">https://republicans-transportation.house.gov/news/documentquery.aspx?DocumentTypeID=2545</a></em>, <em><a href="https://republicans-transportation.house.gov/calendar/?EventTypeID=542">https://republicans-transportation.house.gov/calendar/?EventTypeID=542</a></em>, <em><a href="https://republicans-transportation.house.gov/calendar/?EventTypeID=541">https://republicans-transportation.house.gov/calendar/?EventTypeID=541</a></em>, <em><a href="https://transportation.house.gov/news/press-releases">https://transportation.house.gov/news/press-releases</a></em>, <em><a href="https://transportation.house.gov/committee-activity/hearings">https://transportation.house.gov/committee-activity/hearings</a></em>, <em><a href="https://transportation.house.gov/committee-activity/markups">https://transportation.house.gov/committee-activity/markups</a></em>'
 
+h_transportation = pd.read_csv(rf'House/output/h_transportation_'+ date + '.csv')
+h_transportation_html = h_transportation.to_html()
+html_text += h_transportation_html
+
 # Energy, Republican
 html_text += '<p></p><strong>Energy, Republican</strong>: Date, URL, title, and summary of press releases, hearings, and markups from the US Republican Committee on Energy and Commerce;  <em><a href="https://republicans-energycommerce.house.gov/news/">https://republicans-energycommerce.house.gov/news/</a></em>, <em><a href="https://republicans-energycommerce.house.gov/hearings/">https://republicans-energycommerce.house.gov/hearings/</a></em>, <em><a href="https://republicans-energycommerce.house.gov/markups/">https://republicans-energycommerce.house.gov/markups/</a></em>'
 

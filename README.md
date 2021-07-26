@@ -50,7 +50,6 @@ A simple scraper for crawling US Congress press releases and industry tycoons fo
 * __Foreign__: Date, URL, title, and summary of updates, hearings, and markups from the US Republican Committee on Foreign Affairs; <sub> <br> _https://gop-foreignaffairs.house.gov/updates/_, _https://gop-foreignaffairs.house.gov/hearing/_, _https://gop-foreignaffairs.house.gov/markup/_
 * __Homeland__:  Date, title, URL, and description for press releases from the US House Committee on Homeland Security; <sub> <br> _https://republicans-homeland.house.gov/committee-activity/press-releases/_
 * __Science__: Date, title, and url for news, hearings, and markups from the US House Committee on Science, Space, and Technology; <sub> <br> _https://republicans-science.house.gov/news_. _https://republicans-science.house.gov/legislation/hearings_, _https://republicans-science.house.gov/legislation/markups_
-* __Science__: Date, title, and url for news, hearings, and markups from the US House Committee on Science, Space, and Technology; <sub> <br> _https://republicans-science.house.gov/news_. _https://republicans-science.house.gov/legislation/hearings_, _https://republicans-science.house.gov/legislation/markups_
 
 # How to run:
 1. Clone repository.

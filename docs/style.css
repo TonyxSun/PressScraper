@@ -1,0 +1,9 @@
+@font-face {
+    font-family: openSans;
+    src: url(OpenSans-Regular.ttf);
+  }
+body { 
+    color: rgb(44, 85, 119); 
+    background-color: #FDF5E6;
+    font-family: openSans;
+}

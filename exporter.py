@@ -45,11 +45,11 @@ html_text += digest_html
 
 #Daily Bills 
 #NOTE: TO BE REMOVED IF TOO LONG A LIST??
-html_text += '<strong>Daily Bill Texts</strong>: Date, PDF file, and text providing detailed information on legislation considered in <strong>Daily Digests</strong>;<sub>  <br><em><a href="https://www.congress.gov/bill-texts-received-today">https://www.congress.gov/bill-texts-received-today</a></em></sub>'
+# html_text += '<strong>Daily Bill Texts</strong>: Date, PDF file, and text providing detailed information on legislation considered in <strong>Daily Digests</strong>;<sub>  <br><em><a href="https://www.congress.gov/bill-texts-received-today">https://www.congress.gov/bill-texts-received-today</a></em></sub>'
 
-bills = pd.read_csv(rf'Congress\output\daily_bills_'+ date + '.csv')
-bills_html = bills.to_html()
-html_text += bills_html
+# bills = pd.read_csv(rf'Congress\output\daily_bills_'+ date + '.csv')
+# bills_html = bills.to_html()
+# html_text += bills_html
 
 '''Senate'''
 html_text += '<h2 id="us-senate">US Senate</h2>'
@@ -106,7 +106,7 @@ sjudiciary = pd.read_csv(rf'Senate\output\sjudiciary'+ date + '.csv')
 sjudiciary_html = sjudiciary.to_html()
 html_text += sjudiciary_html
 
-with open('.\docs\index.html', "w", encoding="utf-8") as f:
+with open('index.html', "w", encoding="utf-8") as f:
     f.write(html_text)
 
 f.close()

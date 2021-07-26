@@ -4,7 +4,7 @@
   }
 body { 
     color: rgb(22, 40, 54); 
-    background-color: #FDF5E6;
+    background-color: #fffefb;
     font-family: openSans;
 }
 h2 {
@@ -13,3 +13,17 @@ h2 {
     font-weight: bold;
 
 }
+
+table {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+tr:nth-child(even){background-color: #f2f2f2;}
+tr:hover {background-color: #ddd;}
+  
+thead {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;}

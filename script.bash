@@ -17,7 +17,10 @@ python3 h_foreign_spider.py
 python3 h_homeland_spider.py
 python3 h_science_spider.py
 python3 h_transportation_spider.py
-
+python3 hgop_energy_spider.py
+python3 hgop_foreign_spider.py
+python3 hgop_homeland_spider.py
+python3 hgop_science_spider.py
 
 cd ../Industry
 python3 sia_spider.py

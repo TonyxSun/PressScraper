@@ -50,5 +50,5 @@ class PressSpider(scrapy.Spider):
 # write to a csv file
 # os.system("touch SIA_$(date +%m.%d.%y).csv")
 date = datetime.today().strftime("%m.%d.%y")
-execute = "scrapy runspider sia_spider.py -O output/SIA_" + date + ".csv"
+execute = "scrapy runspider sia_spider.py -O output/sia_" + date + ".csv"
 cmdline.execute(execute.split())

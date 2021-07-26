@@ -3,7 +3,13 @@
     src: url(OpenSans-Regular.ttf);
   }
 body { 
-    color: rgb(44, 85, 119); 
+    color: rgb(22, 40, 54); 
     background-color: #FDF5E6;
     font-family: openSans;
+}
+h2 {
+    color:rgb(0, 145, 255);
+    font-size: 32;
+    font-weight: bold;
+
 }

@@ -50,7 +50,7 @@ html_text += digest_html
 #NOTE: TO BE REMOVED IF TOO LONG A LIST??
 # html_text += '<strong>Daily Bill Texts</strong>: Date, PDF file, and text providing detailed information on legislation considered in <strong>Daily Digests</strong>;  <br><em><a href="https://www.congress.gov/bill-texts-received-today">https://www.congress.gov/bill-texts-received-today</a></em>'
 
-# bills = pd.read_csv(rf'Congress\output\daily_bills_'+ date + '.csv')
+# bills = pd.read_csv(rf'Congress/output/daily_bills_'+ date + '.csv')
 # bills_html = bills.to_html()
 # html_text += bills_html
 
@@ -60,7 +60,7 @@ html_text += '<h2 id="us-senate">US Senate</h2>'
 #floor
 # html_text += '<strong>Floor Activity</strong>: Date, URL, and text providing details of senate floor proceedings;   <em><a href="https://floor.senate.gov/proceedings">https://floor.senate.gov/proceedings</a></em>'
 
-# floor = pd.read_csv(rf'Senate\output\floor_'+ date + '.csv')
+# floor = pd.read_csv(rf'Senate/output/floor_'+ date + '.csv')
 # floor_html = floor.to_html()
 # html_text += floor_html
 

@@ -47,7 +47,7 @@ html_text += digest_html
 #NOTE: TO BE REMOVED IF TOO LONG A LIST??
 html_text += '<strong>Daily Bill Texts</strong>: Date, PDF file, and text providing detailed information on legislation considered in <strong>Daily Digests</strong>;<sub>  <br><em><a href="https://www.congress.gov/bill-texts-received-today">https://www.congress.gov/bill-texts-received-today</a></em>'
 
-bills = pd.read_csv(rf'Industry\output\daily_bills_'+ date + '.csv')
+bills = pd.read_csv(rf'Congress\output\daily_bills_'+ date + '.csv')
 bills_html = bills.to_html()
 html_text += bills_html
 
@@ -92,12 +92,12 @@ sfinance = pd.read_csv(rf'Senate\output\sfinance'+ date + '.csv')
 sfinance_html = sfinance.to_html()
 html_text += sfinance_html
 
-#HLSGA
+#HSGAc
 html_text += '<strong>HLSGA</strong>: Source of content (majority, minority), date, URL, and title for press releases and hearings from the US Senate Committee on Homeland Security &amp; Government Affairs;<sub>  <em><a href="https://www.hsgac.senate.gov/media/majority-media">https://www.hsgac.senate.gov/media/majority-media</a></em>, <em><a href="https://www.hsgac.senate.gov/hearings">https://www.hsgac.senate.gov/hearings</a></em>'
 
-shlsga = pd.read_csv(rf'Senate\output\shlsga'+ date + '.csv')
-scomm_html = shlsga.to_html()
-html_text += scomm_html
+shsgac = pd.read_csv(rf'Senate\output\shsgac'+ date + '.csv')
+shsgac_html = shsgac.to_html()
+html_text += shsgac_html
 
 #judiciary
 html_text += '<strong>Judiciary</strong>: Source of content (majority, minority), date, URL, and title for press releases and hearings from the US Senate Committee on the Judiciary;<sub>  <em><a href="https://www.judiciary.senate.gov/press/majority">https://www.judiciary.senate.gov/press/majority</a></em>, <em><a href="https://www.judiciary.senate.gov/hearings">https://www.judiciary.senate.gov/hearings</a></em>'
@@ -106,6 +106,7 @@ sjudiciary = pd.read_csv(rf'Senate\output\sjudiciary'+ date + '.csv')
 sjudiciary_html = sjudiciary.to_html()
 html_text += sjudiciary_html
 
-Html_file= open("index.html","w")
-Html_file.write(html_text)
-Html_file.close()
+with open('.\docs\index.html', "w", encoding="utf-8") as f:
+    f.write(html_text)
+
+f.close()

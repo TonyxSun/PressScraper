@@ -12,7 +12,8 @@ Senate: Floor ACtivity (tentative)
 '''
 date = datetime.today().strftime("%m.%d.%y")
 date = '07.21.21'
-html_text = '<style type="text/css"> body { color: steelblue; background-color: #FDF5E6 } </style>'
+html_text = '<link rel="stylesheet" href="style.css">'
+# html_text = '<style type="text/css"> body { color: steelblue; background-color: #FDF5E6 } </style>'
 
 '''Industry'''
 html_text += '<h2 id="industry">Industry</h2>'

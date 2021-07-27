@@ -9,7 +9,7 @@ Congress: All Bills
 Senate: Roll Call Votes
 Senate: Floor Activity
 
-USE FOR MAC OS
+USE FOR WINDOWS
 
 '''
 

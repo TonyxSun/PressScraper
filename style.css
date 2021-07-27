@@ -16,7 +16,7 @@ h2 {
 
 table {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 4px;
     border-collapse: collapse;
     width: 100%;
   }
@@ -26,6 +26,8 @@ tr:hover {background-color: #ddd;}
 thead {
     padding-top: 12px;
     padding-bottom: 12px;
-    text-align: left;
+    text-align: right;
     background-color: #04AA6D;
-    color: white;}
+    color: white;
+    font-weight: bold;
+}

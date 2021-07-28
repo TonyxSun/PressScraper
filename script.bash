@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Run spiders
 cd ./Senate
 rm output/*
 python3 sbanking_spider.py
@@ -37,5 +38,11 @@ python3 all_bills_spider.py
 
 cd ..
 
+# Run exporter
 python3 ./exporter2.py
+
+# Upload to github
+git add .
+git commit -m "Update for $(date +'%b %d, %Y')"
+git push
 

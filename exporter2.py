@@ -18,8 +18,10 @@ date = datetime.today().strftime("%m.%d.%y")
 html_text = '<link rel="stylesheet" href="style.css">'
 # html_text = '<style type="text/css"> body { color: steelblue; background-color: #FDF5E6 } </style>'
 
-'''Industry'''
 html_text += '<p> Last Updated ' + date
+html_text += '<img src="2021_Aug_Calendar.jpg" alt="August 2021 Calendar">'
+
+'''Industry'''
 html_text += '<h2 id="industry">Industry</h2>'
 
 #SIA

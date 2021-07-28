@@ -40,3 +40,9 @@ python all_bills_spider.py
 cd ..
 
 python ./exporter.py
+
+# Upload to github
+git add .
+git commit -m "Update for $(date +'%b %d, %Y')"
+git push
+

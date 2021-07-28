@@ -39,7 +39,7 @@ python all_bills_spider.py
 
 cd ..
 
-python ./exporter.py
+python ./exporter_win.py
 
 # Upload to github
 git add .

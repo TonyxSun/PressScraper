@@ -116,6 +116,13 @@ sjudiciary = pd.read_csv(rf'Senate/output/sjudiciary'+ date + '.csv')
 sjudiciary_html = sjudiciary.to_html()
 html_text += sjudiciary_html
 
+# Intelligence
+html_text += '<p></p><strong>Intelligence</strong>: SDate, URL, title, and summary for news from US Permanent Select Committee on Intelligence;  <em><a href="https://intelligence.house.gov/news/">hhttps://intelligence.house.gov/news/</a></em>'
+
+sintelligence = pd.read_csv(rf'Senate/output/sintelligence_'+ date + '.csv')
+sintelligence_html = sintelligence.to_html()
+html_text += sintelligence_html
+
 '''House'''
 html_text += '<h2 id="House">House</h2>'
 

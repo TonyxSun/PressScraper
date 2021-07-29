@@ -43,10 +43,6 @@ python3 ./exporter_mac.py
 
 # Upload to github
 git add .
-git commit -m "Update for $(date +'%b %d, %Y')"
-<<<<<<< HEAD
-git push
-=======
+git commit -m "Update for $(date +'%b %d, %Y')" 
 git push --set-upstream origin main
->>>>>>> de8da74db53ef3d6600a653df63ed148f62db86f
 

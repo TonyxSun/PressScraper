@@ -1,4 +1,5 @@
-![GitHub last commit](https://img.shields.io/github/last-commit/tonyxsun/PressScraper)
+![GitHub last commit](https://img.shields.io/github/last-commit/tonyxsun/PressScraper) 
+![Website](https://img.shields.io/website?label=website%3A&up_message=online&url=https%3A%2F%2Ftonyxsun.github.io%2FPressScraper)
 
 # About
 

@@ -117,7 +117,7 @@ sjudiciary_html = sjudiciary.to_html()
 html_text += sjudiciary_html
 
 # Intelligence
-html_text += '<p></p><strong>Intelligence</strong>: SDate, URL, title, and summary for news from US Permanent Select Committee on Intelligence;  <em><a href="https://intelligence.house.gov/news/">hhttps://intelligence.house.gov/news/</a></em>'
+html_text += '<p></p><strong>Intelligence</strong>: Date, URL, and title, for press releases and hearings from US Senate Select Committee on Intelligence;  <em><a href="https://www.intelligence.senate.gov/press">https://www.intelligence.senate.gov/press</a></em>,  <em><a href="ttps://www.intelligence.senate.gov/hearings">https://www.intelligence.senate.gov/hearings</a></em>'
 
 sintelligence = pd.read_csv(rf'Senate/output/sintelligence_'+ date + '.csv')
 sintelligence_html = sintelligence.to_html()
@@ -170,6 +170,14 @@ html_text += '<p></p><strong>Transportation</strong>: Date, URL, and title of pr
 h_transportation = pd.read_csv(rf'House/output/h_transportation_'+ date + '.csv')
 h_transportation_html = h_transportation.to_html()
 html_text += h_transportation_html
+
+# Intelligence
+html_text += '<p></p><strong>Intelligence</strong>: Date, URL, title, and summary for news from US House Permanent Select Committee on Intelligence;  <em><a href="https://intelligence.house.gov/news/documentquery.aspx?DocumentTypeID=27">https://intelligence.house.gov/news/documentquery.aspx?DocumentTypeID=27</a></em>'
+
+h_intelligence = pd.read_csv(rf'House/output/h_intelligence_'+ date + '.csv')
+h_intelligence_html = h_intelligence.to_html()
+html_text += h_intelligence_html
+
 
 # Energy, Republican
 html_text += '<p></p><strong>Energy, Republican</strong>: Date, URL, title, and summary of press releases, hearings, and markups from the US Republican Committee on Energy and Commerce;  <em><a href="https://republicans-energycommerce.house.gov/news/">https://republicans-energycommerce.house.gov/news/</a></em>, <em><a href="https://republicans-energycommerce.house.gov/hearings/">https://republicans-energycommerce.house.gov/hearings/</a></em>, <em><a href="https://republicans-energycommerce.house.gov/markups/">https://republicans-energycommerce.house.gov/markups/</a></em>'

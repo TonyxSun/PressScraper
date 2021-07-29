@@ -26,6 +26,7 @@ python hgop_energy_spider.py
 python hgop_foreign_spider.py
 python hgop_homeland_spider.py
 python hgop_science_spider.py
+python h_intelligence_spider.py
 
 cd ../Industry
 rm output/*

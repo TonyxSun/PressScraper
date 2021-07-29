@@ -12,7 +12,7 @@ python shsgac_spider.py
 python sjudiciary_spider.py
 python senate_floor_spider.py
 python senate_roll_call.py
-Python sintelligence_spider.py
+python sintelligence_spider.py
 
 cd ../House
 rm output/*

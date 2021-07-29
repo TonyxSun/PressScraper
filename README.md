@@ -1,3 +1,5 @@
+![GitHub last commit](https://img.shields.io/github/last-commit/tonyxsun/PressScraper)
+
 # About
 
 A simple scraper for crawling US Congress press releases and industry tycoons for analytical purposes. [ongoing]

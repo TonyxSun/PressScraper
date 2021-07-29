@@ -28,8 +28,11 @@ html_text += '<h2 id="industry">Industry</h2>'
 #SIA
 html_text += '<p></p><strong>SIA</strong>: Date, URL, and title of all headlines for the Semiconductor Industry Association;  <em><a href="https://www.semiconductors.org/news-events/latest-news/">https://www.semiconductors.org/news-events/latest-news/</a></em>'
 
-sia = pd.read_csv(rf'Industry/output/sia_'+ date + '.csv')
-sia_html = sia.to_html()
+try:
+    sia = pd.read_csv(rf'Industry/output/sia_'+ date + '.csv')
+    sia_html = sia.to_html()
+except:
+    sia_html = "" 
 html_text += sia_html
 
 #FCC

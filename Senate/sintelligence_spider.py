@@ -7,7 +7,7 @@ sys.path.insert(1, '../.')
 from check_date import check_date
 
 
-# Program to crawl the Senate Commerce news webpage, and extract information about recent headlines.
+# Program to crawl the Senate Intelligence news webpage, and extract information about recent headlines.
 
 
 class SenateIntelligenceSpider(scrapy.Spider):
@@ -27,12 +27,6 @@ class SenateIntelligenceSpider(scrapy.Spider):
 
         # Recover category type found previously
         category = response.meta["category"]
-
-        # # Get all URLS
-        # urls = response.css('[class^="views-row-title"] a::attr(href)').getall()
-        
-        # # To iterate through urls
-        # i = -1
 
         # Iterate through each press release 
         if category == "Press Release":
@@ -55,7 +49,6 @@ class SenateIntelligenceSpider(scrapy.Spider):
 
        # Iterate through each hearing
         if category == "Hearings":
-            # print(len(urls))
             for release in response.css('[class^="views-row"]'):
                 
                 # Obtain date and only continue if date was in past_dates

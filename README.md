@@ -1,3 +1,6 @@
+![GitHub last commit](https://img.shields.io/github/last-commit/tonyxsun/PressScraper) 
+![Website](https://img.shields.io/website?label=website%3A&up_message=online&url=https%3A%2F%2Ftonyxsun.github.io%2FPressScraper)
+
 # About
 
 A simple scraper for crawling US Congress press releases and industry tycoons for analytical purposes. [ongoing]
@@ -33,7 +36,7 @@ A simple scraper for crawling US Congress press releases and industry tycoons fo
 * __Finance__: Source of content (majority, minority), date, URL, and title for press releases and hearings from the US Senate Committee on Finance;<sub>  <br> _https://www.finance.senate.gov/chairmans-news_, _https://www.finance.senate.gov/hearings_
 * __HLSGA__: Source of content (majority, minority), date, URL, and title for press releases and hearings from the US Senate Committee on Homeland Security & Government Affairs;<sub>  <br> _https://www.hsgac.senate.gov/media/majority-media_, _https://www.hsgac.senate.gov/hearings_
 * __Judiciary__: Source of content (majority, minority), date, URL, and title for press releases and hearings from the US Senate Committee on the Judiciary;<sub> <br>  _https://www.judiciary.senate.gov/press/majority_, _https://www.judiciary.senate.gov/hearings_
-* __Inteiigence__: Date, URL, title, and summary for news from US Senate Select Committee on Intelligence; <sub> <br> _https://www.intelligence.senate.gov/press_, _https://www.intelligence.senate.gov/hearings_
+* __Intelligence__: Date, URL, title, and summary for news from US Senate Select Committee on Intelligence; <sub> <br> _https://www.intelligence.senate.gov/press_, _https://www.intelligence.senate.gov/hearings_
 
 ## US House
 

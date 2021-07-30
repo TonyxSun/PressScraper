@@ -2,32 +2,68 @@
     font-family: openSans;
     src: url(OpenSans-Regular.ttf);
   }
+
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}   
+
 body { 
     color: rgb(22, 40, 54); 
     background-color: #fffefb;
     font-family: openSans;
 }
+
 h2 {
     color:rgb(0, 145, 255);
     font-size: 32;
     font-weight: bold;
+}
 
+img {
+   width:auto;
+   height:auto;
+   max-width:100%;
+   max-height:100%;
+}
+
+.table-wrapper{
+    margin: 10px 20px 20px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
 }
 
 table {
-    border: 1px solid #ddd;
-    padding: 4px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
     border-collapse: collapse;
     width: 100%;
+    max-width: 100%;
+    background-color: white;
   }
-tr:nth-child(even){background-color: #f2f2f2;}
-tr:hover {background-color: #ddd;}
-  
-thead {
+
+.dataframe th {
+    text-align: center;
+    padding: 8px;
+}
+
+thead th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: right;
-    background-color: #04AA6D;
+    background-color: #324960;
     color: white;
     font-weight: bold;
 }
+
+thead th:nth-child(1) {
+    color: #ffffff;
+    background: #4FC3A1;
+}
+
+tr:nth-child(even) {
+    background: #F8F8F8;
+}
+tr:hover {background-color: #ddd;}

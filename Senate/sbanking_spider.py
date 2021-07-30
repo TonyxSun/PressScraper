@@ -21,7 +21,7 @@ class SenateBankingSpider(scrapy.Spider):
                 "https://www.banking.senate.gov/markups"]
 
         # Corresponding category information
-        category = ["Kajority Press Release", "Minority Press Release", "Hearings", "Markups"]
+        category = ["Majority Press Release", "Minority Press Release", "Hearings", "Markups"]
 
         # Go into each webpage
         for i in range(len(urls)):

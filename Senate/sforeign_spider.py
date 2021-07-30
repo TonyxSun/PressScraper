@@ -56,6 +56,7 @@ class SenateForeignSpider(scrapy.Spider):
 
         # NOMINATIONS
         
+        # Get all urls
         urls = response.xpath("//@onclick").getall()
         i = -1
         for headline in response.css('[class="panel-title"]'):
@@ -72,7 +73,7 @@ class SenateForeignSpider(scrapy.Spider):
                 yield {
                     'category': category,
                     'date': date,
-                    'url': urls[i][13:len(urls[i])-2],
+                    'url': urls[i][13:len(urls[i])-2], # To clean up URL
                     'content': headline.css('[class="title pull-right"]::text').get()
                 }
 

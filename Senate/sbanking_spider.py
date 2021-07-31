@@ -97,7 +97,7 @@ class SenateBankingSpider(scrapy.Spider):
                 
                 yield {
                     'category': category,
-                    'date': item.css('[class="dtstart"]::text').get(),
+                    'date': date,
                     'url': response.urljoin(item.css('[class="faux-col"] a::attr(href)').get()),
                     'title': title
                 }

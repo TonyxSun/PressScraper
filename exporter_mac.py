@@ -15,10 +15,11 @@ USE FOR MAC OS
 '''
 
 date = datetime.today().strftime("%m.%d.%y")
-html_text = '<link rel="stylesheet" href="style.css">'
+html_text = '<link rel="stylesheet" href="./Assets/style.css">'
 
 html_text += '<p> Last Updated ' + date
-html_text += '<div class="calender_img"> <br> <img src="2021_Aug_Calendar.jpg" alt="August 2021 Calendar"> <br> </div>'
+img_src = "./Congress/Calendar/2021_" + date[:2] + "_Calendar.jpg"
+html_text += '<div class="calender_img"> <br> <img src= "' + img_src + '" alt="August 2021 Calendar"> <br> </div>'
 
 '''Industry'''
 html_text += '<h2 id="industry">Industry</h2>'

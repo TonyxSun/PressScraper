@@ -16,7 +16,7 @@ body {
 }
 
 h2 {
-    color:rgb(0, 145, 255);
+    color:rgb(0, 207, 162);
     font-size: 32;
     font-weight: bold;
 }
@@ -28,7 +28,7 @@ img {
    max-height:100%;
 }
 
-.table-wrapper{
+.data{
     margin: 10px 20px 20px;
     box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
 }

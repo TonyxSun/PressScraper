@@ -15,9 +15,7 @@ USE FOR MAC OS
 '''
 
 date = datetime.today().strftime("%m.%d.%y")
-#date = '07.21.21'
 html_text = '<link rel="stylesheet" href="style.css">'
-# html_text = '<style type="text/css"> body { color: steelblue; background-color: #FDF5E6 } </style>'
 
 html_text += '<p> Last Updated ' + date
 html_text += '<img src="2021_Aug_Calendar.jpg" alt="August 2021 Calendar">'
@@ -33,7 +31,7 @@ try:
     sia_html = sia.to_html()
 except pd.errors.EmptyDataError:
     sia_html = "<br><i>No recent output from the past week or in the future</i>" 
-html_text += sia_html
+html_text += '<div class= data> ' + sia_html + '</div>'
 
 #FCC
 html_text += '<p></p><strong>FCC</strong>: Date, URL, and title of all headlines for the Federal Communications Commission;  <em><a href="https://www.fcc.gov/news-events/headlines">https://www.fcc.gov/news-events/headlines</a></em>'
@@ -42,7 +40,7 @@ try:
     fcc_html = fcc.to_html()
 except pd.errors.EmptyDataError:
     fcc_html = "<br><i>No recent output from the past week or in the future</i>" 
-html_text += fcc_html
+html_text += '<div class= data> ' + fcc_html + '</div>'
 
 
 '''Congress'''
@@ -56,7 +54,7 @@ try:
     digest_html = digest.to_html()
 except pd.errors.EmptyDataError:
     digest_html = "<br><i>No recent output from the past week or in the future</i>" 
-html_text += digest_html
+html_text += '<div class= data> ' + digest_html + '</div>'
 
 #Daily Bills 
 #NOTE: TO BE REMOVED IF TOO LONG A LIST??
@@ -87,7 +85,7 @@ try:
     scomm_html =  scomm.to_html()
 except pd.errors.EmptyDataError:
     scomm_html = "<br><i>No recent output from the past week or in the future</i>" 
-html_text += scomm_html
+html_text += '<div class= data> ' + scomm_html + '</div>'
 
 #Foreign
 html_text += '<p></p><strong>Foreign</strong>:  Type of content (nomiations, treaties, legislation, hearing transcripts, business meeting transcripts, committee reports, other), date, URL (if given), and text for activities and reports from the US Senate Committee on Foreign Relations;  <em><a href="https://www.foreign.senate.gov/activities-and-reports">https://www.foreign.senate.gov/activities-and-reports</a></em>'
@@ -97,7 +95,7 @@ try:
     sforeign_html = sforeign.to_html()
 except pd.errors.EmptyDataError:
     sforeign_html = "<br><i>No recent output from the past week or in the future</i>" 
-html_text += sforeign_html
+html_text += '<div class= data> ' + sforeign_html + '</div>'
 
 #Banking
 html_text += '<p></p><strong>Banking</strong>: Date, URL, and title for press releases, hearings, and markups from the US Senate Committee on Banking, Housing, and Urban Affairs;  <em><a href="https://www.banking.senate.gov/newsroom/majority-press-releases">https://www.banking.senate.gov/newsroom/majority-press-releases</a></em>, <em><a href="https://www.banking.senate.gov/hearings">https://www.banking.senate.gov/hearings</a></em>, <em><a href="https://www.banking.senate.gov/markups">https://www.banking.senate.gov/markups</a></em>'
@@ -107,7 +105,7 @@ try:
     sbanking_html = sbanking.to_html()
 except pd.errors.EmptyDataError:
     sbanking_html = "<br><i>No recent output from the past week or in the future</i>" 
-html_text += sbanking_html
+html_text += '<div class= data> ' + sbanking_html + '</div>'
 
 #Finance
 html_text += '<p></p><strong>Finance</strong>: Source of content (majority, minority), date, URL, and title for press releases and hearings from the US Senate Committee on Finance;  <em><a href="https://www.finance.senate.gov/chairmans-news">https://www.finance.senate.gov/chairmans-news</a></em>, <em><a href="https://www.finance.senate.gov/hearings">https://www.finance.senate.gov/hearings</a></em>'
@@ -117,7 +115,7 @@ try:
     sfinance_html = sfinance.to_html()
 except pd.errors.EmptyDataError:
     sfinance_html = "<br><i>No recent output from the past week or in the future</i>" 
-html_text += sfinance_html
+html_text += '<div class= data> ' + sfinance_html + '</div>'
 
 #HSGAc
 html_text += '<p></p><strong>HLSGA</strong>: Source of content (majority, minority), date, URL, and title for press releases and hearings from the US Senate Committee on Homeland Security &amp; Government Affairs;  <em><a href="https://www.hsgac.senate.gov/media/majority-media">https://www.hsgac.senate.gov/media/majority-media</a></em>, <em><a href="https://www.hsgac.senate.gov/hearings">https://www.hsgac.senate.gov/hearings</a></em>'
@@ -127,7 +125,7 @@ try:
     shsgac_html = shsgac.to_html()
 except pd.errors.EmptyDataError:
     shsgac_html = "<br><i>No recent output from the past week or in the future</i>" 
-html_text += shsgac_html
+html_text += '<div class= data> ' + shsgac_html + '</div>'
 
 #judiciary
 html_text += '<p></p><strong>Judiciary</strong>: Source of content (majority, minority), date, URL, and title for press releases and hearings from the US Senate Committee on the Judiciary;  <em><a href="https://www.judiciary.senate.gov/press/majority">https://www.judiciary.senate.gov/press/majority</a></em>, <em><a href="https://www.judiciary.senate.gov/hearings">https://www.judiciary.senate.gov/hearings</a></em>'
@@ -137,7 +135,7 @@ try:
     sjudiciary_html = sjudiciary.to_html()
 except pd.errors.EmptyDataError:
     sjudiciary_html = "<br><i>No recent output from the past week or in the future</i>" 
-html_text += sjudiciary_html
+html_text += '<div class= data> ' + sjudiciary_html + '</div>'
 
 # Intelligence
 html_text += '<p></p><strong>Intelligence</strong>: Date, URL, and title, for press releases and hearings from US Senate Select Committee on Intelligence;  <em><a href="https://www.intelligence.senate.gov/press">https://www.intelligence.senate.gov/press</a></em>,  <em><a href="ttps://www.intelligence.senate.gov/hearings">https://www.intelligence.senate.gov/hearings</a></em>'
@@ -147,7 +145,7 @@ try:
     sintelligence_html = sintelligence.to_html()
 except pd.errors.EmptyDataError:
     sintelligence_html = "<br><i>No recent output from the past week or in the future</i>" 
-html_text += sintelligence_html
+html_text += '<div class= data> ' + sintelligence_html + '</div>'
 
 '''House'''
 html_text += '<h2 id="House">House</h2>'
@@ -160,7 +158,7 @@ try:
     h_energy_html = h_energy.to_html()
 except pd.errors.EmptyDataError:
     h_energy_html = "<br><i>No recent output from the past week or in the future</i>" 
-html_text += h_energy_html
+html_text += '<div class= data> ' + h_energy_html + '</div>'
 
 # Financial Services
 html_text += '<p></p><strong>Financial Services</strong>: Date, URL, title, and summary of press releases, hearings, and markups from the US House Committee on Financial Services;  <em><a href="https://financialservices.house.gov/news/">https://financialservices.house.gov/news/</a></em>, <em><a href="https://financialservices.house.gov/calendar/?EventTypeID=577&Congress=117">https://financialservices.house.gov/calendar/?EventTypeID=577&Congress=117</a></em>, <em><a href="https://financialservices.house.gov/calendar/?EventTypeID=575&Congress=117">https://financialservices.house.gov/calendar/?EventTypeID=575&Congress=117</a></em>'
@@ -170,7 +168,7 @@ try:
     h_financial_html = h_financial.to_html()
 except pd.errors.EmptyDataError:
     h_financial_html = "<br><i>No recent output from the past week or in the future</i>" 
-html_text += h_financial_html
+html_text += '<div class= data> ' + h_financial_html + '</div>'
 
 # Foreign
 html_text += '<p></p><strong>Foreign</strong>: Date, time (if applicable), title, and URL for press releases, hearings, and markups from the US House Committee on Foreign Affairs;  <em><a href="https://foreignaffairs.house.gov/press-releases">https://foreignaffairs.house.gov/press-releases</a></em>, <em><a href="https://foreignaffairs.house.gov/hearings">https://foreignaffairs.house.gov/hearings</a></em>, <em><a href="https://foreignaffairs.house.gov/markups">https://foreignaffairs.house.gov/markups</a></em>'
@@ -180,7 +178,7 @@ try:
     h_foreign_html = h_foreign.to_html()
 except pd.errors.EmptyDataError:
     h_foreign_html = "<br><i>No recent output from the past week or in the future</i>" 
-html_text += h_foreign_html
+html_text += '<div class= data> ' + h_foreign_html + '</div>'
 
 
 # Homeland
@@ -191,7 +189,7 @@ try:
     h_homeland_html = h_homeland.to_html()
 except pd.errors.EmptyDataError:
     h_homeland_html = "<br><i>No recent output from the past week or in the future</i>" 
-html_text += h_homeland_html
+html_text += '<div class= data> ' + h_homeland_html + '</div>'
 
 
 # Science, Space, and Technology
@@ -202,7 +200,7 @@ try:
     h_science_html = h_science.to_html()
 except pd.errors.EmptyDataError:
     h_science_html = "<br><i>No recent output from the past week or in the future</i>" 
-html_text += h_science_html
+html_text += '<div class= data> ' + h_science_html + '</div>'
 
 
 # Transportation
@@ -213,7 +211,7 @@ try:
     h_transportation_html = h_transportation.to_html()
 except pd.errors.EmptyDataError:
     h_transportation_html = "<br><i>No recent output from the past week or in the future</i>" 
-html_text += h_transportation_html
+html_text += '<div class= data> ' + h_transportation_html + '</div>'
 
 # Intelligence
 html_text += '<p></p><strong>Intelligence</strong>: Date, URL, title, and summary for news from US House Permanent Select Committee on Intelligence;  <em><a href="https://intelligence.house.gov/news/documentquery.aspx?DocumentTypeID=27">https://intelligence.house.gov/news/documentquery.aspx?DocumentTypeID=27</a></em>'
@@ -223,7 +221,7 @@ try:
     h_intelligence_html = h_intelligence.to_html()
 except pd.errors.EmptyDataError:
     h_intelligence_html = "<br><i>No recent output from the past week or in the future</i>" 
-html_text += h_intelligence_html
+html_text += '<div class= data> ' + h_intelligence_html + '</div>'
 
 
 # Energy, Republican
@@ -234,7 +232,7 @@ try:
     hgop_energy_html = hgop_energy.to_html()
 except pd.errors.EmptyDataError:
     hgop_energy_html = "<br><i>No recent output from the past week or in the future</i>" 
-html_text += hgop_energy_html
+html_text += '<div class= data> ' + hgop_energy_html + '</div>'
 
 
 # Foreign, Republican
@@ -245,7 +243,7 @@ try:
     hgop_foreign_html = hgop_foreign.to_html()
 except pd.errors.EmptyDataError:
     hgop_foreign_html = "<br><i>No recent output from the past week or in the future</i>" 
-html_text += hgop_foreign_html
+html_text += '<div class= data> ' + hgop_foreign_html + '</div>'
 
 # Homeland, Republican
 html_text += '<p></p><strong>Homeland, Republican</strong>: Date, title, URL, and description for press releases from the US House Committee on Homeland Security;  <em><a href="https://republicans-homeland.house.gov/committee-activity/press-releases/">https://republicans-homeland.house.gov/committee-activity/press-releases/</a></em>'
@@ -255,7 +253,7 @@ try:
     hgop_homeland_html = hgop_homeland.to_html()
 except pd.errors.EmptyDataError:
     hgop_homeland_html = "<br><i>No recent output from the past week or in the future</i>" 
-html_text += hgop_homeland_html
+html_text += '<div class= data> ' + hgop_homeland_html
 
 # Science, Republican
 html_text += '<p></p><strong>Science, Republican</strong>: Date, title, and url for news, hearings, and markups from the US House Committee on Science, Space, and Technology;  <em><a href="https://republicans-science.house.gov/news">https://republicans-science.house.gov/news</a></em>, <em><a href="https://republicans-science.house.gov/legislation/hearings">https://republicans-science.house.gov/legislation/hearingss</a></em>, <em><a href="https://republicans-science.house.gov/legislation/markups">https://republicans-science.house.gov/legislation/markups</a></em>'
@@ -265,7 +263,7 @@ try:
     hgop_science_html = hgop_science.to_html()
 except pd.errors.EmptyDataError:
     hgop_science_html = "<br><i>No recent output from the past week or in the future</i>" 
-html_text += hgop_science_html
+html_text += '<div class= data> ' + hgop_science_html + '</div>'
 
 
 

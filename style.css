@@ -11,12 +11,12 @@
 
 body { 
     color: rgb(22, 40, 54); 
-    background-color: #fffefb;
+    background-color: #fcfaf3;
     font-family: openSans;
 }
 
 h2 {
-    color:rgb(0, 207, 162);
+    color: #324960;
     font-size: 32;
     font-weight: bold;
 }
@@ -24,13 +24,13 @@ h2 {
 img {
    width:auto;
    height:auto;
-   max-width:100%;
-   max-height:100%;
+   max-width:75%;
+   max-height:75%;
 }
 
 .data{
-    margin: 10px 20px 20px;
-    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+    margin: 20px 20px 20px;
+    box-shadow: 0px 30px 40px rgba( 0, 0, 0, 0.2 );
 }
 
 table {

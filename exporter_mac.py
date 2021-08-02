@@ -254,7 +254,7 @@ try:
     hgop_homeland_html = hgop_homeland.to_html()
 except pd.errors.EmptyDataError:
     hgop_homeland_html = "<br><i>No recent output from the past week or in the future</i>" 
-html_text += '<div class= data> ' + hgop_homeland_html
+html_text += '<div class= data> ' + hgop_homeland_html + '</div>'
 
 # Science, Republican
 html_text += '<p></p><strong>Science, Republican</strong>: Date, title, and url for news, hearings, and markups from the US House Committee on Science, Space, and Technology;  <em><a href="https://republicans-science.house.gov/news">https://republicans-science.house.gov/news</a></em>, <em><a href="https://republicans-science.house.gov/legislation/hearings">https://republicans-science.house.gov/legislation/hearingss</a></em>, <em><a href="https://republicans-science.house.gov/legislation/markups">https://republicans-science.house.gov/legislation/markups</a></em>'

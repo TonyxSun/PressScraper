@@ -3,11 +3,11 @@
 
 # About
 
-A simple scraper for crawling US Congress press releases and industry tycoons for analytical purposes. [ongoing]
+A scraper application for crawling US Congress press releases, hearings, markups, and bills for analytical purposes. [ongoing]
 
 **Time Range**: Past content within one week and all future content. 
 
-**Export Format**: CSV 
+**Export Format**: CSV, [website](tonyxsun.github.io/pressscraper)
 
 # Contents
 

@@ -7,7 +7,7 @@ A scraper application for crawling US Congress press releases, hearings, markups
 
 **Time Range**: Past content within one week and all future content. 
 
-**Export Format**: CSV, [website](tonyxsun.github.io/presscraper)
+**Export Format**: CSV, [website](tonyxsun.github.io/pressscraper)
 
 # Contents
 

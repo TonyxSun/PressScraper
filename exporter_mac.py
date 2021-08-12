@@ -21,29 +21,6 @@ html_text += '<p> Last Updated ' + date
 img_src = "./Congress/Calendar/2021_" + date[:2] + "_Calendar.jpg"
 html_text += '<div class="calender_img"> <br> <img src= "' + img_src + '" alt="August 2021 Calendar"> <br> </div>'
 
-'''Industry'''
-html_text += '<h2 id="industry">Industry</h2>'
-
-#SIA
-html_text += '<p></p><strong>SIA</strong>: Date, URL, and title of all headlines for the Semiconductor Industry Association;  <em><a href="https://www.semiconductors.org/news-events/latest-news/">https://www.semiconductors.org/news-events/latest-news/</a></em>'
-
-try:
-    sia = pd.read_csv(rf'Industry/output/sia_'+ date + '.csv')
-    sia_html = sia.to_html()
-except pd.errors.EmptyDataError:
-    sia_html = "<br><i>No recent output from the past week or in the future</i>" 
-html_text += '<div class= data> ' + sia_html + '</div>'
-
-#FCC
-html_text += '<p></p><strong>FCC</strong>: Date, URL, and title of all headlines for the Federal Communications Commission;  <em><a href="https://www.fcc.gov/news-events/headlines">https://www.fcc.gov/news-events/headlines</a></em>'
-try:
-    fcc = pd.read_csv(rf'Industry/output/fcc_'+ date + '.csv')
-    fcc_html = fcc.to_html()
-except pd.errors.EmptyDataError:
-    fcc_html = "<br><i>No recent output from the past week or in the future</i>" 
-html_text += '<div class= data> ' + fcc_html + '</div>'
-
-
 '''Congress'''
 html_text += '<h2 id="us-congress">US Congress</h2>'
 
@@ -266,6 +243,27 @@ except pd.errors.EmptyDataError:
     hgop_science_html = "<br><i>No recent output from the past week or in the future</i>" 
 html_text += '<div class= data> ' + hgop_science_html + '</div>'
 
+'''Industry'''
+html_text += '<h2 id="industry">Industry</h2>'
+
+#SIA
+html_text += '<p></p><strong>SIA</strong>: Date, URL, and title of all headlines for the Semiconductor Industry Association;  <em><a href="https://www.semiconductors.org/news-events/latest-news/">https://www.semiconductors.org/news-events/latest-news/</a></em>'
+
+try:
+    sia = pd.read_csv(rf'Industry/output/sia_'+ date + '.csv')
+    sia_html = sia.to_html()
+except pd.errors.EmptyDataError:
+    sia_html = "<br><i>No recent output from the past week or in the future</i>" 
+html_text += '<div class= data> ' + sia_html + '</div>'
+
+#FCC
+html_text += '<p></p><strong>FCC</strong>: Date, URL, and title of all headlines for the Federal Communications Commission;  <em><a href="https://www.fcc.gov/news-events/headlines">https://www.fcc.gov/news-events/headlines</a></em>'
+try:
+    fcc = pd.read_csv(rf'Industry/output/fcc_'+ date + '.csv')
+    fcc_html = fcc.to_html()
+except pd.errors.EmptyDataError:
+    fcc_html = "<br><i>No recent output from the past week or in the future</i>" 
+html_text += '<div class= data> ' + fcc_html + '</div>'
 
 
 with open('index.html', "w", encoding="utf-8") as f:

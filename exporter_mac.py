@@ -31,7 +31,7 @@ try:
     digest = pd.read_csv(rf'Congress/output/digest_'+ date + '.csv')
     digest_html = digest.to_html()
 except pd.errors.EmptyDataError:
-    digest_html = "<br><i>No recent output from the past week or in the future</i>" 
+    digest_html = "<i>No recent output from the past week or in the future</i>" 
 html_text += '<div class= data> ' + digest_html + '</div>'
 
 #Daily Bills 
@@ -62,7 +62,7 @@ try:
     scomm = pd.read_csv(rf'Senate/output/scommerce_'+ date + '.csv')
     scomm_html =  scomm.to_html()
 except pd.errors.EmptyDataError:
-    scomm_html = "<br><i>No recent output from the past week or in the future</i>" 
+    scomm_html = "<i>No recent output from the past week or in the future</i>" 
 html_text += '<div class= data> ' + scomm_html + '</div>'
 
 #Foreign
@@ -72,7 +72,7 @@ try:
     sforeign = pd.read_csv(rf'Senate/output/sforeign_'+ date + '.csv')
     sforeign_html = sforeign.to_html()
 except pd.errors.EmptyDataError:
-    sforeign_html = "<br><i>No recent output from the past week or in the future</i>" 
+    sforeign_html = "<i>No recent output from the past week or in the future</i>" 
 html_text += '<div class= data> ' + sforeign_html + '</div>'
 
 #Banking
@@ -82,7 +82,7 @@ try:
     sbanking = pd.read_csv(rf'Senate/output/sbanking_'+ date + '.csv')
     sbanking_html = sbanking.to_html()
 except pd.errors.EmptyDataError:
-    sbanking_html = "<br><i>No recent output from the past week or in the future</i>" 
+    sbanking_html = "<i>No recent output from the past week or in the future</i>" 
 html_text += '<div class= data> ' + sbanking_html + '</div>'
 
 #Finance
@@ -92,7 +92,7 @@ try:
     sfinance = pd.read_csv(rf'Senate/output/sfinance_'+ date + '.csv')
     sfinance_html = sfinance.to_html()
 except pd.errors.EmptyDataError:
-    sfinance_html = "<br><i>No recent output from the past week or in the future</i>" 
+    sfinance_html = "<i>No recent output from the past week or in the future</i>" 
 html_text += '<div class= data> ' + sfinance_html + '</div>'
 
 #HSGAc
@@ -102,7 +102,7 @@ try:
     shsgac = pd.read_csv(rf'Senate/output/shsgac_'+ date + '.csv')
     shsgac_html = shsgac.to_html()
 except pd.errors.EmptyDataError:
-    shsgac_html = "<br><i>No recent output from the past week or in the future</i>" 
+    shsgac_html = "<i>No recent output from the past week or in the future</i>" 
 html_text += '<div class= data> ' + shsgac_html + '</div>'
 
 #judiciary
@@ -112,7 +112,7 @@ try:
     sjudiciary = pd.read_csv(rf'Senate/output/sjudiciary_'+ date + '.csv')
     sjudiciary_html = sjudiciary.to_html()
 except pd.errors.EmptyDataError:
-    sjudiciary_html = "<br><i>No recent output from the past week or in the future</i>" 
+    sjudiciary_html = "<i>No recent output from the past week or in the future</i>" 
 html_text += '<div class= data> ' + sjudiciary_html + '</div>'
 
 # Intelligence
@@ -122,7 +122,7 @@ try:
     sintelligence = pd.read_csv(rf'Senate/output/sintelligence_'+ date + '.csv')
     sintelligence_html = sintelligence.to_html()
 except pd.errors.EmptyDataError:
-    sintelligence_html = "<br><i>No recent output from the past week or in the future</i>" 
+    sintelligence_html = "<i>No recent output from the past week or in the future</i>" 
 html_text += '<div class= data> ' + sintelligence_html + '</div>'
 
 '''House'''
@@ -135,7 +135,7 @@ try:
     h_energy = pd.read_csv(rf'House/output/h_energy_'+ date + '.csv')
     h_energy_html = h_energy.to_html()
 except pd.errors.EmptyDataError:
-    h_energy_html = "<br><i>No recent output from the past week or in the future</i>" 
+    h_energy_html = "<i>No recent output from the past week or in the future</i>" 
 html_text += '<div class= data> ' + h_energy_html + '</div>'
 
 # Financial Services
@@ -145,7 +145,7 @@ try:
     h_financial = pd.read_csv(rf'House/output/h_financial_'+ date + '.csv')
     h_financial_html = h_financial.to_html()
 except pd.errors.EmptyDataError:
-    h_financial_html = "<br><i>No recent output from the past week or in the future</i>" 
+    h_financial_html = "<i>No recent output from the past week or in the future</i>" 
 html_text += '<div class= data> ' + h_financial_html + '</div>'
 
 # Foreign
@@ -155,7 +155,7 @@ try:
     h_foreign = pd.read_csv(rf'House/output/h_foreign_'+ date + '.csv')
     h_foreign_html = h_foreign.to_html()
 except pd.errors.EmptyDataError:
-    h_foreign_html = "<br><i>No recent output from the past week or in the future</i>" 
+    h_foreign_html = "<i>No recent output from the past week or in the future</i>" 
 html_text += '<div class= data> ' + h_foreign_html + '</div>'
 
 
@@ -166,7 +166,7 @@ try:
     h_homeland = pd.read_csv(rf'House/output/h_homeland_'+ date + '.csv')
     h_homeland_html = h_homeland.to_html()
 except pd.errors.EmptyDataError:
-    h_homeland_html = "<br><i>No recent output from the past week or in the future</i>" 
+    h_homeland_html = "<i>No recent output from the past week or in the future</i>" 
 html_text += '<div class= data> ' + h_homeland_html + '</div>'
 
 
@@ -177,7 +177,7 @@ try:
     h_science = pd.read_csv(rf'House/output/h_science_'+ date + '.csv')
     h_science_html = h_science.to_html()
 except pd.errors.EmptyDataError:
-    h_science_html = "<br><i>No recent output from the past week or in the future</i>" 
+    h_science_html = "<i>No recent output from the past week or in the future</i>" 
 html_text += '<div class= data> ' + h_science_html + '</div>'
 
 
@@ -188,7 +188,7 @@ try:
     h_transportation = pd.read_csv(rf'House/output/h_transportation_'+ date + '.csv')
     h_transportation_html = h_transportation.to_html()
 except pd.errors.EmptyDataError:
-    h_transportation_html = "<br><i>No recent output from the past week or in the future</i>" 
+    h_transportation_html = "<i>No recent output from the past week or in the future</i>" 
 html_text += '<div class= data> ' + h_transportation_html + '</div>'
 
 # Intelligence
@@ -198,7 +198,7 @@ try:
     h_intelligence = pd.read_csv(rf'House/output/h_intelligence_'+ date + '.csv')
     h_intelligence_html = h_intelligence.to_html()
 except pd.errors.EmptyDataError:
-    h_intelligence_html = "<br><i>No recent output from the past week or in the future</i>" 
+    h_intelligence_html = "<i>No recent output from the past week or in the future</i>" 
 html_text += '<div class= data> ' + h_intelligence_html + '</div>'
 
 
@@ -209,7 +209,7 @@ try:
     hgop_energy = pd.read_csv(rf'House/output/h_gop_energy_'+ date + '.csv')
     hgop_energy_html = hgop_energy.to_html()
 except pd.errors.EmptyDataError:
-    hgop_energy_html = "<br><i>No recent output from the past week or in the future</i>" 
+    hgop_energy_html = "<i>No recent output from the past week or in the future</i>" 
 html_text += '<div class= data> ' + hgop_energy_html + '</div>'
 
 
@@ -220,7 +220,7 @@ try:
     hgop_foreign = pd.read_csv(rf'House/output/h_gop_foreign_'+ date + '.csv')
     hgop_foreign_html = hgop_foreign.to_html()
 except pd.errors.EmptyDataError:
-    hgop_foreign_html = "<br><i>No recent output from the past week or in the future</i>" 
+    hgop_foreign_html = "<i>No recent output from the past week or in the future</i>" 
 html_text += '<div class= data> ' + hgop_foreign_html + '</div>'
 
 # Homeland, Republican
@@ -230,7 +230,7 @@ try:
     hgop_homeland = pd.read_csv(rf'House/output/h_gop_homeland_'+ date + '.csv')
     hgop_homeland_html = hgop_homeland.to_html()
 except pd.errors.EmptyDataError:
-    hgop_homeland_html = "<br><i>No recent output from the past week or in the future</i>" 
+    hgop_homeland_html = "<i>No recent output from the past week or in the future</i>" 
 html_text += '<div class= data> ' + hgop_homeland_html + '</div>'
 
 # Science, Republican
@@ -240,7 +240,7 @@ try:
     hgop_science = pd.read_csv(rf'House/output/h_gop_science_'+ date + '.csv')
     hgop_science_html = hgop_science.to_html()
 except pd.errors.EmptyDataError:
-    hgop_science_html = "<br><i>No recent output from the past week or in the future</i>" 
+    hgop_science_html = "<i>No recent output from the past week or in the future</i>" 
 html_text += '<div class= data> ' + hgop_science_html + '</div>'
 
 '''Industry'''
@@ -253,7 +253,7 @@ try:
     sia = pd.read_csv(rf'Industry/output/sia_'+ date + '.csv')
     sia_html = sia.to_html()
 except pd.errors.EmptyDataError:
-    sia_html = "<br><i>No recent output from the past week or in the future</i>" 
+    sia_html = "<i>No recent output from the past week or in the future</i>" 
 html_text += '<div class= data> ' + sia_html + '</div>'
 
 #FCC
@@ -262,7 +262,7 @@ try:
     fcc = pd.read_csv(rf'Industry/output/fcc_'+ date + '.csv')
     fcc_html = fcc.to_html()
 except pd.errors.EmptyDataError:
-    fcc_html = "<br><i>No recent output from the past week or in the future</i>" 
+    fcc_html = "<i>No recent output from the past week or in the future</i>" 
 html_text += '<div class= data> ' + fcc_html + '</div>'
 
 

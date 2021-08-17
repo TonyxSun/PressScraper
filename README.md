@@ -16,7 +16,8 @@ A scraper application for crawling US Congress press releases, hearings, markups
 
 *  __SIA__：Date, URL, and title of all headlines for the Semiconductor Industry Association; <sub><br> _https://www.semiconductors.org/news-events/latest-news/_
 * __FCC__: Date, URL, and title of all headlines for the Federal Communications Commission; <sub><br>  _https://www.fcc.gov/news-events/headlines_
-* __Wilson Center__: Date, URL, and title of insight and analysis for the Wilson Center's Insights & Analysis page; <sub><br>  _https://www.wilsoncenter.org/insight-analysis?_page=1&keywords=&_limit=10&programs=109_
+* __Wilson__: Date, URL, and title of insight and analysis for the Wilson Center's Insights & Analysis page; <sub><br>  _https://www.wilsoncenter.org/insight-analysis?_page=1&keywords=&_limit=10&programs=109_
+* __Brookings__: Date, URL, and title of insight and analysis for all content produced by the Brookings Institution page; <sub><br>  _https://www.brookings.edu/search/?s=&post_type%5B%5D=&topic%5B%5D=&pcp=&date_range=&start_date=&end_date=_
 
 
 ## US Congress

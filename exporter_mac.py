@@ -275,6 +275,15 @@ except pd.errors.EmptyDataError:
     wilson_html = "<i>No recent output from the past week or in the future</i>" 
 html_text += '<div class= data> ' + wilson_html + '</div>'
 
+#BROOKINGS
+html_text += '<p></p><strong>Brookings</strong>: Date, URL, and title of insight and analysis for all content produced by the Brookings Institution page;  <em><a href="https://www.brookings.edu/search/?s=&post_type%5B%5D=&topic%5B%5D=&pcp=&date_range=&start_date=&end_date=">https://www.brookings.edu/search/?s=&post_type%5B%5D=&topic%5B%5D=&pcp=&date_range=&start_date=&end_date=</a></em>'
+try:
+    brookings = pd.read_csv(rf'Industry/output/wilson_'+ date + '.csv')
+    brookings_html = brookings.to_html()
+except pd.errors.EmptyDataError:
+    brookings_html = "<i>No recent output from the past week or in the future</i>" 
+html_text += '<div class= data> ' + brookings_html + '</div>'
+
 
 with open('index.html', "w", encoding="utf-8") as f:
     f.write(html_text)

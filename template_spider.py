@@ -18,7 +18,7 @@ class TemplateSpider(scrapy.Spider):
     
     def parse(self, response):
         
-        for item in response.css('[class="x"]'):
+        for item in response.css("[class="x"]"):
             pass
 
 

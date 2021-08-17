@@ -21,7 +21,7 @@ class TemplateSpider(scrapy.Spider):
         for item in response.css('[]'):
             
                     
-            date = item.css('[]::text')
+            date = item.css('[]::text').get()
             date_obj = datetime.strptime(date, "").date()
             
             if check_date(date):

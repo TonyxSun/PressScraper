@@ -266,6 +266,16 @@ except pd.errors.EmptyDataError:
 html_text += '<div class= data> ' + fcc_html + '</div>'
 
 
+#WILSON
+html_text += '<p></p><strong>Wilson</strong>: Date, URL, and title of insight and analysis for the Wilson Center\'s Insights & Analysis page;  <em><a href="https://www.wilsoncenter.org/insight-analysis?_page=1&keywords=&_limit=10&programs=109">https://www.wilsoncenter.org/insight-analysis?_page=1&keywords=&_limit=10&programs=109</a></em>'
+try:
+    wilson = pd.read_csv(rf'Industry/output/wilson_'+ date + '.csv')
+    wilson_html = wilson.to_html()
+except pd.errors.EmptyDataError:
+    wilson_html = "<i>No recent output from the past week or in the future</i>" 
+html_text += '<div class= data> ' + wilson_html + '</div>'
+
+
 with open('index.html', "w", encoding="utf-8") as f:
     f.write(html_text)
 

@@ -32,6 +32,7 @@ cd ../Industry
 rm output/*
 python3 sia_spider.py
 python3 fcc_spider.py
+python3 wilson_spider.py
 
 cd ../Congress
 rm output/*

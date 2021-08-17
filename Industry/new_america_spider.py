@@ -18,25 +18,13 @@ class TemplateSpider(scrapy.Spider):
     
     def parse(self, response):
         
-        for item in response.css('[]'):
-            
-                    
-            date = item.css('[]::text')
-            date_obj = datetime.strptime(date, "").date()
-            
-            if check_date(date):
-                yield {
-                    'date': date,
-                    'title': item.css('[]::text').get(),
-                    'url': item.css('[] a::attr(href)').get(),
-                    
-                }
+        for item in response.css("[class="x"]"):
+            pass
 
 
 # ALSO UPDATE ...
 # script.bash
 # exporter_mac.py
-# README.md
 
 
 # Creates file with date and writes content to the file

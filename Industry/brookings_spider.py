@@ -20,6 +20,7 @@ class BrookingsSpider(scrapy.Spider):
         
         for item in response.css('[class~="archive-view"]'):
             
+            # Obtain all text under meta class, find date in the list
             all_date = item.css('[class="meta"] *::text').extract()
             
             for date in all_date:

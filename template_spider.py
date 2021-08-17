@@ -18,13 +18,13 @@ class TemplateSpider(scrapy.Spider):
     
     def parse(self, response):
         
-        for item in response.css():
+        for item in response.css('[class="x"]'):
             pass
 
 
 # ALSO UPDATE ...
 # script.bash
-# 
+# exporter_mac.py
 
 
 # Creates file with date and writes content to the file

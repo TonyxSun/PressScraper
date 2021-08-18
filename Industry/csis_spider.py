@@ -38,7 +38,7 @@ class CSISSpider(scrapy.Spider):
                 'Type': item.css('[class="teaser__type"] ::text').get(),
                 'title': item.css('[class="teaser__title"] a::text').get(),
                 'url': response.urljoin(urls[i]),
-                'description': item.css('[class="teaser__text"] ::text')
+                'description': item.css('[class="teaser__text"] ::text').get()
             }
 
 # Creates file with date and writes content to the file

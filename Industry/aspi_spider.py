@@ -18,27 +18,22 @@ class ASPISpider(scrapy.Spider):
         
         # Otain URLs and count
         urls = response.css('[class="card-title"] a::attr(href)').extract()
-        i = -1
-        for item in response.css('[class="column-block"]'):
+        print("len = "+str(len(urls)))
+        i = -2
+        for item in response.css('[role="article"]'):
             
-            # date = item.css('[class="date-display-single"] ::text').get()
-            
-            # Changes date if it exists
-            # if date != None:
-            #     date_obj = datetime.strptime(date, "%B %d, %Y").date()
-            
+            if i < -1:
+                i += 1
+                continue
+
             i += 1
-            
-            # If date does not exist, continues scraping until date outside of range hit
-            # if not check_date(date_obj):
-            #     break
             
             yield {
                 # 'date': date,
-                'Type': item.css('[class="field--name-field-article-type"] ::text').get(),
-                'title': item.css('[class="card-title"] span::text').get(),
+                'Type': item.css('[class="meta-category"] div::text').get(),
+                'title': item.css('[class="card-title"]>a span::text').get(),
                 'url': response.urljoin(urls[i]),
-                'description': item.css('[class="teaser-text"] ::text')
+                'description': item.css('[class="teaser-text"]>div::text').get()
             }
 
 # Creates file with date and writes content to the file

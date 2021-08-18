@@ -76,6 +76,48 @@ def check_date(date):
 
     return date in past_week or date > today
 
+def check_date_30(date):
+    # did not set up unit tests yet
+    """
+    
+    >>> date = d.today() # Today
+    >>> check_date(date)
+    True
+    
+    >>> date = d.today() + timedelta(days=1) # Tomorrow
+    >>> check_date(date)
+    True
+    
+    >>> date = d.today() + timedelta(days=365) # Next year
+    >>> check_date(date)
+    True
+    
+    >>> date = d.today() - timedelta(days=1) # Yesterday
+    >>> check_date(date)
+    True
+    
+    >>> date = d.today() - timedelta(days=12) 
+    >>> check_date(date)
+    True
+    
+    >>> date = d.today() - timedelta(days=7) # Last week
+    >>> check_date(date)
+    False
+    
+    >>> date = d.today() - timedelta(days=365) # Last year
+    >>> check_date(date)
+    False
+    """
+    today = d.today()
+    
+    past_week = []
+    temp_day = d.today()
+    
+    for i in range(30):
+        past_week.append(temp_day)
+        temp_day = temp_day-timedelta(1)
+
+    return date in past_week or date > today
 
 if __name__ == "__main__":
     doctest.testmod()

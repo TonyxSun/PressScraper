@@ -34,6 +34,9 @@ python3 sia_spider.py
 python3 fcc_spider.py
 python3 wilson_spider.py
 python3 brookings_spider.py
+python3 csis.py
+python3 aspi_spider.py
+python3 icas_spider.py
 
 cd ../Congress
 rm output/*

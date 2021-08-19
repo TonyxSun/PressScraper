@@ -13,28 +13,19 @@ class NewAmericaSpider(scrapy.Spider):
     
 
     def start_requests(self):
-        yield scrapy.Request(url='https://www.newamerica.org/the-thread/', callback=self.parse)
+        yield scrapy.Request(url='https://www.newamerica.org/publications/', callback=self.parse)
     
     
     def parse(self, response):
+        
+        text = response.css('[id="na-home"] *::text').extract()
+        
+        print (text)
 
         
-        for item in response.css('[class="col-6 col-md-4"]'):
- 
-                    
-            date = item.css('[class="margin-top-10"] *::text').get()
-  
-            if date != None:
-                date_obj = datetime.strptime(date, "%b. %d, %Y").date()
+        for item in response.css('[class~="col-6"]'):
+            pass
             
-            #if check_date(date):
-            yield {
-                'date': date,
-                'title': item.css('[class="margin-15"] *::text').getall(),
-                'url': item.css('[class="weekly-edition__articles__article margin-bottom-60"] a::attr(href)').getall(),
-                
-            }
-
 
 # ALSO UPDATE ...
 # script.bash

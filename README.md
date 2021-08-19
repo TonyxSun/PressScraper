@@ -18,6 +18,11 @@ A scraper application for crawling US Congress press releases, hearings, markups
 * __FCC__: Date, URL, and title of all headlines for the Federal Communications Commission; <sub><br>  _https://www.fcc.gov/news-events/headlines_
 * __Wilson__: Date, URL, and title of insight and analysis for the Wilson Center's Insights & Analysis page; <sub><br>  _https://www.wilsoncenter.org/insight-analysis?_page=1&keywords=&_limit=10&programs=109_
 * __Brookings__: Date, URL, and title of insight and analysis for all content produced by the Brookings Institution page; <sub><br>  _https://www.brookings.edu/search/?s=&post_type%5B%5D=&topic%5B%5D=&pcp=&date_range=&start_date=&end_date=_
+* __CSIS__: Date, type, title, URL, and description of insight and analysis for all content by the Center For Strategic & International Studies; <sub><br>  _https://www.csis.org/analysis_
+* __Asia Society__: Title, URL, and description of insight and analysis for all publications by the Asia Society Policy Institute; <sub><br>  _https://www.asiasociety.org/policy-institute/publications_
+* __ICAS__: Date, type, title, URL, and description of insight and analysis for all content by the Institute for China-America Studies; <sub><br>  _https://www.chinaus-icas.org/research-main/_
+* __Atlantic Council__: Date, category, title, URL, description, and tags of insight and analysis for all content by the Atlantic Council; <sub><br>  _https://www.atlanticcouncil.org/insights-impact/research/_, _https://www.atlanticcouncil.org/insights-impact/commentary/_
+
 
 
 ## US Congress

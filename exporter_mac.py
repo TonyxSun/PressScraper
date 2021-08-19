@@ -284,6 +284,43 @@ except pd.errors.EmptyDataError:
     brookings_html = "<i>No recent output from the past week or in the future</i>" 
 html_text += '<div class= data> ' + brookings_html + '</div>'
 
+#CSIS
+html_text += '<p></p><strong>CSIS</strong>: Date, type, title, URL, and description of insight and analysis for all content by the Center For Strategic & International Studies;  <em><a href="https://www.csis.org/analysis">https://www.csis.org/analysis</a></em>'
+try:
+    csis = pd.read_csv(rf'Industry/output/csis_'+ date + '.csv')
+    csis_html = csis.to_html()
+except pd.errors.EmptyDataError:
+    csis_html = "<i>No recent output from the past week or in the future</i>" 
+html_text += '<div class= data> ' + csis_html + '</div>'
+
+
+#Asia Society
+html_text += '<p></p><strong>Asia Society</strong>: Title, URL, and description of insight and analysis for all publications by the Asia Society Policy Institute;  <em><a href="https://www.asiasociety.org/policy-institute/publications">https://www.asiasociety.org/policy-institute/publications</a></em>'
+try:
+    aspi = pd.read_csv(rf'Industry/output/aspi_'+ date + '.csv')
+    aspi_html = aspi.to_html()
+except pd.errors.EmptyDataError:
+    aspi_html = "<i>No recent output from the past week or in the future</i>" 
+html_text += '<div class= data> ' + aspi_html + '</div>'
+
+#ICAS
+html_text += '<p></p><strong>ICAS</strong>: Date, type, title, URL, and description of insight and analysis for all content by the Institute for China-America Studies;  <em><a href="https://www.chinaus-icas.org/research-main">https://www.chinaus-icas.org/research-main</a></em>'
+try:
+    icas = pd.read_csv(rf'Industry/output/icas_'+ date + '.csv')
+    icas_html = icas.to_html()
+except pd.errors.EmptyDataError:
+    icas_html = "<i>No recent output from the past week or in the future</i>" 
+html_text += '<div class= data> ' + icas_html + '</div>'
+
+#Atlantic
+html_text += '<p></p><strong>Atlantic Council</strong>: Date, category, title, URL, description, and tags of insight and analysis for all content by the Atlantic Council;  <em><a href="https://www.atlanticcouncil.org/insights-impact/research/">https://www.atlanticcouncil.org/insights-impact/research/</a></em>, <em><a href="https://www.atlanticcouncil.org/insights-impact/commentary/">https://www.atlanticcouncil.org/insights-impact/commentary/</a></em>'
+try:
+    atlantic = pd.read_csv(rf'Industry/output/atlantic_'+ date + '.csv')
+    atlantic_html = atlantic.to_html()
+except pd.errors.EmptyDataError:
+    atlantic_html = "<i>No recent output from the past week or in the future</i>" 
+html_text += '<div class= data> ' + atlantic_html + '</div>'
+
 
 with open('index.html', "w", encoding="utf-8") as f:
     f.write(html_text)

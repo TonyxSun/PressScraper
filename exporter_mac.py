@@ -315,7 +315,7 @@ html_text += '<div class= data> ' + icas_html + '</div>'
 #Atlantic
 html_text += '<p></p><strong>Atlantic Council</strong>: Date, category, title, URL, description, and tags of insight and analysis for all content by the Atlantic Council;  <em><a href="https://www.atlanticcouncil.org/insights-impact/research/">https://www.atlanticcouncil.org/insights-impact/research/</a></em>, <em><a href="https://www.atlanticcouncil.org/insights-impact/commentary/">https://www.atlanticcouncil.org/insights-impact/commentary/</a></em>'
 try:
-    atlantic = pd.read_csv(rf'Industry/output/icas_'+ date + '.csv')
+    atlantic = pd.read_csv(rf'Industry/output/atlantic_'+ date + '.csv')
     atlantic_html = atlantic.to_html()
 except pd.errors.EmptyDataError:
     atlantic_html = "<i>No recent output from the past week or in the future</i>" 

@@ -37,6 +37,7 @@ python brookings_spider.py
 python csis_spider.py
 python aspi_spider.py
 python icas_spider.py
+python atlantic_spider.py
 
 cd ../Congress
 rm output/*

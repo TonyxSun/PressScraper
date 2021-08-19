@@ -18,7 +18,7 @@ class ASPISpider(scrapy.Spider):
         
         # Otain URLs and count
         urls = response.css('[class="card-title"] a::attr(href)').extract()
-        print("len = "+str(len(urls)))
+
         i = -2
         for item in response.css('[role="article"]'):
             

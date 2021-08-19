@@ -76,6 +76,20 @@ def check_date(date):
 
     return date in past_week or date > today
 
+def check_date_14(date):
+    # did not set up unit tests yet
+
+    today = d.today()
+    
+    past_week = []
+    temp_day = d.today()
+    
+    for i in range(14):
+        past_week.append(temp_day)
+        temp_day = temp_day-timedelta(1)
+
+    return date in past_week or date > today
+
 def check_date_30(date):
     # did not set up unit tests yet
     """

@@ -6,14 +6,11 @@
 - [About](#about)
 - [Contents](#contents)
 - [How to run/update:](#how-to-run-update-)
-<br>
-<br>
 
   
 # About
 
 A scraper application for crawling US Congress, industry associations, and think tanks press releases, hearings, markups, and bills for analytical purposes. 
- 
 
 **Time Range**: Past content within one week (for most sources) and all future content. 
 

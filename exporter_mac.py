@@ -15,7 +15,7 @@ USE FOR MAC OS
 '''
 
 date = datetime.today().strftime("%m.%d.%y")
-html_text = '<link rel="stylesheet" href="./Assets/style.css">'
+html_text = '<html><head><title> US Government Press </title><link rel="icon" type="image/png" href="./Assets/HW_logo.png"><link rel="stylesheet" href="./Assets/style.css"></head><body>'
 html_text += '<h1> US Congress and Goverment </h1>'
 html_text += '<p> Last Updated ' + date + '<hr> Also see: <strong><a href="think_tank.html"> Think Tanks </a></strong> content releases. <hr> </p>'
 img_src = "./Congress/Calendar/2021_" + date[:2] + "_Calendar.jpg"
@@ -268,7 +268,7 @@ html_text += '<div class= data> ' + fcc_html + '</div>'
 ''' Think Tanks '''
 
 think_tank_text = ''
-think_tank_text = '<link rel="stylesheet" href="./Assets/style.css">'
+think_tank_text = '<html><head><title> Think Tanks Press </title><link rel="icon" type="image/png" href="./Assets/HW_logo.png"><link rel="stylesheet" href="./Assets/style.css"></head><body>'
 think_tank_text += '<h1> Think Tanks </h1>'
 think_tank_text += '<p> Last Updated ' + date + '<hr> Also see: <strong><a href="index.html"> US Congress and Goverment </a></strong> releases. <hr> </p>'
 #WILSON
@@ -325,6 +325,9 @@ try:
 except pd.errors.EmptyDataError:
     atlantic_html = "<i>No recent output from the past week or in the future</i>" 
 think_tank_text += '<div class= data> ' + atlantic_html + '</div>'
+
+html_text += '</body></html>'
+think_tank_text += '</body></html>'
 
 
 with open('index.html', "w", encoding="utf-8") as f:

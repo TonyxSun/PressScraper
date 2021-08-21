@@ -5,7 +5,7 @@
 
 - [About](#about)
 - [Contents](#contents)
-- [How to run/update:](#how-to-run-update-)
+- [How to run/update:](#how-to-run-update)
 
   
 # About

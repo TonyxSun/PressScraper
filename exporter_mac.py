@@ -16,8 +16,8 @@ USE FOR MAC OS
 
 date = datetime.today().strftime("%m.%d.%y")
 html_text = '<link rel="stylesheet" href="./Assets/style.css">'
-
-html_text += '<p> Last Updated ' + date
+html_text += '<h1> US Congress and Goverment </h1>'
+html_text += '<p> Last Updated ' + date + '<hr> Also see: <strong><a href="think_tank.html"> Think Tanks </a></strong> content releases. <hr> </p>'
 img_src = "./Congress/Calendar/2021_" + date[:2] + "_Calendar.jpg"
 html_text += '<div class="calender_img"> <br> <img src= "' + img_src + '" alt="August 2021 Calendar"> <br> </div>'
 
@@ -265,64 +265,74 @@ except pd.errors.EmptyDataError:
     fcc_html = "<i>No recent output from the past week or in the future</i>" 
 html_text += '<div class= data> ' + fcc_html + '</div>'
 
+''' Think Tanks '''
 
+think_tank_text = ''
+think_tank_text = '<link rel="stylesheet" href="./Assets/style.css">'
+think_tank_text += '<h1> Think Tanks </h1>'
+think_tank_text += '<p> Last Updated ' + date + '<hr> Also see: <strong><a href="index.html"> US Congress and Goverment </a></strong> releases. <hr> </p>'
 #WILSON
-html_text += '<p></p><strong>Wilson</strong>: Date, URL, and title of insight and analysis for the Wilson Center\'s Insights & Analysis page;  <em><a href="https://www.wilsoncenter.org/insight-analysis?_page=1&keywords=&_limit=10&programs=109">https://www.wilsoncenter.org/insight-analysis?_page=1&keywords=&_limit=10&programs=109</a></em>'
+think_tank_text += '<p></p><strong>Wilson</strong>: Date, URL, and title of insight and analysis for the Wilson Center\'s Insights & Analysis page;  <em><a href="https://www.wilsoncenter.org/insight-analysis?_page=1&keywords=&_limit=10&programs=109">https://www.wilsoncenter.org/insight-analysis?_page=1&keywords=&_limit=10&programs=109</a></em>'
 try:
     wilson = pd.read_csv(rf'Industry/output/wilson_'+ date + '.csv')
     wilson_html = wilson.to_html()
 except pd.errors.EmptyDataError:
     wilson_html = "<i>No recent output from the past week or in the future</i>" 
-html_text += '<div class= data> ' + wilson_html + '</div>'
+think_tank_text += '<div class= data> ' + wilson_html + '</div>'
 
 #BROOKINGS
-html_text += '<p></p><strong>Brookings</strong>: Date, URL, and title of insight and analysis for all content produced by the Brookings Institution page;  <em><a href="https://www.brookings.edu/search/?s=&post_type%5B%5D=&topic%5B%5D=&pcp=&date_range=&start_date=&end_date=">https://www.brookings.edu/search/?s=&post_type%5B%5D=&topic%5B%5D=&pcp=&date_range=&start_date=&end_date=</a></em>'
+think_tank_text += '<p></p><strong>Brookings</strong>: Date, URL, and title of insight and analysis for all content produced by the Brookings Institution page;  <em><a href="https://www.brookings.edu/search/?s=&post_type%5B%5D=&topic%5B%5D=&pcp=&date_range=&start_date=&end_date=">https://www.brookings.edu/search/?s=&post_type%5B%5D=&topic%5B%5D=&pcp=&date_range=&start_date=&end_date=</a></em>'
 try:
     brookings = pd.read_csv(rf'Industry/output/wilson_'+ date + '.csv')
     brookings_html = brookings.to_html()
 except pd.errors.EmptyDataError:
     brookings_html = "<i>No recent output from the past week or in the future</i>" 
-html_text += '<div class= data> ' + brookings_html + '</div>'
+think_tank_text += '<div class= data> ' + brookings_html + '</div>'
 
 #CSIS
-html_text += '<p></p><strong>CSIS</strong>: Date, type, title, URL, and description of insight and analysis for all content by the Center For Strategic & International Studies;  <em><a href="https://www.csis.org/analysis">https://www.csis.org/analysis</a></em>'
+think_tank_text += '<p></p><strong>CSIS</strong>: Date, type, title, URL, and description of insight and analysis for all content by the Center For Strategic & International Studies;  <em><a href="https://www.csis.org/analysis">https://www.csis.org/analysis</a></em>'
 try:
     csis = pd.read_csv(rf'Industry/output/csis_'+ date + '.csv')
     csis_html = csis.to_html()
 except pd.errors.EmptyDataError:
     csis_html = "<i>No recent output from the past week or in the future</i>" 
-html_text += '<div class= data> ' + csis_html + '</div>'
+think_tank_text += '<div class= data> ' + csis_html + '</div>'
 
 
 #Asia Society
-html_text += '<p></p><strong>Asia Society</strong>: Title, URL, and description of insight and analysis for all publications by the Asia Society Policy Institute;  <em><a href="https://www.asiasociety.org/policy-institute/publications">https://www.asiasociety.org/policy-institute/publications</a></em>'
+think_tank_text += '<p></p><strong>Asia Society</strong>: Title, URL, and description of insight and analysis for all publications by the Asia Society Policy Institute;  <em><a href="https://www.asiasociety.org/policy-institute/publications">https://www.asiasociety.org/policy-institute/publications</a></em>'
 try:
     aspi = pd.read_csv(rf'Industry/output/aspi_'+ date + '.csv')
     aspi_html = aspi.to_html()
 except pd.errors.EmptyDataError:
     aspi_html = "<i>No recent output from the past week or in the future</i>" 
-html_text += '<div class= data> ' + aspi_html + '</div>'
+think_tank_text += '<div class= data> ' + aspi_html + '</div>'
 
 #ICAS
-html_text += '<p></p><strong>ICAS</strong>: Date, type, title, URL, and description of insight and analysis for all content by the Institute for China-America Studies;  <em><a href="https://www.chinaus-icas.org/research-main">https://www.chinaus-icas.org/research-main</a></em>'
+think_tank_text += '<p></p><strong>ICAS</strong>: Date, type, title, URL, and description of insight and analysis for all content by the Institute for China-America Studies;  <em><a href="https://www.chinaus-icas.org/research-main">https://www.chinaus-icas.org/research-main</a></em>'
 try:
     icas = pd.read_csv(rf'Industry/output/icas_'+ date + '.csv')
     icas_html = icas.to_html()
 except pd.errors.EmptyDataError:
     icas_html = "<i>No recent output from the past week or in the future</i>" 
-html_text += '<div class= data> ' + icas_html + '</div>'
+think_tank_text += '<div class= data> ' + icas_html + '</div>'
 
 #Atlantic
-html_text += '<p></p><strong>Atlantic Council</strong>: Date, category, title, URL, description, and tags of insight and analysis for all content by the Atlantic Council;  <em><a href="https://www.atlanticcouncil.org/insights-impact/research/">https://www.atlanticcouncil.org/insights-impact/research/</a></em>, <em><a href="https://www.atlanticcouncil.org/insights-impact/commentary/">https://www.atlanticcouncil.org/insights-impact/commentary/</a></em>'
+think_tank_text += '<p></p><strong>Atlantic Council</strong>: Date, category, title, URL, description, and tags of insight and analysis for all content by the Atlantic Council;  <em><a href="https://www.atlanticcouncil.org/insights-impact/research/">https://www.atlanticcouncil.org/insights-impact/research/</a></em>, <em><a href="https://www.atlanticcouncil.org/insights-impact/commentary/">https://www.atlanticcouncil.org/insights-impact/commentary/</a></em>'
 try:
     atlantic = pd.read_csv(rf'Industry/output/atlantic_'+ date + '.csv')
     atlantic_html = atlantic.to_html()
 except pd.errors.EmptyDataError:
     atlantic_html = "<i>No recent output from the past week or in the future</i>" 
-html_text += '<div class= data> ' + atlantic_html + '</div>'
+think_tank_text += '<div class= data> ' + atlantic_html + '</div>'
 
 
 with open('index.html', "w", encoding="utf-8") as f:
     f.write(html_text)
 
 f.close()
+
+with open('think_tank.html', "w", encoding="utf-8") as g:
+    g.write(think_tank_text)
+
+g.close()

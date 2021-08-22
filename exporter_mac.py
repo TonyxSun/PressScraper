@@ -17,7 +17,7 @@ USE FOR MAC OS
 date = datetime.today().strftime("%m.%d.%y")
 html_text = '<html><head><title> US Government Press </title><link rel="icon" type="image/png" href="./Assets/HW_logo.png"><link rel="stylesheet" href="./Assets/style.css"></head><body>'
 html_text += '<h1> US Congress and Goverment </h1>'
-html_text += '<p> Last Updated ' + date + '<hr> Also see: <strong><a href="think_tank.html"> Think Tanks </a></strong> content releases. <hr> </p>'
+html_text += '<p> Last Updated ' + date + ' |  <a href="about.html"> About this page</a>' + <hr> Also see: <strong><a href="think_tank.html"> Think Tanks </a></strong> content releases. <hr> </p>'
 img_src = "./Congress/Calendar/2021_" + date[:2] + "_Calendar.jpg"
 html_text += '<div class="calender_img"> <br> <img src= "' + img_src + '" alt="August 2021 Calendar"> <br> </div>'
 
@@ -270,7 +270,7 @@ html_text += '<div class= data> ' + fcc_html + '</div>'
 think_tank_text = ''
 think_tank_text = '<html><head><title> Think Tanks Press </title><link rel="icon" type="image/png" href="./Assets/HW_logo.png"><link rel="stylesheet" href="./Assets/style.css"></head><body>'
 think_tank_text += '<h1> Think Tanks </h1>'
-think_tank_text += '<p> Last Updated ' + date + '<hr> Also see: <strong><a href="index.html"> US Congress and Goverment </a></strong> releases. <hr> </p>'
+think_tank_text += '<p> Last Updated ' + date + ' |  <a href="about.html"> About this page</a>' +'<hr> Also see: <strong><a href="index.html"> US Congress and Goverment </a></strong> releases. <hr> </p>'
 #WILSON
 think_tank_text += '<p></p><strong>Wilson</strong>: Date, URL, and title of insight and analysis for the Wilson Center\'s Insights & Analysis page;  <em><a href="https://www.wilsoncenter.org/insight-analysis?_page=1&keywords=&_limit=10&programs=109">https://www.wilsoncenter.org/insight-analysis?_page=1&keywords=&_limit=10&programs=109</a></em>'
 try:

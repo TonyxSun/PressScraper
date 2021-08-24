@@ -333,9 +333,10 @@ think_tank_text += '</body></html>'
 with open('index.html', "w", encoding="utf-8") as f:
     f.write(html_text)
 
-f.close()
+
 
 with open('think_tank.html', "w", encoding="utf-8") as g:
     g.write(think_tank_text)
 
+f.close()
 g.close()

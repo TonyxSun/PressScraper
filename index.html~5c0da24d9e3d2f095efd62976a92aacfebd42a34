@@ -1,0 +1,474 @@
+<html><head>
+<title> US Government Press </title><link rel="icon" type="image/png" href="./Assets/HW_logo.png"><link rel="stylesheet" href="./Assets/style.css">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-84949812-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-84949812-1');
+</script>
+
+  </head>
+  <body><h1> US Congress and Goverment </h1><p> Last Updated 08.21.21 |  <a href="about.html"> About this page</a><hr> Also see: <strong><a href="think_tank.html"> Think Tanks </a></strong> content releases. <hr> </p><div class="calender_img"> <br> <img src= "./Congress/Calendar/2021_08_Calendar.jpg" alt="August 2021 Calendar"> <br> </div><h2 id="us-congress">US Congress</h2><p></p><strong>Daily Digests</strong>: Date, URL, and text providing details of legislation introduced, reported, passed, and considered by the full House or Senate each legislative day; <br> <em><a href="https://www.congress.gov/bills-with-chamber-action/browse-by-date">https://www.congress.gov/bills-with-chamber-action/browse-by-date</a></em><div class= data> <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>url</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>08/20/2021</td>
+      <td>https://www.congress.gov/congressional-record/2021/8/20/daily-digest</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>08/17/2021</td>
+      <td>https://www.congress.gov/congressional-record/2021/8/17/daily-digest</td>
+    </tr>
+  </tbody>
+</table></div><h2 id="us-senate">US Senate</h2><h3 id="us-senate-committees">US Senate Committees</h3><p></p><strong>Commerce</strong>:  Date, URL. title, and summary of press releases, hearings, and markups from the US Senate Committee on Commerce, Science, and Transportation;  <em><a href="https://www.commerce.senate.gov/pressreleases">https://www.commerce.senate.gov/pressreleases</a></em>, <em><a href="https://www.commerce.senate.gov/hearings">https://www.commerce.senate.gov/hearings</a></em>, <em><a href="https://www.commerce.senate.gov/markups">https://www.commerce.senate.gov/markups</a></em><div class= data> <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>category</th>
+      <th>date</th>
+      <th>title</th>
+      <th>url</th>
+      <th>summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Hearings</td>
+      <td>08/23/2021</td>
+      <td>POSTPONED: Commerce Committee Announces August 23 Subcommittee Field Hearing on Space and Science in Colorado Springs, CO</td>
+      <td>https://www.commerce.senate.gov/2021/8/commerce-committee-announces-august-23-subcommittee-field-hearing-on-space-and-science-in-colorado-springs-co</td>
+      <td>POSTPONED— The Subcommittee on Space and Science field hearing titled “Collaboration and Competition in Space: Ushering in a New Era” originally scheduled for Monday, August 23, 2021 at 2pm MDT in Colorado Springs, Colorado, has been postponed until a later date.</td>
+    </tr>
+  </tbody>
+</table></div><p></p><strong>Foreign</strong>:  Type of content (nomiations, treaties, legislation, hearing transcripts, business meeting transcripts, committee reports, other), date, URL (if given), and text for activities and reports from the US Senate Committee on Foreign Relations;  <em><a href="https://www.foreign.senate.gov/activities-and-reports">https://www.foreign.senate.gov/activities-and-reports</a></em><div class= data> <i>No recent output from the past week or in the future</i></div><p></p><strong>Banking</strong>: Date, URL, and title for press releases, hearings, and markups from the US Senate Committee on Banking, Housing, and Urban Affairs;  <em><a href="https://www.banking.senate.gov/newsroom/majority-press-releases">https://www.banking.senate.gov/newsroom/majority-press-releases</a></em>, <em><a href="https://www.banking.senate.gov/hearings">https://www.banking.senate.gov/hearings</a></em>, <em><a href="https://www.banking.senate.gov/markups">https://www.banking.senate.gov/markups</a></em><div class= data> <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>category</th>
+      <th>date</th>
+      <th>url</th>
+      <th>title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Majority Press Release</td>
+      <td>08/18/21</td>
+      <td>https://www.banking.senate.gov/newsroom/majority/brown-applauds-new-affordable-housing-goals-proposal-for-fannie-mae-freddie-mac</td>
+      <td>Brown Applauds New Affordable Housing Goals Proposal for Fannie Mae, Freddie Mac</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Hearings</td>
+      <td>08/24/21</td>
+      <td>https://www.banking.senate.gov/hearings/examining-minnesotas-transit-priorities</td>
+      <td>Examining Minnesota’s Transit Priorities</td>
+    </tr>
+  </tbody>
+</table></div><p></p><strong>Finance</strong>: Source of content (majority, minority), date, URL, and title for press releases and hearings from the US Senate Committee on Finance;  <em><a href="https://www.finance.senate.gov/chairmans-news">https://www.finance.senate.gov/chairmans-news</a></em>, <em><a href="https://www.finance.senate.gov/hearings">https://www.finance.senate.gov/hearings</a></em><div class= data> <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>category</th>
+      <th>date</th>
+      <th>url</th>
+      <th>title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>majority</td>
+      <td>08/19/21</td>
+      <td>https://www.finance.senate.gov/chairmans-news/wyden-statement-on-jobless-benefits-unemployment-insurance-reform_</td>
+      <td>Wyden Statement on Jobless Benefits, Unemployment Insurance Reform</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>majority</td>
+      <td>08/18/21</td>
+      <td>https://www.finance.senate.gov/chairmans-news/wyden-announces-new-bill-to-end-homelessness-and-ensure-affordable-housing-for-all</td>
+      <td>Wyden Announces New Bill to End Homelessness and Ensure Affordable Housing for All</td>
+    </tr>
+  </tbody>
+</table></div><p></p><strong>HLSGA</strong>: Source of content (majority, minority), date, URL, and title for press releases and hearings from the US Senate Committee on Homeland Security &amp; Government Affairs;  <em><a href="https://www.hsgac.senate.gov/media/majority-media">https://www.hsgac.senate.gov/media/majority-media</a></em>, <em><a href="https://www.hsgac.senate.gov/hearings">https://www.hsgac.senate.gov/hearings</a></em><div class= data> <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>category</th>
+      <th>date</th>
+      <th>url</th>
+      <th>title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>minority</td>
+      <td>8/17/21</td>
+      <td>http://www.hsgac.senate.gov/media/minority-media/portman-op-ed-in-barrons-infrastructure-deal-will-shred-red-tape</td>
+      <td>Portman Op-Ed in Barron’s: Infrastructure Deal Will Shred Red Tape</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>majority</td>
+      <td>8/20/21</td>
+      <td>http://www.hsgac.senate.gov/media/majority-media/michigan-leaders-and-organizations-applaud-peters-for-securing-500-million-to-help-address-shoreline-erosion-and-flooding-in-senate-passed-bipartisan-infrastructure-bill</td>
+      <td>Michigan Leaders and Organizations Applaud Peters for Securing $500 Million to Help Address Shoreline Erosion and Flooding in Senate-Passed Bipartisan Infrastructure Bill</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>majority</td>
+      <td>8/16/21</td>
+      <td>http://www.hsgac.senate.gov/media/majority-media/peters-tours-of-port-of-monroe-with-acting-cbp-commissioner-and-port-leaders</td>
+      <td>Peters Tours of Port of Monroe with Acting CBP Commissioner and Port Leaders</td>
+    </tr>
+  </tbody>
+</table></div><p></p><strong>Judiciary</strong>: Source of content (majority, minority), date, URL, and title for press releases and hearings from the US Senate Committee on the Judiciary;  <em><a href="https://www.judiciary.senate.gov/press/majority">https://www.judiciary.senate.gov/press/majority</a></em>, <em><a href="https://www.judiciary.senate.gov/hearings">https://www.judiciary.senate.gov/hearings</a></em><div class= data> <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>category</th>
+      <th>date</th>
+      <th>url</th>
+      <th>title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>minority</td>
+      <td>08/19/21</td>
+      <td>https://www.judiciary.senate.gov/press/rep/releases/grassley-statement-on-federal-injunction-of-biden-admin-immigration-enforcement-deportation-policy</td>
+      <td>Grassley Statement on Federal Injunction of Biden Admin Immigration Enforcement, Deportation Policy</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>minority</td>
+      <td>08/16/21</td>
+      <td>https://www.judiciary.senate.gov/2021-08-16-grassley-and-durbin-to-doj-oig_-dea-audit</td>
+      <td>2021-08-16, Grassley and Durbin to DOJ OIG - DEA audit</td>
+    </tr>
+  </tbody>
+</table></div><p></p><strong>Intelligence</strong>: Date, URL, and title, for press releases and hearings from US Senate Select Committee on Intelligence;  <em><a href="https://www.intelligence.senate.gov/press">https://www.intelligence.senate.gov/press</a></em>,  <em><a href="ttps://www.intelligence.senate.gov/hearings">https://www.intelligence.senate.gov/hearings</a></em><div class= data> <i>No recent output from the past week or in the future</i></div><h2 id="House">House</h2><p></p><strong>Energy</strong>: Date, URL, title, and summary of press releases, hearings, and markups from the US House Committee on Energy;  <em><a href="https://energycommerce.house.gov/newsroom/press-releases">https://energycommerce.house.gov/newsroom/press-releases</a></em>, <em><a href="https://energycommerce.house.gov/committee-activity/hearings">https://energycommerce.house.gov/committee-activity/hearings</a></em>, <em><a href="https://energycommerce.house.gov/committee-activity/markups">https://energycommerce.house.gov/committee-activity/markups</a></em><div class= data> <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>category</th>
+      <th>date</th>
+      <th>title</th>
+      <th>url</th>
+      <th>summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Press Release</td>
+      <td>Aug 19, 2021</td>
+      <td>E&amp;C Leaders Follow Up with Pharmaceutical Manufacturers on the High Cost of Insulin</td>
+      <td>https://energycommerce.house.gov/newsroom/press-releases/ec-leaders-follow-up-with-pharmaceutical-manufacturers-on-the-high-cost-of</td>
+      <td>Pallone and DeGette wrote to three manufacturers of insulin in the U.S. regarding the high cost of the lifesaving drug.</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Press Release</td>
+      <td>Aug 17, 2021</td>
+      <td>E&amp;C Leaders Request Information from EPA About Troubling Reports in the New Chemical Review Program</td>
+      <td>https://energycommerce.house.gov/newsroom/press-releases/ec-leaders-request-information-from-epa-about-troubling-reports-in-the-new</td>
+      <td>Pallone, DeGette, and Tonko request information from about troubling reports in the New Chemical Review Program.</td>
+    </tr>
+  </tbody>
+</table></div><p></p><strong>Financial Services</strong>: Date, URL, title, and summary of press releases, hearings, and markups from the US House Committee on Financial Services;  <em><a href="https://financialservices.house.gov/news/">https://financialservices.house.gov/news/</a></em>, <em><a href="https://financialservices.house.gov/calendar/?EventTypeID=577&Congress=117">https://financialservices.house.gov/calendar/?EventTypeID=577&Congress=117</a></em>, <em><a href="https://financialservices.house.gov/calendar/?EventTypeID=575&Congress=117">https://financialservices.house.gov/calendar/?EventTypeID=575&Congress=117</a></em><div class= data> <i>No recent output from the past week or in the future</i></div><p></p><strong>Foreign</strong>: Date, time (if applicable), title, and URL for press releases, hearings, and markups from the US House Committee on Foreign Affairs;  <em><a href="https://foreignaffairs.house.gov/press-releases">https://foreignaffairs.house.gov/press-releases</a></em>, <em><a href="https://foreignaffairs.house.gov/hearings">https://foreignaffairs.house.gov/hearings</a></em>, <em><a href="https://foreignaffairs.house.gov/markups">https://foreignaffairs.house.gov/markups</a></em><div class= data> <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>category</th>
+      <th>date</th>
+      <th>time</th>
+      <th>title</th>
+      <th>urls</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Press Release</td>
+      <td>8/17/21</td>
+      <td>NaN</td>
+      <td>Meeks, McCaul, Sires and Green Issue Statement on Haitian Earthquake Recovery Efforts</td>
+      <td>https://foreignaffairs.house.gov/press-releases?ID=AAAA3184-70E6-4895-8A35-DE0BC79CFF34</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Press Release</td>
+      <td>8/17/21</td>
+      <td>NaN</td>
+      <td>Chairman Meeks to Hold Hearing on Situation in Afghanistan</td>
+      <td>https://foreignaffairs.house.gov/press-releases?ID=4984F809-C616-4408-A041-B8F4305DABA9</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Press Release</td>
+      <td>8/15/21</td>
+      <td>NaN</td>
+      <td>Chair Meeks Issues Statement on Afghanistan</td>
+      <td>https://foreignaffairs.house.gov/press-releases?ID=B3E9E67B-710E-438D-A0FB-BBFCA0462FB0</td>
+    </tr>
+  </tbody>
+</table></div><p></p><strong>Homeland</strong>: Date, title, and url for news, hearings, and markups from the US House Committee on Homeland Security;  <em><a href="https://homeland.house.gov/activities/hearings">https://homeland.house.gov/activities/hearings</a></em>, <em><a href="https://homeland.house.gov/activities/markups">https://homeland.house.gov/activities/markups</a></em>, <em><a href="https://homeland.house.gov/news">https://homeland.house.gov/news</a></em><div class= data> <i>No recent output from the past week or in the future</i></div><p></p><strong>Science, Space, and Technology</strong>: Date, URL, and title of press releases, hearings, and markups from the US House Committee on Science, Space, and Tech;  <em><a href="https://science.house.gov/news/press-releases">https://science.house.gov/news/press-releases</a></em>, <em><a href="https://science.house.gov/hearings">https://science.house.gov/hearings</a></em>, <em><a href="https://science.house.gov/markups">https://science.house.gov/markups</a></em><div class= data> <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>category</th>
+      <th>date</th>
+      <th>title</th>
+      <th>url</th>
+      <th>summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>News</td>
+      <td>August 18, 2021</td>
+      <td>Chairwoman Johnson Applauds EPA Decision to Ban Chlorpyrifos on Food</td>
+      <td>https://science.house.gov/news/press-releases/chairwoman-johnson-applauds-epa-decision-to-ban-chlorpyrifos-on-food</td>
+      <td>(Washington, DC) - Today, the U.S. Environmental Protection Agency (EPA) announced a ban on the use of chlorpyrifos on food. Chlorpyrifos is an agricultural pesticide that has been found to be neurotoxic to children and developing fetuses. The ban is a response to an order from the Ninth Circuit Court of Appeals directing a revocation of allowable residue levels in food.\r Chairwoman Eddie Bernice Johnson made the following statement:\r "I applaud Administrator Regan's decision to ban the use of …</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>News</td>
+      <td>August 17, 2021</td>
+      <td>Congresswomen Johnson and Lofgren Congratulate National Ignition Facility on Major Milestone Toward Fusion Ignition</td>
+      <td>https://science.house.gov/news/press-releases/congresswomen-johnson-and-lofgren-congratulate-national-ignition-facility-on-major-milestone-toward-fusion-ignition</td>
+      <td>(Washington, DC) - Today, Lawrence Livermore National Lab (LLNL) in Livermore, CA announced that an experiment at the National Ignition Facility (NIF) "made a significant step toward ignition, achieving a yield of more than 1.3 megajoules (MJ). This advancement puts researchers at the threshold of fusion ignition, an important goal of the NIF, and opens access to a new experimental regime. The experiment was enabled by focusing laser light from NIF - the size of three football fields - onto a …</td>
+    </tr>
+  </tbody>
+</table></div><p></p><strong>Transportation</strong>: Date, URL, and title of press releases, hearings, and markups from the US House Committee on Transportation (Both Majority and Minority sites);  <em><a href="https://republicans-transportation.house.gov/news/documentquery.aspx?DocumentTypeID=2545">https://republicans-transportation.house.gov/news/documentquery.aspx?DocumentTypeID=2545</a></em>, <em><a href="https://republicans-transportation.house.gov/calendar/?EventTypeID=542">https://republicans-transportation.house.gov/calendar/?EventTypeID=542</a></em>, <em><a href="https://republicans-transportation.house.gov/calendar/?EventTypeID=541">https://republicans-transportation.house.gov/calendar/?EventTypeID=541</a></em>, <em><a href="https://transportation.house.gov/news/press-releases">https://transportation.house.gov/news/press-releases</a></em>, <em><a href="https://transportation.house.gov/committee-activity/hearings">https://transportation.house.gov/committee-activity/hearings</a></em>, <em><a href="https://transportation.house.gov/committee-activity/markups">https://transportation.house.gov/committee-activity/markups</a></em><div class= data> <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>category</th>
+      <th>date</th>
+      <th>title</th>
+      <th>url</th>
+      <th>summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Majority Press Releases</td>
+      <td>August 16, 2021</td>
+      <td>T&amp;I Committee Leaders Ask GAO to Review Delays in Delivery of Critical Additions to Coast Guard Fleet</td>
+      <td>https://transportation.house.gov/news/press-releases/tandi-committee-leaders-ask-gao-to-review-delays-in-delivery-of-critical-additions-to-coast-guard-fleet-</td>
+      <td>WASHINGTON, DC-Today, House Committee on Transportation and Infrastructure Chair Peter DeFazio (D-OR) and Ranking Member Sam Graves (R-MO) asked the U.S. Government Accountability Office (GAO) to review the significant delivery delays of the Offshore Patrol and Polar Security Cutters, as well as related budgetary issues. The Offshore Patrol Cutter fleet is the largest vessel procurement the Coast Guard has undertaken, and Polar Security Cutter acquisition is the most complex. In a pair of …</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Minority Press Releases</td>
+      <td>August 16, 2021</td>
+      <td>T&amp;I Committee Leaders Ask GAO to Review Delays in Delivery of Critical Additions to Coast Guard Fleet</td>
+      <td>https://republicans-transportation.house.gov/news/documentsingle.aspx?DocumentID=405565</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table></div><p></p><strong>Intelligence</strong>: Date, URL, title, and summary for news from US House Permanent Select Committee on Intelligence;  <em><a href="https://intelligence.house.gov/news/documentquery.aspx?DocumentTypeID=27">https://intelligence.house.gov/news/documentquery.aspx?DocumentTypeID=27</a></em><div class= data> <i>No recent output from the past week or in the future</i></div><p></p><strong>Energy, Republican</strong>: Date, URL, title, and summary of press releases, hearings, and markups from the US Republican Committee on Energy and Commerce;  <em><a href="https://republicans-energycommerce.house.gov/news/">https://republicans-energycommerce.house.gov/news/</a></em>, <em><a href="https://republicans-energycommerce.house.gov/hearings/">https://republicans-energycommerce.house.gov/hearings/</a></em>, <em><a href="https://republicans-energycommerce.house.gov/markups/">https://republicans-energycommerce.house.gov/markups/</a></em><div class= data> <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>category</th>
+      <th>date</th>
+      <th>title</th>
+      <th>url</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Press Releases</td>
+      <td>08.19.2021</td>
+      <td>E&amp;C Republican Leaders Release Statement on T-Mobile Data Breach</td>
+      <td>https://republicans-energycommerce.house.gov/news/ec-republican-leaders-release-statement-on-t-mobile-data-breach/</td>
+      <td>Washington D.C. — Today, Energy and Commerce Republican Leader Cathy McMorris Rodgers (R-WA), Communications and Technology Subcommittee Republican Leader Bob Latta (R-OH), and Consumer Protection and Commerce Republican Leader Gus Bilirakis (R-FL) released the following statement regarding the data breach and theft of personal information from T-Mobile current and potential customers:</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Press Releases</td>
+      <td>08.19.2021</td>
+      <td>Rodgers and Dingell Look to Create Nationwide System to Improve 911 Emergency Response for People with Disabilities</td>
+      <td>https://republicans-energycommerce.house.gov/news/rodgers-and-dingell-look-to-create-nationwide-system-to-improve-911-emergency-response-for-people-with-disabilities/</td>
+      <td>Washington, D.C. — House Energy and Commerce Committee Republican Leader Cathy McMorris Rodgers (R-WA) and Rep. Debbie Dingell (D-MI) introduced the “Information Sharing and Advanced Communication (ISAAC) Alerting” Act, which directs the Federal Communications Commission (FCC) to prepare a report on how to implement a nationwide 9–1–1 disability alerting system.</td>
+    </tr>
+  </tbody>
+</table></div><p></p><strong>Foreign, Republican</strong>: Date, URL, title, and summary of updates, hearings, and markups from the US Republican Committee on Foreign Affairs;  <em><a href="https://gop-foreignaffairs.house.gov/updates/">https://gop-foreignaffairs.house.gov/updates/</a></em>, <em><a href="https://gop-foreignaffairs.house.gov/hearing/">https://gop-foreignaffairs.house.gov/hearing/</a></em>, <em><a href="https://gop-foreignaffairs.house.gov/markup/">https://gop-foreignaffairs.house.gov/markup/</a></em><div class= data> <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>category</th>
+      <th>date</th>
+      <th>title</th>
+      <th>url</th>
+      <th>summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Press Releases</td>
+      <td>08.20.21</td>
+      <td>McCaul on the Anniversary of Alexey Navalny’s Poisoning</td>
+      <td>https://gop-foreignaffairs.house.gov/press-release/mccaul-on-the-anniversary-of-alexey-navalnys-poisoning/</td>
+      <td>Washington, D.C.- House Foreign Affairs Lead Republican Michael McCaul released the following statement in response to the Biden Administration’s announcement today on the designation of nine…</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Press Releases</td>
+      <td>08.20.21</td>
+      <td>McCaul: Biden’s Statement “Completely Divorced from Reality”</td>
+      <td>https://gop-foreignaffairs.house.gov/press-release/mccaul-bidens-statement-completely-divorced-from-reality/</td>
+      <td>Washington, D.C. – House Foreign Affairs Committee Lead Republican has released the following statement in response to remarks from President Joe Biden on the crisis in Afghanistan.</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Press Releases</td>
+      <td>08.20.21</td>
+      <td>McCaul Leads Letter to Secretary Blinken Condemning State Department’s Dereliction of Duty Regarding Afghanistan</td>
+      <td>https://gop-foreignaffairs.house.gov/press-release/mccaul-leads-letter-to-secretary-blinken-condemning-state-departments-dereliction-of-duty-regarding-afghanistan/</td>
+      <td>Washington, D.C.- House Foreign Affairs Committee Lead Republican Michael McCaul led committee Republicans in a letter to Secretary of State Antony Blinken condemning State Department’s senior…</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Press Releases</td>
+      <td>08.20.21</td>
+      <td>McCaul: Biden’s Nord Stream 2 Policy “Weakening U.S. Credibility with Friends and Foes Alike”</td>
+      <td>https://gop-foreignaffairs.house.gov/press-release/mccaul-bidens-nord-stream-2-policy-weakening-u-s-credibility-with-friends-and-foes-alike/</td>
+      <td>Washington, D.C.– House Foreign Affairs Lead Republican Michael McCaul released the following statement in response to the latest congressionally-mandated report from the State Department on…</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Press Releases</td>
+      <td>08.20.21</td>
+      <td>ICYMI: McCaul in Houston Chronicle: Afghanistan Will Once Again Become a Terrorist Safe Haven</td>
+      <td>https://gop-foreignaffairs.house.gov/press-release/icymi-mccaul-in-houston-chronicle-afghanistan-will-once-again-become-a-terrorist-safe-haven/</td>
+      <td>Afghanistan will once again become a terrorist safe haven</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Press Releases</td>
+      <td>08.19.21</td>
+      <td>McCaul Calls for Briefing on Reported State Cables from Kabul Embassy Asking for Evacuation of Staff</td>
+      <td>https://gop-foreignaffairs.house.gov/press-release/mccaul-calls-for-briefing-on-reported-state-cables-from-kabul-embassy-asking-for-evacuation-of-staff/</td>
+      <td>Washington, D.C. – House Foreign Affairs Committee Lead Republican Michael McCaul has released the following statement after reports surfaced that staff at the Kabul Embassy warned the Biden…</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Press Releases</td>
+      <td>08.19.21</td>
+      <td>ICYMI: McCaul in Fox: Biden Owns Afghanistan Mess – He Wasted Time, Ignored Advice and Now Blames Others</td>
+      <td>https://gop-foreignaffairs.house.gov/press-release/icymi-mccaul-in-fox-biden-owns-afghanistan-mess-he-wasted-time-ignored-advice-and-now-blames-others/</td>
+      <td>Rep. Michael McCaul: Biden owns Afghanistan mess – he wasted time, ignored advice and now blames others</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Press Releases</td>
+      <td>08.18.21</td>
+      <td>McCaul, Risch Highlight Biden’s Failed Policy to Stop Nord Stream 2</td>
+      <td>https://gop-foreignaffairs.house.gov/press-release/mccaul-risch-highlight-bidens-failed-policy-to-stop-nord-stream-2/</td>
+      <td>Washington, D.C.- House Foreign Affairs Committee Lead Republican Michael McCaul (R-TX) and Senate Foreign Relations Committee Ranking Member Jim Risch (R-ID) have released the following,…</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Press Releases</td>
+      <td>08.17.21</td>
+      <td>McCaul, Rogers, and Nunes Blast Biden for Endangering American, Afghan Partners’ Lives</td>
+      <td>https://gop-foreignaffairs.house.gov/press-release/mccaul-rogers-and-nunes-blast-biden-for-endangering-american-afghan-partners-lives/</td>
+      <td>Washington, D.C.- House Foreign Affairs Committee Lead Republican Michael McCaul (R-TX), House Committee on Armed Services Lead Republican Mike Rogers (R-AL), and House Permanent Select Committee on…</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Press Releases</td>
+      <td>08.17.21</td>
+      <td>McCaul, Meeks, Green, and Sires Issue Statement on Haitian Earthquake Recovery Efforts</td>
+      <td>https://gop-foreignaffairs.house.gov/press-release/mccaul-meeks-green-and-sires-issue-statement-on-haitian-earthquake-recovery-efforts/</td>
+      <td>Washington, D.C.– House Foreign Affairs Committee Lead Republican Michael McCaul (R-TX), Chairman Gregory Meeks (D-NY), as well as Lead Republican and Chairman of the Western Hemisphere, Civilian…</td>
+    </tr>
+  </tbody>
+</table></div><p></p><strong>Homeland, Republican</strong>: Date, title, URL, and description for press releases from the US House Committee on Homeland Security;  <em><a href="https://republicans-homeland.house.gov/committee-activity/press-releases/">https://republicans-homeland.house.gov/committee-activity/press-releases/</a></em><div class= data> <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>category</th>
+      <th>date</th>
+      <th>title</th>
+      <th>url</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Press Releases</td>
+      <td>August 20, 2021</td>
+      <td>Katko, McCaul, Rogers Warn of Dangerous Threat Posed by Prisoners Released by Taliban</td>
+      <td>https://republicans-homeland.house.gov/katko-mccaul-rogers-warn-of-dangerous-threat-posed-by-prisoners-released-by-taliban/</td>
+      <td>Katko, McCaul, Rogers Warn of Dangerous Threat Posed by Prisoners Released by Taliban WASHINGTON, DC – Rep. John Katko (R-NY),...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Press Releases</td>
+      <td>August 20, 2021</td>
+      <td>Katko, McCaul, Rogers Warn of Dangerous Threat Posed by Prisoners Released by Taliban</td>
+      <td>https://republicans-homeland.house.gov/katko-mccaul-rogers-warn-of-dangerous-threat-posed-by-prisoners-released-by-taliban/</td>
+      <td>Katko, McCaul, Rogers Warn of Dangerous Threat Posed by Prisoners Released by Taliban WASHINGTON, DC – Rep. John Katko (R-NY),...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Press Releases</td>
+      <td>August 18, 2021</td>
+      <td>Katko Outlines Immediate Actions To Protect Homeland Following Afghanistan Nightmare</td>
+      <td>https://republicans-homeland.house.gov/katko-outlines-immediate-actions-to-protect-homeland-following-afghanistan-nightmare/</td>
+      <td>Katko Outlines Immediate Actions To Protect Homeland Following Afghanistan Nightmare WASHINGTON, DC – Just weeks before the 20th anniversary of the...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Press Releases</td>
+      <td>August 17, 2021</td>
+      <td>Katko: President Biden’s Massive Foreign Policy Blunder Has Jeopardized Our Homeland Security</td>
+      <td>https://republicans-homeland.house.gov/katko-president-bidens-massive-foreign-policy-blunder-has-jeopardized-our-homeland-security/</td>
+      <td>Katko: President Biden’s Massive Foreign Policy Blunder Has Jeopardized Our Homeland Security WASHINGTON, D.C.— Rep. John Katko (R-NY), Ranking Member...</td>
+    </tr>
+  </tbody>
+</table></div><p></p><strong>Science, Republican</strong>: Date, title, and url for news, hearings, and markups from the US House Committee on Science, Space, and Technology;  <em><a href="https://republicans-science.house.gov/news">https://republicans-science.house.gov/news</a></em>, <em><a href="https://republicans-science.house.gov/legislation/hearings">https://republicans-science.house.gov/legislation/hearingss</a></em>, <em><a href="https://republicans-science.house.gov/legislation/markups">https://republicans-science.house.gov/legislation/markups</a></em><div class= data> <i>No recent output from the past week or in the future</i></div><h2 id="industry">Industry</h2><p></p><strong>SIA</strong>: Date, URL, and title of all headlines for the Semiconductor Industry Association;  <em><a href="https://www.semiconductors.org/news-events/latest-news/">https://www.semiconductors.org/news-events/latest-news/</a></em><div class= data> <i>No recent output from the past week or in the future</i></div><p></p><strong>FCC</strong>: Date, URL, and title of all headlines for the Federal Communications Commission;  <em><a href="https://www.fcc.gov/news-events/headlines">https://www.fcc.gov/news-events/headlines</a></em><div class= data> <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>url</th>
+      <th>title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>August 20, 2021</td>
+      <td>https://www.fcc.gov/document/starks-fcc-request-comments-uas-spectrum-rules</td>
+      <td>Starks On FCC Request For Comments On UAS Spectrum Rules</td>
+    </tr>
+  </tbody>
+</table></div></body></html>

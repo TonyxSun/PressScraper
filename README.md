@@ -1,28 +1,40 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/tonyxsun/PressScraper) 
 ![Website](https://img.shields.io/website?label=website%3A&up_message=online&url=https%3A%2F%2Ftonyxsun.github.io%2FPressScraper)
 
+### **Quick Navigation**
+
+- [About](#about)
+- [Contents](#contents)
+- [How to run/update](#how-to-runupdate)
+
+  
 # About
 
-A scraper application for crawling US Congress press releases, hearings, markups, and bills for analytical purposes. [ongoing]
+A scraper application for crawling US Congress, industry associations, and think tanks press releases, hearings, markups, and bills for analytical purposes. 
 
-**Time Range**: Past content within one week and all future content. 
+**Time Range**: Past content within one week (for most sources) and all future content. 
 
-**Export Format**: CSV, [website](https://tonyxsun.github.io/PressScraper/)
+**Export Format**: CSV, [US Government](https://tonyxsun.github.io/PressScraper/), [Think Tanks](https://tonyxsun.github.io/PressScraper/think_tank.html)
+
+> *Note: For easier navigation, think tank press content are located on a seperate page from the US Government releases.*
 
 # Contents
+* [Think Tanks](#think-tanks)
+* [US Congress](#us-congress)
+* [US Senate](#us-senate)
+    + [US Senate Committees](#us-senate-committees)
+* [US House](#us-house)
+    + [US House Committees](#us-house-committees)
+    + [US Republican Committees](#us-republican-committees)
+* [Industry](#industry)
+## Think Tanks
 
-
-## Industry
-
-*  __SIA__：Date, URL, and title of all headlines for the Semiconductor Industry Association; <sub><br> _https://www.semiconductors.org/news-events/latest-news/_
-* __FCC__: Date, URL, and title of all headlines for the Federal Communications Commission; <sub><br>  _https://www.fcc.gov/news-events/headlines_
 * __Wilson__: Date, URL, and title of insight and analysis for the Wilson Center's Insights & Analysis page; <sub><br>  _https://www.wilsoncenter.org/insight-analysis?_page=1&keywords=&_limit=10&programs=109_
 * __Brookings__: Date, URL, and title of insight and analysis for all content produced by the Brookings Institution page; <sub><br>  _https://www.brookings.edu/search/?s=&post_type%5B%5D=&topic%5B%5D=&pcp=&date_range=&start_date=&end_date=_
 * __CSIS__: Date, type, title, URL, and description of insight and analysis for all content by the Center For Strategic & International Studies; <sub><br>  _https://www.csis.org/analysis_
 * __Asia Society__: Title, URL, and description of insight and analysis for all publications by the Asia Society Policy Institute; <sub><br>  _https://www.asiasociety.org/policy-institute/publications_
 * __ICAS__: Date, type, title, URL, and description of insight and analysis for all content by the Institute for China-America Studies; <sub><br>  _https://www.chinaus-icas.org/research-main/_
 * __Atlantic Council__: Date, category, title, URL, description, and tags of insight and analysis for all content by the Atlantic Council; <sub><br>  _https://www.atlanticcouncil.org/insights-impact/research/_, _https://www.atlanticcouncil.org/insights-impact/commentary/_
-
 
 
 ## US Congress
@@ -62,8 +74,13 @@ A scraper application for crawling US Congress press releases, hearings, markups
 * __Homeland__:  Date, title, URL, and description for press releases from the US House Committee on Homeland Security; <sub> <br> _https://republicans-homeland.house.gov/committee-activity/press-releases/_
 * __Science__: Date, title, and url for news, hearings, and markups from the US House Committee on Science, Space, and Technology; <sub> <br> _https://republicans-science.house.gov/news_. _https://republicans-science.house.gov/legislation/hearings_, _https://republicans-science.house.gov/legislation/markups_
 
-# How to run:
+## Industry
+
+*  __SIA__：Date, URL, and title of all headlines for the Semiconductor Industry Association; <sub><br> _https://www.semiconductors.org/news-events/latest-news/_
+* __FCC__: Date, URL, and title of all headlines for the Federal Communications Commission; <sub><br>  _https://www.fcc.gov/news-events/headlines_
+
+
+# How to run/update
 1. Clone repository.
-2. Append all necessary executables as bash commands in `script.bash`.
-3. Run `./script.bash` in the terminal.
-4. Using [Crontab](https://man7.org/linux/man-pages/man5/crontab.5.html)(Mac/Linux) or [Task Scheduler](https://docs.microsoft.com/en-us/windows/win32/taskschd/task-scheduler-start-page)(Windows), set up execution schedule to automatically run scraping job.
+2. Run `./script.bash` in the terminal.
+3. Using [Crontab](https://man7.org/linux/man-pages/man5/crontab.5.html)(Mac/Linux) or [Task Scheduler](https://docs.microsoft.com/en-us/windows/win32/taskschd/task-scheduler-start-page)(Windows), set up execution schedule to automatically run scraping job.

@@ -11,8 +11,9 @@
 
 body { 
     color: rgb(22, 40, 54); 
-    background-color: #fcfaf3;
+    background-color: #f5f5f5;
     font-family: openSans;
+    margin: 50px 50px 50px 50px;
 }
 
 h2 {

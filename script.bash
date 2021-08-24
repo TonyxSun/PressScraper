@@ -3,29 +3,29 @@
 # Run spiders
 cd ./Senate
 rm output/*
-python sbanking_spider.py
-python scommerce_spider.py
-python sforeign_spider.py
-python sfinance_spider.py
-python shsgac_spider.py
-python sjudiciary_spider.py
-python sintelligence_spider.py
-python senate_floor_spider.py
-python senate_roll_call.py
+python3 sbanking_spider.py
+python3 scommerce_spider.py
+python3 sforeign_spider.py
+python3 sfinance_spider.py
+python3 shsgac_spider.py
+python3 sjudiciary_spider.py
+python3 sintelligence_spider.py
+python3 senate_floor_spider.py
+python3 senate_roll_call.py
 
 cd ../House
 rm output/*
-python h_energy_spider.py
-python h_financial_spider.py
-python h_foreign_spider.py
-python h_homeland_spider.py
-python h_science_spider.py
-python h_transportation_spider.py
-python hgop_energy_spider.py
-python hgop_foreign_spider.py
-python hgop_homeland_spider.py
-python hgop_science_spider.py
-python h_intelligence_spider.py
+python3 h_energy_spider.py
+python3 h_financial_spider.py
+python3 h_foreign_spider.py
+python3 h_homeland_spider.py
+python3 h_science_spider.py
+python3 h_transportation_spider.py
+python3 hgop_energy_spider.py
+python3 hgop_foreign_spider.py
+python3 hgop_homeland_spider.py
+python3 hgop_science_spider.py
+python3 h_intelligence_spider.py
 
 
 cd ../Industry

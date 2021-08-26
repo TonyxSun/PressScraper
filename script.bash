@@ -48,7 +48,7 @@ python3 all_bills_spider.py
 cd ..
 
 # Run exporter
-python3 ./exporter_mac.py
+python3 ./exporter_mac.py 
 
 # Upload to github
 git pull

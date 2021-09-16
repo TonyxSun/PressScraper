@@ -4,7 +4,7 @@ from scrapy import cmdline
 
 import sys
 sys.path.insert(1, '../.')
-from check_date import check_date
+from check_date import check_date_14
 
 
 
@@ -30,7 +30,7 @@ class BrookingsSpider(scrapy.Spider):
 
             date_obj = datetime.strptime(date, "%A, %B %d, %Y").date()
             
-            if check_date(date_obj):
+            if check_date_14(date_obj):
                 
                 yield {
                     'date': date,

@@ -4,7 +4,7 @@ from scrapy import cmdline
 
 import sys
 sys.path.insert(1, '../.')
-from check_date import check_date
+from check_date import check_date_14
 
 
 
@@ -26,15 +26,17 @@ class WilsonSpider(scrapy.Spider):
             
             date = item.css('[class="teaser-byline-text-date"] ::text').get()
             
+            date_obj = None
             # Changes date if it exists
             if date != None:
                 date_obj = datetime.strptime(date, "%B %d, %Y").date()
+                            
+            # If date does not exist, continues scraping until date outside of range hit
+            if date_obj != None and not check_date_14(date_obj):
+                break
             
             i += 1
-            
-            # If date does not exist, continues scraping until date outside of range hit
-            if not check_date(date_obj):
-                break
+
             
             
             yield {

@@ -19,6 +19,7 @@ html_text = '<html><head><script async src="https://www.googletagmanager.com/gta
 html_text += '<h1> US Congress and Goverment </h1>'
 html_text += '<p> Last Updated ' + date + ' |  <a href="about.html"> About this page</a>' + '<hr> Also see: <strong><a href="think_tank.html"> Think Tanks </a></strong> content releases. <hr> </p>'
 img_src = "./Congress/Calendar/2021_" + date[:2] + "_Calendar.jpg"
+print (img_src)
 html_text += '<div class="calender_img"> <br> <img src= "' + img_src + '" alt="August 2021 Calendar"> <br> </div>'
 
 '''Congress'''
